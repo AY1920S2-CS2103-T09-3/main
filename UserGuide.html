@@ -14,15 +14,17 @@
 <li><a href="#Features">3. Features</a>
 <ul class="sectlevel2">
 <li><a href="#viewing-help-code-help-code">3.1. Viewing help : <code>help</code></a></li>
-<li><a href="#adding-a-person-code-add-code">3.2. Adding a person: <code>add</code></a></li>
-<li><a href="#listing-all-persons-code-list-code">3.3. Listing all persons : <code>list</code></a></li>
-<li><a href="#editing-a-person-code-edit-code">3.4. Editing a person : <code>edit</code></a></li>
-<li><a href="#locating-persons-by-name-code-find-code">3.5. Locating persons by name: <code>find</code></a></li>
-<li><a href="#deleting-a-person-code-delete-code">3.6. Deleting a person : <code>delete</code></a></li>
-<li><a href="#clearing-all-entries-code-clear-code">3.7. Clearing all entries : <code>clear</code></a></li>
-<li><a href="#exiting-the-program-code-exit-code">3.8. Exiting the program : <code>exit</code></a></li>
-<li><a href="#saving-the-data">3.9. Saving the data</a></li>
-<li><a href="#encrypting-data-files-code-coming-in-v2-0-code">3.10. Encrypting data files <code>[coming in v2.0]</code></a></li>
+<li><a href="#set-a-monthly-budget-code-budget-code">3.2. Set a monthly budget: <code>budget</code></a></li>
+<li><a href="#key-in-expense-code-spend-code">3.3. Key in expense : <code>spend</code></a></li>
+<li><a href="#key-in-income-code-income-code">3.4. Key in income : <code>income</code></a></li>
+<li><a href="#filter-transactions-code-filter-code">3.5. Filter transactions : <code>filter</code></a></li>
+<li><a href="#search-transactions-code-search-code">3.6. Search transactions : <code>search</code></a></li>
+<li><a href="#deleting-a-transaction-code-delete-code">3.7. Deleting a transaction : <code>delete</code></a></li>
+<li><a href="#analysis-of-transactions-code-show-analytics-code">3.8. Analysis of transactions : <code>show analytics</code></a></li>
+<li><a href="#list-of-transactions-code-show-list-code">3.9. List of transactions : <code>show list</code></a></li>
+<li><a href="#exiting-the-program-code-exit-code">3.10. Exiting the program : <code>exit</code></a></li>
+<li><a href="#saving-the-data">3.11. Saving the data</a></li>
+<li><a href="#encrypting-data-files-code-coming-in-v2-0-code">3.12. Encrypting data files <code>[coming in v2.0]</code></a></li>
 </ul>
 </li>
 <li><a href="#faq">4. FAQ</a></li>
@@ -34,7 +36,7 @@
 <h2 id="introduction"><a class="link" href="#introduction">1. Introduction</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>AddressBook Level 3 (AB3) is for those who <strong>prefer to use a desktop app for managing contacts</strong>. More importantly, AB3 is <strong>optimized for those who prefer to work with a Command Line Interface</strong> (CLI) while still having the benefits of a Graphical User Interface (GUI). If you can type fast, AB3 can get your contact management tasks done faster than traditional GUI apps. Interested? Jump to the <a href="#quick-start">Section 2, &#8220;Quick Start&#8221;</a> to get started. Enjoy!</p>
+<p>ExpenseLA is for money-conscious NUS students who wish to track their spending, in order to make better informed decisions when it comes to saving money. ExpenseLA maintains a record of your daily incoming and outgoing transactions to constantly keep track of your finances! ExpenseLA is optimized for those who prefer to work with a Command Line Interface (CLI) while still enjoying the benefits of having a Graphical User Interface (GUI). If you want a simple, no-frills expense tracker, look no further than ExpenseLA!</p>
 </div>
 </div>
 </div>
@@ -47,7 +49,7 @@
 <p>Ensure you have Java <code>11</code> or above installed in your Computer.</p>
 </li>
 <li>
-<p>Download the latest <code>addressbook.jar</code> <a href="https://github.com/se-edu/addressbook-level3/releases">here</a>.</p>
+<p>Download the latest <code>expensela.jar</code> <a href="https://github.com/se-edu/addressbook-level3/releases">here</a>.</p>
 </li>
 <li>
 <p>Copy the file to the folder you want to use as the home folder for your Address Book.</p>
@@ -69,13 +71,16 @@ e.g. typing <strong><code>help</code></strong> and pressing <kbd>Enter</kbd> wil
 <div class="ulist">
 <ul>
 <li>
-<p><strong><code>list</code></strong> : lists all contacts</p>
+<p><strong><code>budget 1000</code></strong> : set a budget of $1000 for the current month</p>
 </li>
 <li>
-<p><strong><code>add</code></strong><code>n/John Doe p/98765432 e/johnd@example.com a/John street, block 123, #01-01</code> : adds a contact named <code>John Doe</code> to the Address Book.</p>
+<p><strong><code>spend 100</code></strong><code>/n Wagyu Steak /d 2020-02-28 /c food</code> : adds an expense named <code>Wagyu Steak</code> spent on <code>2020-02-28</code> in category <code>food</code> to the expense tracker</p>
 </li>
 <li>
-<p><strong><code>delete</code></strong><code>3</code> : deletes the 3rd contact shown in the current list</p>
+<p><strong><code>delete</code></strong><code>999999999</code> : deletes the expense with id <code>999999999</code> in the current list</p>
+</li>
+<li>
+<p>*<code>filter /m 2020-02</code> : filters out all transactions made on <code>2020-02</code></p>
 </li>
 <li>
 <p><strong><code>exit</code></strong> : exits the app</p>
@@ -101,13 +106,10 @@ e.g. typing <strong><code>help</code></strong> and pressing <kbd>Enter</kbd> wil
 <div class="ulist">
 <ul>
 <li>
-<p>Words in <code>UPPER_CASE</code> are the parameters to be supplied by the user e.g. in <code>add n/NAME</code>, <code>NAME</code> is a parameter which can be used as <code>add n/John Doe</code>.</p>
+<p>Words in <code>UPPER_CASE</code> are the parameters to be supplied by the user e.g. in <code>filter /c OBJECT</code>, <code>OBJECT</code> is a parameter which can be used as <code>filter /c Food</code>.</p>
 </li>
 <li>
-<p>Items in square brackets are optional e.g <code>n/NAME [t/TAG]</code> can be used as <code>n/John Doe t/friend</code> or as <code>n/John Doe</code>.</p>
-</li>
-<li>
-<p>Items with <code>…</code>​ after them can be used multiple times including zero times e.g. <code>[t/TAG]&#8230;&#8203;</code> can be used as <code>&#160;</code> (i.e. 0 times), <code>t/friend</code>, <code>t/friend t/family</code> etc.</p>
+<p>Items in square brackets are optional e.g <code>spend 1000 /n Truffle Pizza [/d DATE] [/c CAT]</code> can be used as <code>spend 1000 /n Truffle Pizza /d TOADY&#8217;S DATE /c Others</code>.</p>
 </li>
 <li>
 <p>Parameters can be in any order e.g. if the command specifies <code>n/NAME p/PHONE_NUMBER</code>, <code>p/PHONE_NUMBER n/NAME</code> is also acceptable.</p>
@@ -123,22 +125,11 @@ e.g. typing <strong><code>help</code></strong> and pressing <kbd>Enter</kbd> wil
 </div>
 </div>
 <div class="sect2">
-<h3 id="adding-a-person-code-add-code"><a class="link" href="#adding-a-person-code-add-code">3.2. Adding a person: <code>add</code></a></h3>
+<h3 id="set-a-monthly-budget-code-budget-code"><a class="link" href="#set-a-monthly-budget-code-budget-code">3.2. Set a monthly budget: <code>budget</code></a></h3>
 <div class="paragraph">
-<p>Adds a person to the address book<br>
-Format: <code>add n/NAME p/PHONE_NUMBER e/EMAIL a/ADDRESS [t/TAG]&#8230;&#8203;</code></p>
-</div>
-<div class="admonitionblock tip">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-tip" title="Tip"></i>
-</td>
-<td class="content">
-A person can have any number of tags (including 0)
-</td>
-</tr>
-</table>
+<p>Sets a budget<br>
+Format: <code>budget AMOUNT</code> to set budget $AMOUNT for the current month<br>
+        <code>budget /repeat AMOUNT</code> to set repeating budget of $AMOUNT for the coming months</p>
 </div>
 <div class="paragraph">
 <p>Examples:</p>
@@ -146,49 +137,23 @@ A person can have any number of tags (including 0)
 <div class="ulist">
 <ul>
 <li>
-<p><code>add n/John Doe p/98765432 e/johnd@example.com a/John street, block 123, #01-01</code></p>
+<p><code>budget 1000</code></p>
 </li>
 <li>
-<p><code>add n/Betsy Crowe t/friend e/betsycrowe@example.com a/Newgate Prison p/1234567 t/criminal</code></p>
+<p><code>budget /repeat 1500</code></p>
 </li>
 </ul>
 </div>
 </div>
 <div class="sect2">
-<h3 id="listing-all-persons-code-list-code"><a class="link" href="#listing-all-persons-code-list-code">3.3. Listing all persons : <code>list</code></a></h3>
+<h3 id="key-in-expense-code-spend-code"><a class="link" href="#key-in-expense-code-spend-code">3.3. Key in expense : <code>spend</code></a></h3>
 <div class="paragraph">
-<p>Shows a list of all persons in the address book.<br>
-Format: <code>list</code></p>
+<p>Adds an expense to expense tracker.<br>
+Format: <code>spend /n NAME /d DATE /c CATEGORY</code></p>
 </div>
-</div>
-<div class="sect2">
-<h3 id="editing-a-person-code-edit-code"><a class="link" href="#editing-a-person-code-edit-code">3.4. Editing a person : <code>edit</code></a></h3>
 <div class="paragraph">
-<p>Edits an existing person in the address book.<br>
-Format: <code>edit INDEX [n/NAME] [p/PHONE] [e/EMAIL] [a/ADDRESS] [t/TAG]&#8230;&#8203;</code></p>
-</div>
-<div class="sidebarblock">
-<div class="content">
-<div class="ulist">
-<ul>
-<li>
-<p>Edits the person at the specified <code>INDEX</code>. The index refers to the index number shown in the displayed person list. The index <strong>must be a positive integer</strong> 1, 2, 3, &#8230;&#8203;</p>
-</li>
-<li>
-<p>At least one of the optional fields must be provided.</p>
-</li>
-<li>
-<p>Existing values will be updated to the input values.</p>
-</li>
-<li>
-<p>When editing tags, the existing tags of the person will be removed i.e adding of tags is not cumulative.</p>
-</li>
-<li>
-<p>You can remove all the person&#8217;s tags by typing <code>t/</code> without specifying any tags after it.</p>
-</li>
-</ul>
-</div>
-</div>
+<p>[Tip] Leaving the DATE option blank will auto fill with today&#8217;s date
+[Tip] Leaving the CATEGORY option blank will auto fill with 'Others' category</p>
 </div>
 <div class="paragraph">
 <p>Examples:</p>
@@ -196,21 +161,75 @@ Format: <code>edit INDEX [n/NAME] [p/PHONE] [e/EMAIL] [a/ADDRESS] [t/TAG]&#8230;
 <div class="ulist">
 <ul>
 <li>
-<p><code>edit 1 p/91234567 e/johndoe@example.com</code><br>
-Edits the phone number and email address of the 1st person to be <code>91234567</code> and <code>johndoe@example.com</code> respectively.</p>
+<p><code>spend /n Grab Share /d 2020-02-19 /c Transport</code></p>
 </li>
 <li>
-<p><code>edit 2 n/Betsy Crower t/</code><br>
-Edits the name of the 2nd person to be <code>Betsy Crower</code> and clears all existing tags.</p>
+<p><code>spend /n Valentines Flowers</code></p>
 </li>
 </ul>
 </div>
 </div>
 <div class="sect2">
-<h3 id="locating-persons-by-name-code-find-code"><a class="link" href="#locating-persons-by-name-code-find-code">3.5. Locating persons by name: <code>find</code></a></h3>
+<h3 id="key-in-income-code-income-code"><a class="link" href="#key-in-income-code-income-code">3.4. Key in income : <code>income</code></a></h3>
 <div class="paragraph">
-<p>Finds persons whose names contain any of the given keywords.<br>
-Format: <code>find KEYWORD [MORE_KEYWORDS]</code></p>
+<p>Adds an income to expense tracker.<br>
+Format: <code>income /n NAME /d DATE</code></p>
+</div>
+<div class="paragraph">
+<p>[Tip] Leaving the DATE option blank will auto fill with today&#8217;s date</p>
+</div>
+<div class="paragraph">
+<p>Examples:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>income /n Sell used iPhone /d 2020-02-19</code></p>
+</li>
+<li>
+<p><code>income /n Pocket Money from mommy</code></p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="filter-transactions-code-filter-code"><a class="link" href="#filter-transactions-code-filter-code">3.5. Filter transactions : <code>filter</code></a></h3>
+<div class="paragraph">
+<p>Filters transactions for user to see by filter type.<br>
+Format: <code>filter /m YYYY-MM</code> to view a certain month&#8217;s transactions
+        <code>filter /y YYYY</code> to view a certain year&#8217;s transactions
+        <code>filter /f YYYY-MM /t YYYY-MM</code> to view transactions from a range of months <code>[coming in v2.0]</code>
+        <code>filter /c CATEGORY</code> to view transactions of a certain category
+        <code>filter reset</code> to reset view to latest</p>
+</div>
+<div class="paragraph">
+<p>Examples:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>filter /m 2020-02</code></p>
+</li>
+<li>
+<p><code>filter /y 2020</code></p>
+</li>
+<li>
+<p><code>filter /f 2020-02 /t 2019-07</code></p>
+</li>
+<li>
+<p><code>filter /c Transport</code></p>
+</li>
+<li>
+<p><code>filter reset</code></p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="search-transactions-code-search-code"><a class="link" href="#search-transactions-code-search-code">3.6. Search transactions : <code>search</code></a></h3>
+<div class="paragraph">
+<p>Search for transactions with certain keywords.<br>
+Format: <code>search KEYWORD [MORE_KEYWORDS]</code></p>
 </div>
 <div class="sidebarblock">
 <div class="content">
@@ -220,16 +239,13 @@ Format: <code>find KEYWORD [MORE_KEYWORDS]</code></p>
 <p>The search is case insensitive. e.g <code>hans</code> will match <code>Hans</code></p>
 </li>
 <li>
-<p>The order of the keywords does not matter. e.g. <code>Hans Bo</code> will match <code>Bo Hans</code></p>
-</li>
-<li>
 <p>Only the name is searched.</p>
 </li>
 <li>
 <p>Only full words will be matched e.g. <code>Han</code> will not match <code>Hans</code></p>
 </li>
 <li>
-<p>Persons matching at least one keyword will be returned (i.e. <code>OR</code> search). e.g. <code>Hans Bo</code> will return <code>Hans Gruber</code>, <code>Bo Yang</code></p>
+<p>Transactions matching at least one keyword will be returned (i.e. <code>OR</code> search). e.g. <code>Hans Bo</code> will return <code>Hans Gruber</code>, <code>Bo Yang</code></p>
 </li>
 </ul>
 </div>
@@ -241,34 +257,31 @@ Format: <code>find KEYWORD [MORE_KEYWORDS]</code></p>
 <div class="ulist">
 <ul>
 <li>
-<p><code>find John</code><br>
-Returns <code>john</code> and <code>John Doe</code></p>
+<p><code>search pizza</code><br>
+Returns <code>pizza</code> and <code>Domino&#8217;s Pizza</code></p>
 </li>
 <li>
-<p><code>find Betsy Tim John</code><br>
-Returns any person having names <code>Betsy</code>, <code>Tim</code>, or <code>John</code></p>
+<p><code>search hawaiian wood fired pizza</code><br>
+Returns any transaction having names <code>hawaiian</code>, <code>wood</code>, <code>fired</code> or <code>pizza</code></p>
 </li>
 </ul>
 </div>
 </div>
 <div class="sect2">
-<h3 id="deleting-a-person-code-delete-code"><a class="link" href="#deleting-a-person-code-delete-code">3.6. Deleting a person : <code>delete</code></a></h3>
+<h3 id="deleting-a-transaction-code-delete-code"><a class="link" href="#deleting-a-transaction-code-delete-code">3.7. Deleting a transaction : <code>delete</code></a></h3>
 <div class="paragraph">
-<p>Deletes the specified person from the address book.<br>
-Format: <code>delete INDEX</code></p>
+<p>Deletes the specified transaction from the expense tracker.<br>
+Format: <code>delete TRANSACTION_ID</code></p>
 </div>
 <div class="sidebarblock">
 <div class="content">
 <div class="ulist">
 <ul>
 <li>
-<p>Deletes the person at the specified <code>INDEX</code>.</p>
+<p>Every transaction is given a unique <code>TRANSACTION_ID</code> when added to the expense tracker.</p>
 </li>
 <li>
-<p>The index refers to the index number shown in the displayed person list.</p>
-</li>
-<li>
-<p>The index <strong>must be a positive integer</strong> 1, 2, 3, &#8230;&#8203;</p>
+<p>The transaction ID of a particular transaction can be found either by searching to the transaction with the search function.</p>
 </li>
 </ul>
 </div>
@@ -280,41 +293,45 @@ Format: <code>delete INDEX</code></p>
 <div class="ulist">
 <ul>
 <li>
-<p><code>list</code><br>
-<code>delete 2</code><br>
-Deletes the 2nd person in the address book.</p>
-</li>
-<li>
-<p><code>find Betsy</code><br>
-<code>delete 1</code><br>
-Deletes the 1st person in the results of the <code>find</code> command.</p>
+<p><code>search pizza</code><br>
+<code>delete 1904850</code><br>
+Deletes the transaction with ID 1904850 in the expense tracker.</p>
 </li>
 </ul>
 </div>
 </div>
 <div class="sect2">
-<h3 id="clearing-all-entries-code-clear-code"><a class="link" href="#clearing-all-entries-code-clear-code">3.7. Clearing all entries : <code>clear</code></a></h3>
+<h3 id="analysis-of-transactions-code-show-analytics-code"><a class="link" href="#analysis-of-transactions-code-show-analytics-code">3.8. Analysis of transactions : <code>show analytics</code></a></h3>
 <div class="paragraph">
-<p>Clears all entries from the address book.<br>
-Format: <code>clear</code></p>
+<p>Shows the analysis of transactions made in the filtered month/year.<br>
+Analysis will be shown in the form of a pie chart for categories and bar graph for month or week depending on the filter.<br>
+Format: <code>show analytics</code></p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="exiting-the-program-code-exit-code"><a class="link" href="#exiting-the-program-code-exit-code">3.8. Exiting the program : <code>exit</code></a></h3>
+<h3 id="list-of-transactions-code-show-list-code"><a class="link" href="#list-of-transactions-code-show-list-code">3.9. List of transactions : <code>show list</code></a></h3>
+<div class="paragraph">
+<p>Shows the list of transaction made in the filtered month/year.<br>
+To switch between analytics and list view of transactions.
+Format: <code>show list</code></p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="exiting-the-program-code-exit-code"><a class="link" href="#exiting-the-program-code-exit-code">3.10. Exiting the program : <code>exit</code></a></h3>
 <div class="paragraph">
 <p>Exits the program.<br>
 Format: <code>exit</code></p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="saving-the-data"><a class="link" href="#saving-the-data">3.9. Saving the data</a></h3>
+<h3 id="saving-the-data"><a class="link" href="#saving-the-data">3.11. Saving the data</a></h3>
 <div class="paragraph">
 <p>Address book data are saved in the hard disk automatically after any command that changes the data.<br>
 There is no need to save manually.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="encrypting-data-files-code-coming-in-v2-0-code"><a class="link" href="#encrypting-data-files-code-coming-in-v2-0-code">3.10. Encrypting data files <code>[coming in v2.0]</code></a></h3>
+<h3 id="encrypting-data-files-code-coming-in-v2-0-code"><a class="link" href="#encrypting-data-files-code-coming-in-v2-0-code">3.12. Encrypting data files <code>[coming in v2.0]</code></a></h3>
 <div class="paragraph">
 <p><em>{explain how the user can enable/disable data encryption}</em></p>
 </div>
@@ -326,7 +343,7 @@ There is no need to save manually.</p>
 <div class="sectionbody">
 <div class="paragraph">
 <p><strong>Q</strong>: How do I transfer my data to another Computer?<br>
-<strong>A</strong>: Install the app in the other computer and overwrite the empty data file it creates with the file that contains the data of your previous Address Book folder.</p>
+<strong>A</strong>: Install the app in the other computer and overwrite the empty data file it creates with the file that contains the data of your previous Expense Tracker folder.</p>
 </div>
 </div>
 </div>
@@ -336,26 +353,49 @@ There is no need to save manually.</p>
 <div class="ulist">
 <ul>
 <li>
-<p><strong>Add</strong> <code>add n/NAME p/PHONE_NUMBER e/EMAIL a/ADDRESS [t/TAG]&#8230;&#8203;</code><br>
-e.g. <code>add n/James Ho p/22224444 e/jamesho@example.com a/123, Clementi Rd, 1234665 t/friend t/colleague</code></p>
+<p><strong>Budget</strong> : <code>budget AMOUNT</code><br>
+           <code>budget /repeat AMOUNT</code><br>
+e.g. <code>budget 1000</code><br>
+     <code>budget /repeat 1500</code></p>
 </li>
 <li>
-<p><strong>Clear</strong> : <code>clear</code></p>
+<p><strong>Spend</strong> : <code>spend /n NAME /d DATE /c CATEGORY</code><br>
+e.g. <code>spend /n Grab Share /d 2020-02-19 /c Transport</code><br>
+     <code>spend /n Valentines Flowers</code><br>
+     <code>spend /n Flowers /d 2020-02-19</code><br>
+     <code>spend /n Pizza /c Food</code></p>
 </li>
 <li>
-<p><strong>Delete</strong> : <code>delete INDEX</code><br>
-e.g. <code>delete 3</code></p>
+<p><strong>Income</strong> : <code>income /n NAME /d DATE</code><br>
+e.g. <code>income /n Sell used iPhone /d 2020-02-19</code><br>
+     <code>income /n Pocket Money from mommy</code></p>
 </li>
 <li>
-<p><strong>Edit</strong> : <code>edit INDEX [n/NAME] [p/PHONE_NUMBER] [e/EMAIL] [a/ADDRESS] [t/TAG]&#8230;&#8203;</code><br>
-e.g. <code>edit 2 n/James Lee e/jameslee@example.com</code></p>
+<p><strong>Filter</strong> : <code>filter /m YYYY-MM</code><br>
+             <code>filter /y YYYY</code><br>
+             <code>filter /f YYYY-MM /t YYYY-MM</code> <code>[coming in v2.0]</code><br>
+             <code>filter /c CATEGORY</code><br>
+             <code>filter reset</code><br>
+e.g. <code>filter /m 2020-02</code><br>
+     <code>filter /y 2020</code><br>
+     <code>filter /f 2020-02 /t 2019-07</code><br>
+     <code>filter /c Transport</code><br>
+     <code>filter reset</code></p>
 </li>
 <li>
-<p><strong>Find</strong> : <code>find KEYWORD [MORE_KEYWORDS]</code><br>
-e.g. <code>find James Jake</code></p>
+<p><strong>Search</strong> : <code>search KEYWORD [MORE_KEYWORDS]</code><br>
+e.g. <code>search pizza</code><br>
+     <code>search hawaiian wood fired pizza</code></p>
 </li>
 <li>
-<p><strong>List</strong> : <code>list</code></p>
+<p><strong>Delete</strong> : <code>delete TRANSACTION_ID</code><br>
+e.g. <code>delete 902947392183</code></p>
+</li>
+<li>
+<p><strong>Analytics</strong> : <code>show analytics</code></p>
+</li>
+<li>
+<p><strong>List</strong> : <code>show list</code></p>
 </li>
 <li>
 <p><strong>Help</strong> : <code>help</code></p>
@@ -363,4 +403,4 @@ e.g. <code>find James Jake</code></p>
 </ul>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2020-03-04 03:25:30 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2020-03-04 06:21:48 UTC</div></div></div></body></html>
