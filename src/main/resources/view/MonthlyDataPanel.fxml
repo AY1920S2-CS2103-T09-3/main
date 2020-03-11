@@ -4,8 +4,8 @@
 
 <?import javafx.scene.control.Label?>
 <VBox xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
-    <Label fx:id="monthlyDataPlaceholderText1" text="Hello from monthly data 1"/>
-    <Label fx:id="monthlyDataPlaceholderText2" text="Hello from monthly data 2"/>
-    <Label fx:id="monthlyDataPlaceholderText3" text="Hello from monthly data 3"/>
-    <Label fx:id="monthlyDataPlaceholderText4" text="Hello from monthly data 4"/>
+<!--    <Label fx:id="monthlyDataPlaceholderText1" text="Hello from monthly data 1"/>-->
+<!--    <Label fx:id="monthlyDataPlaceholderText2" text="Hello from monthly data 2"/>-->
+<!--    <Label fx:id="monthlyDataPlaceholderText3" text="Hello from monthly data 3"/>-->
+<!--    <Label fx:id="monthlyDataPlaceholderText4" text="Hello from monthly data 4"/>-->
 </VBox>
