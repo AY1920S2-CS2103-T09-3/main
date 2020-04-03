@@ -1,30 +1,31 @@
-<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><!--[if IE]><meta http-equiv="X-UA-Compatible" content="IE=edge"><![endif]--><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="generator" content="Asciidoctor 1.5.6.1"><title>AddressBook Level 3 - User Guide</title><link rel="stylesheet" href="stylesheets/gh-pages.css">
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><!--[if IE]><meta http-equiv="X-UA-Compatible" content="IE=edge"><![endif]--><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="generator" content="Asciidoctor 1.5.6.1"><title>ExpenseLa - User Guide</title><link rel="stylesheet" href="stylesheets/gh-pages.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css">
-<link rel="stylesheet" href="stylesheets/coderay-asciidoctor.css"></head><body class="article"><div id="seedu-header"><nav class="navbar navbar-lg navbar-light bg-lighter"><div class="container"><a class="navbar-brand" href="https://se-edu.github.io/"><img src="images/SeEduLogo.png" alt="SE-EDU"></a><ul class="navbar-nav"><li class="nav-item"><a class="nav-link active" href="index.html">AB-3</a></li><li class="nav-item"><a class="nav-link" href="https://se-edu.github.io/collate">Collate</a></li><li class="nav-item"><a class="nav-link" href="https://se-edu.github.io/se-book">Book</a></li><li class="nav-item"><a class="nav-link" href="https://se-edu.github.io/learningresources">Resources</a></li></ul></div></nav></div><div id="site-header"><nav class="navbar navbar-light bg-light"><div class="container"><a class="navbar-brand" href="index.html">AddressBook-Level3</a><ul class="navbar-nav"><li class="nav-item"><a class="nav-link active" href="UserGuide.html">User Guide</a></li><li class="nav-item"><a class="nav-link" href="DeveloperGuide.html">Developer Guide</a></li><li class="nav-item"><a class="nav-link" href="LearningOutcomes.html">LOs</a></li><li class="nav-item"><a class="nav-link" href="AboutUs.html">About Us</a></li><li class="nav-item"><a class="nav-link" href="ContactUs.html">Contact Us</a></li><li class="navitem"><a class="nav-link" href="https://github.com/AY1920S2-CS2103-T09-3/main"><span class="fa fa-github fa-lg" aria-hidden="true"></span>&nbsp;View on GitHub</a></li></ul></div></nav></div><div id="header"><h1>AddressBook Level 3 - User Guide</h1></div><div id="content"><div id="preamble">
+<link rel="stylesheet" href="stylesheets/coderay-asciidoctor.css"></head><body class="article"><div id="seedu-header"><nav class="navbar navbar-lg navbar-light bg-lighter"><div class="container"><a class="navbar-brand" href="https://se-edu.github.io/"><img src="images/SeEduLogo.png" alt="SE-EDU"></a><ul class="navbar-nav"><li class="nav-item"><a class="nav-link active" href="index.html">ExpenseLa</a></li><li class="nav-item"><a class="nav-link" href="https://se-edu.github.io/collate">Collate</a></li><li class="nav-item"><a class="nav-link" href="https://se-edu.github.io/se-book">Book</a></li><li class="nav-item"><a class="nav-link" href="https://se-edu.github.io/learningresources">Resources</a></li></ul></div></nav></div><div id="site-header"><nav class="navbar navbar-light bg-light"><div class="container"><a class="navbar-brand" href="index.html">ExpenseLa</a><ul class="navbar-nav"><li class="nav-item"><a class="nav-link active" href="UserGuide.html">User Guide</a></li><li class="nav-item"><a class="nav-link" href="DeveloperGuide.html">Developer Guide</a></li><li class="nav-item"><a class="nav-link" href="LearningOutcomes.html">LOs</a></li><li class="nav-item"><a class="nav-link" href="AboutUs.html">About Us</a></li><li class="nav-item"><a class="nav-link" href="ContactUs.html">Contact Us</a></li><li class="navitem"><a class="nav-link" href="https://github.com/AY1920S2-CS2103-T09-3/main"><span class="fa fa-github fa-lg" aria-hidden="true"></span>&nbsp;View on GitHub</a></li></ul></div></nav></div><div id="header"><h1>ExpenseLa - User Guide</h1></div><div id="content"><div id="preamble">
 <div class="sectionbody">
 <div class="paragraph">
-<p>By: <code>Team SE-EDU</code>      Since: <code>Jun 2016</code>      Licence: <code>MIT</code></p>
+<p>By: <code>Team AY1920S2-CS2103-T09-3</code>      Since: <code>Feb 2020</code>      Licence: <code>MIT</code></p>
 </div>
 </div>
 <div id="toc" class="toc">
 <div id="toctitle"></div>
 <ul class="sectlevel1">
-<li><a href="#introduction">1. Introduction</a></li>
+<li><a href="#product-overview">1. Product Overview</a></li>
 <li><a href="#quick-start">2. Quick Start</a></li>
-<li><a href="#Features">3. Features</a>
+<li><a href="#Features">3. Features Present</a>
 <ul class="sectlevel2">
 <li><a href="#viewing-help-code-help-code">3.1. Viewing help : <code>help</code></a></li>
-<li><a href="#set-a-monthly-budget-code-budget-code">3.2. Set a monthly budget: <code>budget</code></a></li>
-<li><a href="#key-in-expense-code-spend-code">3.3. Key in expense : <code>spend</code></a></li>
-<li><a href="#key-in-income-code-income-code">3.4. Key in income : <code>income</code></a></li>
+<li><a href="#set-a-monthly-budget-code-budget-code">3.2. Set a monthly budget : <code>budget</code></a></li>
+<li><a href="#reset-total-balance-code-resetbalance-code">3.3. Reset total balance <code>resetbalance</code></a></li>
+<li><a href="#key-in-transaction-code-add-code">3.4. Key in transaction : <code>add</code></a></li>
 <li><a href="#filter-transactions-code-filter-code">3.5. Filter transactions : <code>filter</code></a></li>
-<li><a href="#search-transactions-code-search-code">3.6. Search transactions : <code>search</code></a></li>
-<li><a href="#deleting-a-transaction-code-delete-code">3.7. Deleting a transaction : <code>delete</code></a></li>
-<li><a href="#analysis-of-transactions-code-show-analytics-code">3.8. Analysis of transactions : <code>show analytics</code></a></li>
-<li><a href="#list-of-transactions-code-show-list-code">3.9. List of transactions : <code>show list</code></a></li>
-<li><a href="#exiting-the-program-code-exit-code">3.10. Exiting the program : <code>exit</code></a></li>
-<li><a href="#saving-the-data">3.11. Saving the data</a></li>
-<li><a href="#encrypting-data-files-code-coming-in-v2-0-code">3.12. Encrypting data files <code>[coming in v2.0]</code></a></li>
+<li><a href="#deleting-a-transaction-code-delete-code">3.6. Deleting a transaction : <code>delete</code></a></li>
+<li><a href="#edit-a-transaction-code-edit-code">3.7. Edit a transaction : <code>edit</code></a></li>
+<li><a href="#analysis-of-transactions-code-toggle-code">3.8. Analysis of transactions : <code>toggle</code></a></li>
+<li><a href="#find-transaction-by-name-code-find-code">3.9. Find transaction by name : <code>find</code></a></li>
+<li><a href="#list-of-transactions-code-list-code">3.10. List of transactions : <code>list</code></a></li>
+<li><a href="#clear-all-data-code-clear-code">3.11. Clear all data : <code>clear</code></a></li>
+<li><a href="#exiting-the-program-code-exit-code">3.12. Exiting the program : <code>exit</code></a></li>
+<li><a href="#saving-the-data">3.13. Saving the data</a></li>
 </ul>
 </li>
 <li><a href="#faq">4. FAQ</a></li>
@@ -33,7 +34,7 @@
 </div>
 </div>
 <div class="sect1">
-<h2 id="introduction"><a class="link" href="#introduction">1. Introduction</a></h2>
+<h2 id="product-overview"><a class="link" href="#product-overview">1. Product Overview</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>ExpenseLA is for money-conscious NUS students who wish to track their spending, in order to make better informed decisions when it comes to saving money. ExpenseLA maintains a record of your daily incoming and outgoing transactions to constantly keep track of your finances! ExpenseLA is optimized for those who prefer to work with a Command Line Interface (CLI) while still enjoying the benefits of having a Graphical User Interface (GUI). If you want a simple, no-frills expense tracker, look no further than ExpenseLA!</p>
@@ -49,7 +50,7 @@
 <p>Ensure you have Java <code>11</code> or above installed in your Computer.</p>
 </li>
 <li>
-<p>Download the latest <code>expensela.jar</code> <a href="https://github.com/se-edu/addressbook-level3/releases">here</a>.</p>
+<p>Download the latest <code>expensela.jar</code> <a href="https://github.com/AY1920S2-CS2103-T09-3/main/releases">here</a>.</p>
 </li>
 <li>
 <p>Copy the file to the folder you want to use as the home folder for your Address Book.</p>
@@ -71,16 +72,16 @@ e.g. typing <strong><code>help</code></strong> and pressing <kbd>Enter</kbd> wil
 <div class="ulist">
 <ul>
 <li>
-<p><strong><code>budget 1000</code></strong> : set a budget of $1000 for the current month</p>
+<p><strong><code>budget b/1000 rc/no</code></strong> : set a non-recurring budget of $1000 for the current month</p>
 </li>
 <li>
-<p><strong><code>spend 100</code></strong><code>/n Wagyu Steak /d 2020-02-28 /c food</code> : adds an expense named <code>Wagyu Steak</code> spent on <code>2020-02-28</code> in category <code>food</code> to the expense tracker</p>
+<p><strong><code>add a/100</code></strong><code>n/Wagyu Steak d/2020-02-28 c/FOOD</code> : adds an expense named <code>Wagyu Steak</code> with amount <code>$100.00</code> spent on <code>2020-02-28</code> in category <code>FOOD</code> to the expense tracker</p>
 </li>
 <li>
-<p><strong><code>delete</code></strong><code>999999999</code> : deletes the expense with id <code>999999999</code> in the current list</p>
+<p><strong><code>delete</code></strong><code>1</code> : deletes the expense with id <code>1</code> in the current list</p>
 </li>
 <li>
-<p>*<code>filter /m 2020-02</code> : filters out all transactions made on <code>2020-02</code></p>
+<p><strong><code>filter</code></strong><code>m/ 2020-02</code> : filters to only show transactions made on <code>2020-02</code></p>
 </li>
 <li>
 <p><strong><code>exit</code></strong> : exits the app</p>
@@ -89,14 +90,14 @@ e.g. typing <strong><code>help</code></strong> and pressing <kbd>Enter</kbd> wil
 </div>
 </li>
 <li>
-<p>Refer to <a href="#Features">Section 3, &#8220;Features&#8221;</a> for details of each command.</p>
+<p>Refer to <a href="#Features">Section 3, &#8220;Features Present&#8221;</a> for details of each command.</p>
 </li>
 </ol>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="Features"><a class="link" href="#Features">3. Features</a></h2>
+<h2 id="Features"><a class="link" href="#Features">3. Features Present</a></h2>
 <div class="sectionbody">
 <div class="exampleblock">
 <div class="content">
@@ -106,13 +107,13 @@ e.g. typing <strong><code>help</code></strong> and pressing <kbd>Enter</kbd> wil
 <div class="ulist">
 <ul>
 <li>
-<p>Words in <code>UPPER_CASE</code> are the parameters to be supplied by the user e.g. in <code>filter /c OBJECT</code>, <code>OBJECT</code> is a parameter which can be used as <code>filter /c Food</code>.</p>
+<p>Words in <code>UPPER_CASE</code> are the parameters to be supplied by the user e.g. in <code>filter c/OBJECT</code>, <code>OBJECT</code> is a parameter which can be used as <code>filter c/FOOD</code>.</p>
 </li>
 <li>
-<p>Items in square brackets are optional e.g <code>spend 1000 /n Truffle Pizza [/d DATE] [/c CAT]</code> can be used as <code>spend 1000 /n Truffle Pizza /d TOADY&#8217;S DATE /c Others</code>.</p>
+<p>Items in square brackets are optional e.g <code>spend a/AMOUNT n/ OBJECT [d/ DATE] [c/ CAT]</code> and can used as <code>add a/100 n/Pizza</code> or <code>add a/100 n/Pizza d/2020-02-02 c/Food</code></p>
 </li>
 <li>
-<p>Parameters can be in any order e.g. if the command specifies <code>n/NAME p/PHONE_NUMBER</code>, <code>p/PHONE_NUMBER n/NAME</code> is also acceptable.</p>
+<p>Parameters can be in any order e.g. if the command specifies <code>n/NAME a/AMOUNT</code>, <code>a/AMOUNT n/NAME</code> is also acceptable.</p>
 </li>
 </ul>
 </div>
@@ -125,11 +126,13 @@ e.g. typing <strong><code>help</code></strong> and pressing <kbd>Enter</kbd> wil
 </div>
 </div>
 <div class="sect2">
-<h3 id="set-a-monthly-budget-code-budget-code"><a class="link" href="#set-a-monthly-budget-code-budget-code">3.2. Set a monthly budget: <code>budget</code></a></h3>
+<h3 id="set-a-monthly-budget-code-budget-code"><a class="link" href="#set-a-monthly-budget-code-budget-code">3.2. Set a monthly budget : <code>budget</code></a></h3>
 <div class="paragraph">
-<p>Sets a budget<br>
-Format: <code>budget AMOUNT</code> to set budget $AMOUNT for the current month<br>
-        <code>budget /repeat AMOUNT</code> to set repeating budget of $AMOUNT for the coming months</p>
+<p>Sets a spendable budget for the current month</p>
+</div>
+<div class="paragraph">
+<p>Format: <code>budget b/AMOUNT rc/no</code> (to set a budget for the given month only)
+        <code>budget b/AMOUNT rc/yes</code> (to set repeating budget of $AMOUNT for the coming months)</p>
 </div>
 <div class="paragraph">
 <p>Examples:</p>
@@ -137,46 +140,63 @@ Format: <code>budget AMOUNT</code> to set budget $AMOUNT for the current month<b
 <div class="ulist">
 <ul>
 <li>
-<p><code>budget 1000</code></p>
+<p><code>budget b/1000 rc/no</code></p>
 </li>
 <li>
-<p><code>budget /repeat 1500</code></p>
+<p><code>budget rc/yes b/1500</code></p>
 </li>
 </ul>
 </div>
 </div>
 <div class="sect2">
-<h3 id="key-in-expense-code-spend-code"><a class="link" href="#key-in-expense-code-spend-code">3.3. Key in expense : <code>spend</code></a></h3>
+<h3 id="reset-total-balance-code-resetbalance-code"><a class="link" href="#reset-total-balance-code-resetbalance-code">3.3. Reset total balance <code>resetbalance</code></a></h3>
 <div class="paragraph">
-<p>Adds an expense to expense tracker.<br>
-Format: <code>spend /n NAME /d DATE /c CATEGORY</code></p>
-</div>
-<div class="paragraph">
-<p>[Tip] Leaving the DATE option blank will auto fill with today&#8217;s date
-[Tip] Leaving the CATEGORY option blank will auto fill with 'Others' category</p>
-</div>
-<div class="paragraph">
-<p>Examples:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p><code>spend /n Grab Share /d 2020-02-19 /c Transport</code></p>
-</li>
-<li>
-<p><code>spend /n Valentines Flowers</code></p>
-</li>
-</ul>
+<p>Reset Balance value to the total from the amount of all transactions in stored in the application so far</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="key-in-income-code-income-code"><a class="link" href="#key-in-income-code-income-code">3.4. Key in income : <code>income</code></a></h3>
+<h3 id="key-in-transaction-code-add-code"><a class="link" href="#key-in-transaction-code-add-code">3.4. Key in transaction : <code>add</code></a></h3>
 <div class="paragraph">
-<p>Adds an income to expense tracker.<br>
-Format: <code>income /n NAME /d DATE</code></p>
+<p>Adds an expense or income to the expense tracker. Expenses/incomes are stored as a transaction.</p>
 </div>
 <div class="paragraph">
-<p>[Tip] Leaving the DATE option blank will auto fill with today&#8217;s date</p>
+<p>Format: `add [i/] n/ NAME a/ AMOUNT [d/ DATE] [c/ CATEGORY] [r/ REMARK]  `</p>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+Leaving the DATE option blank will auto fill with today&#8217;s date
+</td>
+</tr>
+</table>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+Leaving the CATEGORY option blank will auto fill with 'MISC' category
+</td>
+</tr>
+</table>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+Not including i/ will make transaction an expense by default while including i/ will make it an income
+</td>
+</tr>
+</table>
 </div>
 <div class="paragraph">
 <p>Examples:</p>
@@ -184,10 +204,13 @@ Format: <code>income /n NAME /d DATE</code></p>
 <div class="ulist">
 <ul>
 <li>
-<p><code>income /n Sell used iPhone /d 2020-02-19</code></p>
+<p><code>add a/ 26.00 n/ Grab Share d/ 2020-02-19 c/ TRANSPORT</code></p>
 </li>
 <li>
-<p><code>income /n Pocket Money from mommy</code></p>
+<p><code>add a/ 16.00 n/ Pizza r/ Lunch c/ FOOD</code></p>
+</li>
+<li>
+<p><code>add i/ a/ 200.00 n/ pocket money c/INCOME</code></p>
 </li>
 </ul>
 </div>
@@ -195,12 +218,11 @@ Format: <code>income /n NAME /d DATE</code></p>
 <div class="sect2">
 <h3 id="filter-transactions-code-filter-code"><a class="link" href="#filter-transactions-code-filter-code">3.5. Filter transactions : <code>filter</code></a></h3>
 <div class="paragraph">
-<p>Filters transactions for user to see by filter type.<br>
-Format: <code>filter /m YYYY-MM</code> to view a certain month&#8217;s transactions
-        <code>filter /y YYYY</code> to view a certain year&#8217;s transactions
-        <code>filter /f YYYY-MM /t YYYY-MM</code> to view transactions from a range of months <code>[coming in v2.0]</code>
-        <code>filter /c CATEGORY</code> to view transactions of a certain category
-        <code>filter reset</code> to reset view to latest</p>
+<p>Filters transactions for user to see by filter type.</p>
+</div>
+<div class="paragraph">
+<p>Format: <code>filter /m YYYY-MM</code> to view a certain month&#8217;s transactions
+        <code>filter /c CATEGORY</code> to view transactions of a certain category</p>
 </div>
 <div class="paragraph">
 <p>Examples:</p>
@@ -208,48 +230,48 @@ Format: <code>filter /m YYYY-MM</code> to view a certain month&#8217;s transacti
 <div class="ulist">
 <ul>
 <li>
-<p><code>filter /m 2020-02</code></p>
+<p><code>filter m/ 2020-02</code></p>
 </li>
 <li>
-<p><code>filter /y 2020</code></p>
+<p><code>filter c/ TRANSPORT</code></p>
 </li>
 <li>
-<p><code>filter /f 2020-02 /t 2019-07</code></p>
-</li>
-<li>
-<p><code>filter /c Transport</code></p>
-</li>
-<li>
-<p><code>filter reset</code></p>
+<p><code>filter m/ 2020-03 c/ FOOD</code></p>
 </li>
 </ul>
 </div>
 </div>
 <div class="sect2">
-<h3 id="search-transactions-code-search-code"><a class="link" href="#search-transactions-code-search-code">3.6. Search transactions : <code>search</code></a></h3>
+<h3 id="deleting-a-transaction-code-delete-code"><a class="link" href="#deleting-a-transaction-code-delete-code">3.6. Deleting a transaction : <code>delete</code></a></h3>
 <div class="paragraph">
-<p>Search for transactions with certain keywords.<br>
-Format: <code>search KEYWORD [MORE_KEYWORDS]</code></p>
+<p>Deletes the specified transaction from the expense tracker.</p>
 </div>
-<div class="sidebarblock">
-<div class="content">
-<div class="ulist">
-<ul>
-<li>
-<p>The search is case insensitive. e.g <code>hans</code> will match <code>Hans</code></p>
-</li>
-<li>
-<p>Only the name is searched.</p>
-</li>
-<li>
-<p>Only full words will be matched e.g. <code>Han</code> will not match <code>Hans</code></p>
-</li>
-<li>
-<p>Transactions matching at least one keyword will be returned (i.e. <code>OR</code> search). e.g. <code>Hans Bo</code> will return <code>Hans Gruber</code>, <code>Bo Yang</code></p>
-</li>
-</ul>
+<div class="paragraph">
+<p>Format: <code>delete TRANSACTION_ID</code></p>
 </div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+Every transaction is given a unique <code>TRANSACTION_ID</code> when added to the expense tracker.
+</td>
+</tr>
+</table>
 </div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+The transaction ID of a particular transaction can be found either by searching to the transaction with the search function.
+</td>
+</tr>
+</table>
 </div>
 <div class="paragraph">
 <p>Examples:</p>
@@ -257,35 +279,19 @@ Format: <code>search KEYWORD [MORE_KEYWORDS]</code></p>
 <div class="ulist">
 <ul>
 <li>
-<p><code>search pizza</code><br>
-Returns <code>pizza</code> and <code>Domino&#8217;s Pizza</code></p>
-</li>
-<li>
-<p><code>search hawaiian wood fired pizza</code><br>
-Returns any transaction having names <code>hawaiian</code>, <code>wood</code>, <code>fired</code> or <code>pizza</code></p>
+<p><code>delete 3</code><br>
+Deletes the transaction with ID 3 in the expense tracker.</p>
 </li>
 </ul>
 </div>
 </div>
 <div class="sect2">
-<h3 id="deleting-a-transaction-code-delete-code"><a class="link" href="#deleting-a-transaction-code-delete-code">3.7. Deleting a transaction : <code>delete</code></a></h3>
+<h3 id="edit-a-transaction-code-edit-code"><a class="link" href="#edit-a-transaction-code-edit-code">3.7. Edit a transaction : <code>edit</code></a></h3>
 <div class="paragraph">
-<p>Deletes the specified transaction from the expense tracker.<br>
-Format: <code>delete TRANSACTION_ID</code></p>
+<p>Edit the specified transaction from the expense tracker</p>
 </div>
-<div class="sidebarblock">
-<div class="content">
-<div class="ulist">
-<ul>
-<li>
-<p>Every transaction is given a unique <code>TRANSACTION_ID</code> when added to the expense tracker.</p>
-</li>
-<li>
-<p>The transaction ID of a particular transaction can be found either by searching to the transaction with the search function.</p>
-</li>
-</ul>
-</div>
-</div>
+<div class="paragraph">
+<p>Format: <code>edit TRANSACTION_ID [n/ NAME] [a/ AMOUNT] [d/ DATE] [c/ CAT] [r/ REMARK]</code></p>
 </div>
 <div class="paragraph">
 <p>Examples:</p>
@@ -293,47 +299,68 @@ Format: <code>delete TRANSACTION_ID</code></p>
 <div class="ulist">
 <ul>
 <li>
-<p><code>search pizza</code><br>
-<code>delete 1904850</code><br>
-Deletes the transaction with ID 1904850 in the expense tracker.</p>
+<p><code>edit 1 a/ 26.00 n/ Grab Share d/ 2020-02-19 c/ TRANSPORT</code></p>
+</li>
+<li>
+<p><code>edit 2 a/ 16.00 n/ Pizza c/ FOOD</code></p>
+</li>
+<li>
+<p><code>edit 3 a/ 200.00 n/ pocket money</code></p>
 </li>
 </ul>
 </div>
 </div>
 <div class="sect2">
-<h3 id="analysis-of-transactions-code-show-analytics-code"><a class="link" href="#analysis-of-transactions-code-show-analytics-code">3.8. Analysis of transactions : <code>show analytics</code></a></h3>
+<h3 id="analysis-of-transactions-code-toggle-code"><a class="link" href="#analysis-of-transactions-code-toggle-code">3.8. Analysis of transactions : <code>toggle</code></a></h3>
 <div class="paragraph">
-<p>Shows the analysis of transactions made in the filtered month/year.<br>
-Analysis will be shown in the form of a pie chart for categories and bar graph for month or week depending on the filter.<br>
-Format: <code>show analytics</code></p>
+<p>Toggle between list view of transactions and analytics view with bar graph and pie chart to show expense trend</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="list-of-transactions-code-show-list-code"><a class="link" href="#list-of-transactions-code-show-list-code">3.9. List of transactions : <code>show list</code></a></h3>
+<h3 id="find-transaction-by-name-code-find-code"><a class="link" href="#find-transaction-by-name-code-find-code">3.9. Find transaction by name : <code>find</code></a></h3>
 <div class="paragraph">
-<p>Shows the list of transaction made in the filtered month/year.<br>
-To switch between analytics and list view of transactions.
-Format: <code>show list</code></p>
+<p>Find Transaction that matches one of the words from a given list of keywords</p>
+</div>
+<div class="paragraph">
+<p>Format: <code>find KEYWORD_1 [KEYWORD_2] &#8230;&#8203; [KEYWORD_N]</code></p>
+</div>
+<div class="paragraph">
+<p>Examples:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>find bottle school</code></p>
+</li>
+</ul>
 </div>
 </div>
 <div class="sect2">
-<h3 id="exiting-the-program-code-exit-code"><a class="link" href="#exiting-the-program-code-exit-code">3.10. Exiting the program : <code>exit</code></a></h3>
+<h3 id="list-of-transactions-code-list-code"><a class="link" href="#list-of-transactions-code-list-code">3.10. List of transactions : <code>list</code></a></h3>
 <div class="paragraph">
-<p>Exits the program.<br>
-Format: <code>exit</code></p>
+<p>List all transactions and reset all filters</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="saving-the-data"><a class="link" href="#saving-the-data">3.11. Saving the data</a></h3>
+<h3 id="clear-all-data-code-clear-code"><a class="link" href="#clear-all-data-code-clear-code">3.11. Clear all data : <code>clear</code></a></h3>
 <div class="paragraph">
-<p>Address book data are saved in the hard disk automatically after any command that changes the data.<br>
+<p>Clear all data in expenseLa including monthly data and total balance</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="exiting-the-program-code-exit-code"><a class="link" href="#exiting-the-program-code-exit-code">3.12. Exiting the program : <code>exit</code></a></h3>
+<div class="paragraph">
+<p>Exits the program.</p>
+</div>
+<div class="paragraph">
+<p>Format: <code>exit</code></p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="saving-the-data"><a class="link" href="#saving-the-data">3.13. Saving the data</a></h3>
+<div class="paragraph">
+<p>ExpenseLa data are saved in the hard disk automatically as a json file after any command that changes the data.<br>
 There is no need to save manually.</p>
-</div>
-</div>
-<div class="sect2">
-<h3 id="encrypting-data-files-code-coming-in-v2-0-code"><a class="link" href="#encrypting-data-files-code-coming-in-v2-0-code">3.12. Encrypting data files <code>[coming in v2.0]</code></a></h3>
-<div class="paragraph">
-<p><em>{explain how the user can enable/disable data encryption}</em></p>
 </div>
 </div>
 </div>
@@ -353,49 +380,53 @@ There is no need to save manually.</p>
 <div class="ulist">
 <ul>
 <li>
-<p><strong>Budget</strong> : <code>budget AMOUNT</code><br>
-           <code>budget /repeat AMOUNT</code><br>
-e.g. <code>budget 1000</code><br>
-     <code>budget /repeat 1500</code></p>
+<p><strong>Budget</strong> : <code>budget a/ AMOUNT rc/ no</code><br>
+           <code>budget rc/ yes a/ AMOUNT</code><br>
+e.g. <code>budget a/ 1000 rc/ no</code><br>
+     <code>budget a/ 1500 rc/ yes</code></p>
 </li>
 <li>
-<p><strong>Spend</strong> : <code>spend /n NAME /d DATE /c CATEGORY</code><br>
-e.g. <code>spend /n Grab Share /d 2020-02-19 /c Transport</code><br>
-     <code>spend /n Valentines Flowers</code><br>
-     <code>spend /n Flowers /d 2020-02-19</code><br>
-     <code>spend /n Pizza /c Food</code></p>
-</li>
-<li>
-<p><strong>Income</strong> : <code>income /n NAME /d DATE</code><br>
-e.g. <code>income /n Sell used iPhone /d 2020-02-19</code><br>
-     <code>income /n Pocket Money from mommy</code></p>
+<p><strong>add</strong> : <code>add a/ AMOUNT n/ NAME [d/ DATE] [c/ CATEGORY] [r/ REMARK]</code><br>
+e.g. * <code>add a/ 26.00 n/ Grab Share d/ 2020-02-19 c/ TRANSPORT</code><br>
+       <code>add a/ 16.00 n/ Pizza r/ Lunch c/ FOOD</code><br>
+       <code>add i/ a/ 200.00 n/ pocket money c/INCOME</code></p>
 </li>
 <li>
 <p><strong>Filter</strong> : <code>filter /m YYYY-MM</code><br>
-             <code>filter /y YYYY</code><br>
-             <code>filter /f YYYY-MM /t YYYY-MM</code> <code>[coming in v2.0]</code><br>
              <code>filter /c CATEGORY</code><br>
-             <code>filter reset</code><br>
-e.g. <code>filter /m 2020-02</code><br>
-     <code>filter /y 2020</code><br>
-     <code>filter /f 2020-02 /t 2019-07</code><br>
-     <code>filter /c Transport</code><br>
-     <code>filter reset</code></p>
+e.g. <code>filter m/ 2020-02</code><br>
+     <code>filter c/ FOOD</code><br>
+     <code>filter c/ TRANSPORT m/ 2020-03</code></p>
 </li>
 <li>
-<p><strong>Search</strong> : <code>search KEYWORD [MORE_KEYWORDS]</code><br>
-e.g. <code>search pizza</code><br>
-     <code>search hawaiian wood fired pizza</code></p>
+<p><strong>Find</strong> : <code>find KEYWORD [MORE_KEYWORDS]</code><br>
+e.g. <code>find pizza</code><br>
+     <code>find hawaiian wood fired pizza</code></p>
 </li>
 <li>
 <p><strong>Delete</strong> : <code>delete TRANSACTION_ID</code><br>
-e.g. <code>delete 902947392183</code></p>
+e.g. <code>delete 3</code></p>
 </li>
 <li>
-<p><strong>Analytics</strong> : <code>show analytics</code></p>
+<p><strong>Edit</strong> : <code>edit TRANSACTION_ID [n/ NAME] [a/ AMOUNT] [d/ DATE] [c/ CAT] [r/ REMARK]</code><br>
+e.g. <code>edit 1 a/ 26.00 n/ Grab Share d/ 2020-02-19 c/ TRANSPORT</code><br>
+     <code>edit 2 a/ 16.00 n/ Pizza c/ FOOD</code><br>
+     <code>edit 3 a/ 200.00 n/ pocket money</code></p>
 </li>
 <li>
-<p><strong>List</strong> : <code>show list</code></p>
+<p><strong>Toggle</strong> : <code>toggle</code></p>
+</li>
+<li>
+<p><strong>Reset Balance</strong>: <code>resetbalance</code></p>
+</li>
+<li>
+<p><strong>Clear</strong>: <code>clear</code></p>
+</li>
+<li>
+<p><strong>Exit</strong>: <code>exit</code></p>
+</li>
+<li>
+<p><strong>List</strong> : <code>list</code></p>
 </li>
 <li>
 <p><strong>Help</strong> : <code>help</code></p>
@@ -403,4 +434,4 @@ e.g. <code>delete 902947392183</code></p>
 </ul>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2020-03-04 07:24:36 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2020-04-03 07:18:15 UTC</div></div></div></body></html>

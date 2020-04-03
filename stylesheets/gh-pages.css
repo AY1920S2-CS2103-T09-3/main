@@ -202,6 +202,10 @@ table.tableblock > .title,
     padding: 1rem 1rem;
 }
 
+#seedu-header {
+    display: none;
+}
+
 /* Do not display site header on print mediums */
 @media print {
     #seedu-header {

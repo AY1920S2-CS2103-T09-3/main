@@ -1,36 +1,44 @@
 <!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><!--[if IE]><meta http-equiv="X-UA-Compatible" content="IE=edge"><![endif]--><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="generator" content="Asciidoctor 1.5.6.1"><title>ExpenseLa - Developer Guide</title><link rel="stylesheet" href="stylesheets/gh-pages.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css">
-<link rel="stylesheet" href="stylesheets/coderay-asciidoctor.css"></head><body class="article"><div id="seedu-header"><nav class="navbar navbar-lg navbar-light bg-lighter"><div class="container"><a class="navbar-brand" href="https://se-edu.github.io/"><img src="images/SeEduLogo.png" alt="SE-EDU"></a><ul class="navbar-nav"><li class="nav-item"><a class="nav-link active" href="index.html">AB-3</a></li><li class="nav-item"><a class="nav-link" href="https://se-edu.github.io/collate">Collate</a></li><li class="nav-item"><a class="nav-link" href="https://se-edu.github.io/se-book">Book</a></li><li class="nav-item"><a class="nav-link" href="https://se-edu.github.io/learningresources">Resources</a></li></ul></div></nav></div><div id="site-header"><nav class="navbar navbar-light bg-light"><div class="container"><a class="navbar-brand" href="index.html">AddressBook-Level3</a><ul class="navbar-nav"><li class="nav-item"><a class="nav-link" href="UserGuide.html">User Guide</a></li><li class="nav-item"><a class="nav-link active" href="DeveloperGuide.html">Developer Guide</a></li><li class="nav-item"><a class="nav-link" href="LearningOutcomes.html">LOs</a></li><li class="nav-item"><a class="nav-link" href="AboutUs.html">About Us</a></li><li class="nav-item"><a class="nav-link" href="ContactUs.html">Contact Us</a></li><li class="navitem"><a class="nav-link" href="https://github.com/AY1920S2-CS2103-T09-3/main"><span class="fa fa-github fa-lg" aria-hidden="true"></span>&nbsp;View on GitHub</a></li></ul></div></nav></div><div id="header"><h1>ExpenseLa - Developer Guide</h1></div><div id="content"><div id="preamble">
+<link rel="stylesheet" href="stylesheets/coderay-asciidoctor.css"></head><body class="article"><div id="seedu-header"><nav class="navbar navbar-lg navbar-light bg-lighter"><div class="container"><a class="navbar-brand" href="https://se-edu.github.io/"><img src="images/SeEduLogo.png" alt="SE-EDU"></a><ul class="navbar-nav"><li class="nav-item"><a class="nav-link active" href="index.html">ExpenseLa</a></li><li class="nav-item"><a class="nav-link" href="https://se-edu.github.io/collate">Collate</a></li><li class="nav-item"><a class="nav-link" href="https://se-edu.github.io/se-book">Book</a></li><li class="nav-item"><a class="nav-link" href="https://se-edu.github.io/learningresources">Resources</a></li></ul></div></nav></div><div id="site-header"><nav class="navbar navbar-light bg-light"><div class="container"><a class="navbar-brand" href="index.html">ExpenseLa</a><ul class="navbar-nav"><li class="nav-item"><a class="nav-link" href="UserGuide.html">User Guide</a></li><li class="nav-item"><a class="nav-link active" href="DeveloperGuide.html">Developer Guide</a></li><li class="nav-item"><a class="nav-link" href="LearningOutcomes.html">LOs</a></li><li class="nav-item"><a class="nav-link" href="AboutUs.html">About Us</a></li><li class="nav-item"><a class="nav-link" href="ContactUs.html">Contact Us</a></li><li class="navitem"><a class="nav-link" href="https://github.com/AY1920S2-CS2103-T09-3/main"><span class="fa fa-github fa-lg" aria-hidden="true"></span>&nbsp;View on GitHub</a></li></ul></div></nav></div><div id="header"><h1>ExpenseLa - Developer Guide</h1></div><div id="content"><div id="preamble">
 <div class="sectionbody">
 <div class="paragraph">
-<p>By: <code>Team SE-EDU</code>      Since: <code>Jun 2016</code>      Licence: <code>MIT</code></p>
+<p>By: <code>Team Halim</code>      Since: <code>Jan 2020</code>      Licence: <code>MIT</code></p>
 </div>
 </div>
 <div id="toc" class="toc">
 <div id="toctitle"></div>
 <ul class="sectlevel1">
-<li><a href="#setting-up">1. Setting up</a></li>
-<li><a href="#design">2. Design</a>
+<li><a href="#introduction">1. Introduction</a>
 <ul class="sectlevel2">
-<li><a href="#Design-Architecture">2.1. Architecture</a></li>
-<li><a href="#Design-Ui">2.2. UI component</a></li>
-<li><a href="#Design-Logic">2.3. Logic component</a></li>
-<li><a href="#Design-Model">2.4. Model component</a></li>
-<li><a href="#Design-Storage">2.5. Storage component</a></li>
-<li><a href="#Design-Commons">2.6. Common classes</a></li>
+<li><a href="#purpose">1.1. Purpose</a></li>
+<li><a href="#scope">1.2. Scope</a></li>
 </ul>
 </li>
-<li><a href="#implementation">3. Implementation</a>
+<li><a href="#setting-up">2. Setting up</a></li>
+<li><a href="#design">3. Design</a>
 <ul class="sectlevel2">
-<li><a href="#proposed-undo-redo-feature">3.1. [Proposed] Undo/Redo feature</a></li>
-<li><a href="#proposed-data-encryption">3.2. [Proposed] Data Encryption</a></li>
-<li><a href="#logging">3.3. Logging</a></li>
-<li><a href="#Implementation-Configuration">3.4. Configuration</a></li>
+<li><a href="#Design-Architecture">3.1. Architecture</a></li>
+<li><a href="#Design-Ui">3.2. UI component</a></li>
+<li><a href="#Design-Logic">3.3. Logic component</a></li>
+<li><a href="#Design-Model">3.4. Model component</a></li>
+<li><a href="#Design-Storage">3.5. Storage component</a></li>
+<li><a href="#Design-Commons">3.6. Common classes</a></li>
 </ul>
 </li>
-<li><a href="#documentation">4. Documentation</a></li>
-<li><a href="#testing">5. Testing</a></li>
-<li><a href="#dev-ops">6. Dev Ops</a></li>
+<li><a href="#implementation">4. Implementation</a>
+<ul class="sectlevel2">
+<li><a href="#adding-transactions">4.1. Adding transactions</a></li>
+<li><a href="#setting-budgets">4.2. Setting budgets</a></li>
+<li><a href="#filtering-transactions">4.3. Filtering Transactions</a></li>
+<li><a href="#chart-analytics">4.4. Chart Analytics</a></li>
+<li><a href="#logging">4.5. Logging</a></li>
+<li><a href="#Implementation-Configuration">4.6. Configuration</a></li>
+</ul>
+</li>
+<li><a href="#documentation">5. Documentation</a></li>
+<li><a href="#testing">6. Testing</a></li>
+<li><a href="#dev-ops">7. Dev Ops</a></li>
 <li><a href="#product-scope">Appendix A: Product Scope</a></li>
 <li><a href="#user-stories">Appendix B: User Stories</a></li>
 <li><a href="#use-cases">Appendix C: Use Cases</a>
@@ -52,18 +60,41 @@
 </div>
 </div>
 <div class="sect1">
-<h2 id="setting-up"><a class="link" href="#setting-up">1. Setting up</a></h2>
+<h2 id="introduction"><a class="link" href="#introduction">1. Introduction</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Refer to the guide <a href="SettingUp.html">here</a>.</p>
+<p>ExpenseLa is an application for NUS students to be able to track their spending and also gain insights to their monthly spending through data analytics. The data analytics portion of ExpenseLa aims to aid students in viewing and comparing their monthly expenditure on items of different categories such as shopping and groceries, as well as keeping track of their monthly budgets. ExpenseLa records daily incoming and outgoing transactions and constantly keeps track of the user&#8217;s budget, income and spending. ExpenseLa is optimised for users who prefer to work with a Command Line Interface (CLI) which works in parallel with a Graphical User Interface (GUI). It is an easy, insight-driven application that hopes to help students keep better track of their expenses.</p>
+</div>
+<div class="sect2">
+<h3 id="purpose"><a class="link" href="#purpose">1.1. Purpose</a></h3>
+<div class="paragraph">
+<p>This developer guide aims to communicate the design and architecture of the software implementation to developers working on ExpenseLa. It also includes future implementations to give developers an idea of the direction that ExpenseLa intends to take on both current and future features. A developer should be able to understand the design, architecture and future goals of ExpenseLa upon reading this guide.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="scope"><a class="link" href="#scope">1.2. Scope</a></h3>
+<div class="paragraph">
+<p>This developer guide specifies the technical and non-technical details of ExpenseLa. The technical aspects include the design and architecture of the software and the non-technical aspects include the user stories, use cases and non-functional requirements.</p>
+</div>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="design"><a class="link" href="#design">2. Design</a></h2>
+<h2 id="setting-up"><a class="link" href="#setting-up">2. Setting up</a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Pleas refer to the guide <a href="SettingUp.html">here</a>.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="design"><a class="link" href="#design">3. Design</a></h2>
 <div class="sectionbody">
 <div class="sect2">
-<h3 id="Design-Architecture"><a class="link" href="#Design-Architecture">2.1. Architecture</a></h3>
+<h3 id="Design-Architecture"><a class="link" href="#Design-Architecture">3.1. Architecture</a></h3>
+<div class="paragraph">
+<p>In this section, we will be introducing the individual components that form ExpenseLa using various diagrams.</p>
+</div>
 <div class="imageblock">
 <div class="content">
 <img src="images/ArchitectureDiagram.png" alt="ArchitectureDiagram">
@@ -149,7 +180,7 @@ The following class plays an important role at the architecture level:</p>
 <div class="content">
 <img src="images/LogicClassDiagram.png" alt="LogicClassDiagram">
 </div>
-<div class="title">Figure 2. Class Diagram of the Logic Component</div>
+<div class="title">Figure 2. Class Diagram of the <code>Logic</code> Component</div>
 </div>
 <h4 id="how-the-architecture-components-interact-with-each-other" class="discrete">How the architecture components interact with each other</h4>
 <div class="paragraph">
@@ -166,7 +197,7 @@ The following class plays an important role at the architecture level:</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="Design-Ui"><a class="link" href="#Design-Ui">2.2. UI component</a></h3>
+<h3 id="Design-Ui"><a class="link" href="#Design-Ui">3.2. UI component</a></h3>
 <div class="imageblock">
 <div class="content">
 <img src="images/UiClassDiagram.png" alt="UiClassDiagram">
@@ -177,13 +208,13 @@ The following class plays an important role at the architecture level:</p>
 <p><strong>API</strong> : <a href="https://github.com/AY1920S2-CS2103-T09-3/main/tree/master/src/main/java/seedu/address/ui/Ui.java"><code>Ui.java</code></a></p>
 </div>
 <div class="paragraph">
-<p>The UI consists of a <code>MainWindow</code> that is made up of parts e.g.<code>CommandBox</code>, <code>ResultDisplay</code>, <code>PersonListPanel</code>, <code>StatusBarFooter</code> etc. All these, including the <code>MainWindow</code>, inherit from the abstract <code>UiPart</code> class.</p>
+<p>The UI consists of a <code>MainWindow</code> that is made up of parts e.g.<code>CommandBox</code>, <code>ResultDisplay</code>, <code>TransactionListPanel</code>, <code>StatusBarFooter</code> etc. All these, including the <code>MainWindow</code>, inherit from the abstract <code>UiPart</code> class.</p>
 </div>
 <div class="paragraph">
 <p>The <code>UI</code> component uses JavaFx UI framework. The layout of these UI parts are defined in matching <code>.fxml</code> files that are in the <code>src/main/resources/view</code> folder. For example, the layout of the <a href="https://github.com/AY1920S2-CS2103-T09-3/main/tree/master/src/main/java/seedu/address/ui/MainWindow.java"><code>MainWindow</code></a> is specified in <a href="https://github.com/AY1920S2-CS2103-T09-3/main/tree/master/src/main/resources/view/MainWindow.fxml"><code>MainWindow.fxml</code></a></p>
 </div>
 <div class="paragraph">
-<p>The <code>UI</code> component,</p>
+<p>The <code>UI</code> component does the following actions:</p>
 </div>
 <div class="ulist">
 <ul>
@@ -197,7 +228,7 @@ The following class plays an important role at the architecture level:</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="Design-Logic"><a class="link" href="#Design-Logic">2.3. Logic component</a></h3>
+<h3 id="Design-Logic"><a class="link" href="#Design-Logic">3.3. Logic component</a></h3>
 <div id="fig-LogicClassDiagram" class="imageblock">
 <div class="content">
 <img src="images/LogicClassDiagram.png" alt="LogicClassDiagram">
@@ -208,16 +239,19 @@ The following class plays an important role at the architecture level:</p>
 <p><strong>API</strong> :
 <a href="https://github.com/AY1920S2-CS2103-T09-3/main/tree/master/src/main/java/seedu/address/logic/Logic.java"><code>Logic.java</code></a></p>
 </div>
+<div class="paragraph">
+<p>Logic is an interface which <code>LogicManager</code> implements, allowing access to the API. The following items are examples on how the LogicManager class can be interacted with:</p>
+</div>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p><code>Logic</code> uses the <code>AddressBookParser</code> class to parse the user command.</p>
+<p><code>Logic</code> uses the <code>ExpenseLaParser</code> class to parse the user command.</p>
 </li>
 <li>
 <p>This results in a <code>Command</code> object which is executed by the <code>LogicManager</code>.</p>
 </li>
 <li>
-<p>The command execution can affect the <code>Model</code> (e.g. adding a person).</p>
+<p>The command execution can affect the <code>Model</code> (e.g. adding a <code>Transaction</code>).</p>
 </li>
 <li>
 <p>The result of the command execution is encapsulated as a <code>CommandResult</code> object which is passed back to the <code>Ui</code>.</p>
@@ -250,7 +284,7 @@ The lifeline for <code>DeleteCommandParser</code> should end at the destroy mark
 </div>
 </div>
 <div class="sect2">
-<h3 id="Design-Model"><a class="link" href="#Design-Model">2.4. Model component</a></h3>
+<h3 id="Design-Model"><a class="link" href="#Design-Model">3.4. Model component</a></h3>
 <div class="imageblock">
 <div class="content">
 <img src="images/ModelClassDiagram.png" alt="ModelClassDiagram">
@@ -269,10 +303,13 @@ The lifeline for <code>DeleteCommandParser</code> should end at the destroy mark
 <p>stores a <code>UserPref</code> object that represents the user&#8217;s preferences.</p>
 </li>
 <li>
-<p>stores the Address Book data.</p>
+<p>stores the <code>ExpenseLa</code> data.</p>
 </li>
 <li>
-<p>exposes an unmodifiable <code>ObservableList&lt;Person&gt;</code> that can be 'observed' e.g. the UI can be bound to this list so that the UI automatically updates when the data in the list change.</p>
+<p>stores <code>TransactionList</code> which contains the list of all transactions</p>
+</li>
+<li>
+<p>exposes an unmodifiable <code>ObservableList&lt;Transaction&gt;</code> that can be 'observed' e.g. the UI can be bound to this list so that the UI automatically updates when the data in the list change.</p>
 </li>
 <li>
 <p>does not depend on any of the other three components.</p>
@@ -295,7 +332,7 @@ As a more OOP model, we can store a <code>Tag</code> list in <code>Address Book<
 </div>
 </div>
 <div class="sect2">
-<h3 id="Design-Storage"><a class="link" href="#Design-Storage">2.5. Storage component</a></h3>
+<h3 id="Design-Storage"><a class="link" href="#Design-Storage">3.5. Storage component</a></h3>
 <div class="imageblock">
 <div class="content">
 <img src="images/StorageClassDiagram.png" alt="StorageClassDiagram">
@@ -314,117 +351,74 @@ As a more OOP model, we can store a <code>Tag</code> list in <code>Address Book<
 <p>can save <code>UserPref</code> objects in json format and read it back.</p>
 </li>
 <li>
-<p>can save the Address Book data in json format and read it back.</p>
+<p>can save the ExpenseLa data in json format and read it back.</p>
 </li>
 </ul>
 </div>
 </div>
 <div class="sect2">
-<h3 id="Design-Commons"><a class="link" href="#Design-Commons">2.6. Common classes</a></h3>
+<h3 id="Design-Commons"><a class="link" href="#Design-Commons">3.6. Common classes</a></h3>
 <div class="paragraph">
-<p>Classes used by multiple components are in the <code>seedu.addressbook.commons</code> package.</p>
+<p>Classes used by multiple components are in the <code>seedu.ExpenseLa.commons</code> package.</p>
 </div>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="implementation"><a class="link" href="#implementation">3. Implementation</a></h2>
+<h2 id="implementation"><a class="link" href="#implementation">4. Implementation</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>This section describes some noteworthy details on how certain features are implemented.</p>
 </div>
 <div class="sect2">
-<h3 id="proposed-undo-redo-feature"><a class="link" href="#proposed-undo-redo-feature">3.1. [Proposed] Undo/Redo feature</a></h3>
+<h3 id="adding-transactions"><a class="link" href="#adding-transactions">4.1. Adding transactions</a></h3>
+<div class="paragraph">
+<p>We allow users to add Expense/Income transactions into ExpenseLa which denotes a positive or negative inflow of money. This section shows how we handle these requests from the user.</p>
+</div>
 <div class="sect3">
-<h4 id="proposed-implementation"><a class="link" href="#proposed-implementation">3.1.1. Proposed Implementation</a></h4>
+<h4 id="implementation-2"><a class="link" href="#implementation-2">4.1.1. Implementation</a></h4>
 <div class="paragraph">
-<p>The undo/redo mechanism is facilitated by <code>VersionedAddressBook</code>.
-It extends <code>AddressBook</code> with an undo/redo history, stored internally as an <code>addressBookStateList</code> and <code>currentStatePointer</code>.
-Additionally, it implements the following operations:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p><code>VersionedAddressBook#commit()</code>&#8201;&#8212;&#8201;Saves the current address book state in its history.</p>
-</li>
-<li>
-<p><code>VersionedAddressBook#undo()</code>&#8201;&#8212;&#8201;Restores the previous address book state from its history.</p>
-</li>
-<li>
-<p><code>VersionedAddressBook#redo()</code>&#8201;&#8212;&#8201;Restores a previously undone address book state from its history.</p>
-</li>
-</ul>
+<p>We store every single <code>Transaction</code> added by the user into an <code>ObservableList&lt;Transaction&gt;</code>, which is a list object in <code>TransactionList</code>. We used an <code>ObservableList</code> to easily reflect changes to the list by any other component of ExpenseLa using the list.</p>
 </div>
 <div class="paragraph">
-<p>These operations are exposed in the <code>Model</code> interface as <code>Model#commitAddressBook()</code>, <code>Model#undoAddressBook()</code> and <code>Model#redoAddressBook()</code> respectively.</p>
+<p>There are two ways of implementing a Transaction:
+* Adding an expense (negative transaction): add
+* Adding an income (positive transaction): add i/
+These two commands will indicate whether the transaction is positive or negative.</p>
 </div>
 <div class="paragraph">
-<p>Given below is an example usage scenario and how the undo/redo mechanism behaves at each step.</p>
+<p>When inserting a new Expense/Income, the <code>AddTransactionCommandParser</code> will detemine which object to initialise depending on whether the i/ syntax is present.</p>
 </div>
 <div class="paragraph">
-<p>Step 1. The user launches the application for the first time. The <code>VersionedAddressBook</code> will be initialized with the initial address book state, and the <code>currentStatePointer</code> pointing to that single address book state.</p>
-</div>
-<div class="imageblock">
-<div class="content">
-<img src="images/UndoRedoState0.png" alt="UndoRedoState0">
-</div>
-</div>
-<div class="paragraph">
-<p>Step 2. The user executes <code>delete 5</code> command to delete the 5th person in the address book. The <code>delete</code> command calls <code>Model#commitAddressBook()</code>, causing the modified state of the address book after the <code>delete 5</code> command executes to be saved in the <code>addressBookStateList</code>, and the <code>currentStatePointer</code> is shifted to the newly inserted address book state.</p>
-</div>
-<div class="imageblock">
-<div class="content">
-<img src="images/UndoRedoState1.png" alt="UndoRedoState1">
-</div>
-</div>
-<div class="paragraph">
-<p>Step 3. The user executes <code>add n/David &#8230;&#8203;</code> to add a new person. The <code>add</code> command also calls <code>Model#commitAddressBook()</code>, causing another modified address book state to be saved into the <code>addressBookStateList</code>.</p>
-</div>
-<div class="imageblock">
-<div class="content">
-<img src="images/UndoRedoState2.png" alt="UndoRedoState2">
-</div>
-</div>
-<div class="admonitionblock note">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-note" title="Note"></i>
-</td>
-<td class="content">
-If a command fails its execution, it will not call <code>Model#commitAddressBook()</code>, so the address book state will not be saved into the <code>addressBookStateList</code>.
-</td>
-</tr>
-</table>
-</div>
-<div class="paragraph">
-<p>Step 4. The user now decides that adding the person was a mistake, and decides to undo that action by executing the <code>undo</code> command. The <code>undo</code> command will call <code>Model#undoAddressBook()</code>, which will shift the <code>currentStatePointer</code> once to the left, pointing it to the previous address book state, and restores the address book to that state.</p>
-</div>
-<div class="imageblock">
-<div class="content">
-<img src="images/UndoRedoState3.png" alt="UndoRedoState3">
-</div>
-</div>
-<div class="admonitionblock note">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-note" title="Note"></i>
-</td>
-<td class="content">
-If the <code>currentStatePointer</code> is at index 0, pointing to the initial address book state, then there are no previous address book states to restore. The <code>undo</code> command uses <code>Model#canUndoAddressBook()</code> to check if this is the case. If so, it will return an error to the user rather than attempting to perform the undo.
-</td>
-</tr>
-</table>
-</div>
-<div class="paragraph">
-<p>The following sequence diagram shows how the undo operation works:</p>
+<p>The following sequence diagram shows how the add transaction operation works:</p>
 </div>
 <div class="imageblock">
 <div class="content">
 <img src="images/UndoSequenceDiagram.png" alt="UndoSequenceDiagram">
 </div>
 </div>
+<div class="paragraph">
+<p>Figure 9. Sequence diagram of how adding a new <code>Transaction</code> is processed depending on syntax.</p>
+</div>
+<div class="paragraph">
+<p><code>Transaction</code> are normally instantiated by <code>AddCommandParser#parse(String args)</code>, which attempts to parse the various parameters supplied in args and return either a positive or negative <code>Transaction</code>. The following conditions will cause a <code>ParseException</code> to be thrown by the parser:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Missing parameters</p>
+</li>
+<li>
+<p>Incorrect syntax (i.e. missing prefix if required)</p>
+</li>
+<li>
+<p>Illegal values in parameters (i.e. special character and symbols entered for an integer only field)</p>
+</li>
+<li>
+<p>Multiple occurences of parameters which only expects single entry</p>
+</li>
+</ul>
+</div>
 <div class="admonitionblock note">
 <table>
 <tr>
@@ -432,13 +426,29 @@ If the <code>currentStatePointer</code> is at index 0, pointing to the initial a
 <i class="fa icon-note" title="Note"></i>
 </td>
 <td class="content">
-The lifeline for <code>UndoCommand</code> should end at the destroy marker (X) but due to a limitation of PlantUML, the lifeline reaches the end of diagram.
+Incorrect user input will display error message
 </td>
 </tr>
 </table>
 </div>
 <div class="paragraph">
-<p>The <code>redo</code> command does the opposite&#8201;&#8212;&#8201;it calls <code>Model#redoAddressBook()</code>, which shifts the <code>currentStatePointer</code> once to the right, pointing to the previously undone state, and restores the address book to that state.</p>
+<p>We will demonstrate how a <code>Transaction</code> is added into <code>ExpenseLa</code>:</p>
+</div>
+<div class="paragraph">
+<p>Step 1. The user executres the command add <strong>n/Pizza a/20.5 d/2020-02-02</strong> to insert a negative transaction with its <code>Name</code> set to "Pizza", its <code>Amount</code> set to "20.50" and the <code>Date</code> set to 02 Feb 2020. The input is now checked and an attempt to parse each parameter occurs:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code><strong>Name</strong></code> is parsed by <code>AddCommandParser#parseName(ArgumentMultimap)</code></p>
+</li>
+<li>
+<p><code><strong>Value</strong></code> is parsed by <code>AddCommandParser#parseAmount(ArgumentMultimap)</code></p>
+</li>
+<li>
+<p><code><strong>Date</strong></code> is parse by <code>AddCommandParser#parseDate(ArgumentMultimap)</code></p>
+</li>
+</ul>
 </div>
 <div class="admonitionblock note">
 <table>
@@ -447,13 +457,13 @@ The lifeline for <code>UndoCommand</code> should end at the destroy marker (X) b
 <i class="fa icon-note" title="Note"></i>
 </td>
 <td class="content">
-If the <code>currentStatePointer</code> is at index <code>addressBookStateList.size() - 1</code>, pointing to the latest address book state, then there are no undone address book states to restore. The <code>redo</code> command uses <code>Model#canRedoAddressBook()</code> to check if this is the case. If so, it will return an error to the user rather than attempting to perform the redo.
+<code><strong>ArgumentMultimap</strong></code> is a class that stores all the parsed parameters taken from the user input.
 </td>
 </tr>
 </table>
 </div>
 <div class="paragraph">
-<p>Step 5. The user then decides to execute the command <code>list</code>. Commands that do not modify the address book, such as <code>list</code>, will usually not call <code>Model#commitAddressBook()</code>, <code>Model#undoAddressBook()</code> or <code>Model#redoAddressBook()</code>. Thus, the <code>addressBookStateList</code> remains unchanged.</p>
+<p>Since the user input is valid, the <code>Transaction</code> is successfully created and inserted into the transaction list. The transaction list now contains 1 <code>Transaction</code> object.</p>
 </div>
 <div class="imageblock">
 <div class="content">
@@ -461,7 +471,22 @@ If the <code>currentStatePointer</code> is at index <code>addressBookStateList.s
 </div>
 </div>
 <div class="paragraph">
-<p>Step 6. The user executes <code>clear</code>, which calls <code>Model#commitAddressBook()</code>. Since the <code>currentStatePointer</code> is not pointing at the end of the <code>addressBookStateList</code>, all address book states after the <code>currentStatePointer</code> will be purged. We designed it this way because it no longer makes sense to redo the <code>add n/David &#8230;&#8203;</code> command. This is the behavior that most modern desktop applications follow.</p>
+<p>Step 2. The user executes <strong>add i/ n/Salary a/3000 r/Monthly Salary to indicate his monthly pay</strong> to insert a positive <code><strong>Transaction</strong></code>.
+The input is now checked in a similar fashion as in Step 1 except that:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code><strong>Remark</strong></code> is parsed by <code>AddCommandParser#parseRemark(ArgumentMultimap)</code></p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Again, since the input is valid, the positive <code>Transaction</code> is successfully added into the transaction list. The transaction list
+now contains 2 <code><strong>Transaction</strong></code> objects.</p>
+</div>
+<div class="paragraph">
+<p>The following activity diagram summarizes what happens when the user executes a command to add a new <code>Transaction</code>:</p>
 </div>
 <div class="imageblock">
 <div class="content">
@@ -476,92 +501,295 @@ If the <code>currentStatePointer</code> is at index <code>addressBookStateList.s
 <img src="images/CommitActivityDiagram.png" alt="CommitActivityDiagram">
 </div>
 </div>
+<div class="paragraph">
+<p>Figure 10. Activity diagram of adding a <code>Transaction</code> into the transaction list.</p>
+</div>
 </div>
 <div class="sect3">
-<h4 id="design-considerations"><a class="link" href="#design-considerations">3.1.2. Design Considerations</a></h4>
-<div class="sect4">
-<h5 id="aspect-how-undo-redo-executes"><a class="link" href="#aspect-how-undo-redo-executes">Aspect: How undo &amp; redo executes</a></h5>
-<div class="ulist">
-<ul>
-<li>
-<p><strong>Alternative 1 (current choice):</strong> Saves the entire address book.</p>
-<div class="ulist">
-<ul>
-<li>
-<p>Pros: Easy to implement.</p>
-</li>
-<li>
-<p>Cons: May have performance issues in terms of memory usage.</p>
-</li>
-</ul>
-</div>
-</li>
-<li>
-<p><strong>Alternative 2:</strong> Individual command knows how to undo/redo by itself.</p>
-<div class="ulist">
-<ul>
-<li>
-<p>Pros: Will use less memory (e.g. for <code>delete</code>, just save the person being deleted).</p>
-</li>
-<li>
-<p>Cons: We must ensure that the implementation of each individual command are correct.</p>
-</li>
-</ul>
-</div>
-</li>
-</ul>
-</div>
-</div>
-<div class="sect4">
-<h5 id="aspect-data-structure-to-support-the-undo-redo-commands"><a class="link" href="#aspect-data-structure-to-support-the-undo-redo-commands">Aspect: Data structure to support the undo/redo commands</a></h5>
-<div class="ulist">
-<ul>
-<li>
-<p><strong>Alternative 1 (current choice):</strong> Use a list to store the history of address book states.</p>
-<div class="ulist">
-<ul>
-<li>
-<p>Pros: Easy for new Computer Science student undergraduates to understand, who are likely to be the new incoming developers of our project.</p>
-</li>
-<li>
-<p>Cons: Logic is duplicated twice. For example, when a new command is executed, we must remember to update both <code>HistoryManager</code> and <code>VersionedAddressBook</code>.</p>
-</li>
-</ul>
-</div>
-</li>
-<li>
-<p><strong>Alternative 2:</strong> Use <code>HistoryManager</code> for undo/redo</p>
-<div class="ulist">
-<ul>
-<li>
-<p>Pros: We do not need to maintain a separate list, and just reuse what is already in the codebase.</p>
-</li>
-<li>
-<p>Cons: Requires dealing with commands that have already been undone: We must remember to skip these commands. Violates Single Responsibility Principle and Separation of Concerns as <code>HistoryManager</code> now needs to do two different things.</p>
-</li>
-</ul>
-</div>
-</li>
-</ul>
-</div>
-</div>
-</div>
-</div>
-<div class="sect2">
-<h3 id="proposed-data-encryption"><a class="link" href="#proposed-data-encryption">3.2. [Proposed] Data Encryption</a></h3>
+<h4 id="design-considerations"><a class="link" href="#design-considerations">4.1.2. Design Considerations</a></h4>
 <div class="paragraph">
-<p><em>{Explain here how the data encryption feature will be implemented}</em></p>
+<p>There are many different ways to implement how a transaction is added into <code>ExpenseLa</code>. In this section, we will be justifying why we chose to implement it the way we did.</p>
+</div>
+<div class="sect4">
+<h5 id="aspect-differentiating-between-positive-and-negative-code-transactions-code"><a class="link" href="#aspect-differentiating-between-positive-and-negative-code-transactions-code">Aspect: Differentiating between positive and negative <code>Transactions</code></a></h5>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Alternative 1: (current choice):</strong> Introduce a CliSyntax to differentiate between positive and negative <code>Transaction</code></p>
+<div class="ulist">
+<ul>
+<li>
+<p>Pros: All transactions are differentiated easily with the positive or negative sign.</p>
+</li>
+<li>
+<p>Cons: Reduces the readability of the program as polymorphism can be confusing.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><strong>Alternative 2:</strong> Keep <code><strong>Expense</strong></code> and <code><strong>Income</strong></code> classes separate, with each having their own specialized methods.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Pros: Maintains an intuitive design: <code><strong>Expense</strong></code> deducts money and <code><strong>Income</strong></code> increases money.</p>
+</li>
+<li>
+<p>Cons: Incurs significant overhead and duplicated codes since it is likely that both <code><strong>Expense</strong></code> and <code><strong>Income</strong></code> will
+have very similar methods.</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</div>
 </div>
 </div>
 <div class="sect2">
-<h3 id="logging"><a class="link" href="#logging">3.3. Logging</a></h3>
+<h3 id="setting-budgets"><a class="link" href="#setting-budgets">4.2. Setting budgets</a></h3>
+<div class="paragraph">
+<p>We allow the user to maintain a <code><strong>Budget</strong></code> for the current month. This section details how <code><strong>ExpenseLa</strong></code> handles
+requests made by the user who is trying to set a budget for the current month. <code><strong>Budget</strong></code> is contained inside
+<code><strong>MonthlyData</strong></code> object along with <code><strong>Expense</strong></code> and <code><strong>Income</strong></code> and application only has 1 <code><strong>MonthlyData</strong></code> object for the current month. object looks like:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/set-budget/BudgetClassDiagram.png" alt="BudgetClassDiagram">
+</div>
+</div>
+<div class="sect3">
+<h4 id="implementation-3"><a class="link" href="#implementation-3">4.2.1. Implementation</a></h4>
+<div class="paragraph">
+<p>Whenever the user attempts to set a new <code><strong>Budget</strong></code>, <code><strong>ExpenseLa</strong></code> will create a new MonthlyData object with the given amount.
+The application will then call <code>ModelManager#setMonthlyData(MonthlyData toSet)</code>. During the creation of the new MonthlyData, the
+Budget class will internally check if the budget amount is valid.</p>
+</div>
+<div class="paragraph">
+<p>We will demonstrate what happens at the back-end whenever the user sets a budget:</p>
+</div>
+<div class="paragraph">
+<p>Case 1. The user wishes to set their budget for as $1500. They execute the command: <strong>budget b/1500</strong>.
+The user&#8217;s entry is checked by <code>BudgetCommandParser#parse()</code> and an attempt to parse each parameter occurs:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code><strong>Budget</strong></code> is parsed by <code>ParseUtil#parseBudget(ArgumentMultimap)</code></p>
+</li>
+</ul>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<code><strong>ArgumentMultimap</strong></code> is a class that stores all the parsed parameters taken from the user input.
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>Since the user input is valid, the <code><strong>Budget</strong></code> is successfully created and inserted into a newly created <code><strong>MonthlyData</strong></code>.</p>
+</div>
+<div class="paragraph">
+<p>Case 2. The user made a typo when setting their budget. They execute the command <strong>budget b/150o</strong>.
+The user&#8217;s entry is checked by <code>BudgetCommandParser#parse()</code> and an attempt to parse each parameter occurs:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code><strong>Budget</strong></code> is parsed by <code>ParseUtil#parseBudget(ArgumentMultimap)</code></p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p><code><strong>Budget</strong></code> class then is attempted to be created with the parsed budget amount in the constructor. Internally
+Budget will do a validity check using Regex and throw a <code><strong>ParseExection</strong></code> since amount is not valid.</p>
+</div>
+<div class="paragraph">
+<p>The sequence diagram below depicts what was just elaborated:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/add-budget/BudgetSequenceDiagram.png" alt="BudgetSequenceDiagram">
+</div>
+<div class="title">Figure 9. Sequence diagram showing how a <code><strong>Budget</strong></code> is set</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="design-considerations-2"><a class="link" href="#design-considerations-2">4.2.2. Design considerations</a></h4>
+<div class="paragraph">
+<p>We have considered various ways as to how <code><strong>Budget</strong></code> should be stored in <code><strong>ExpensLa</strong></code>. In this section, we will explain the
+rationale on our course of actions.</p>
+</div>
+<div class="sect4">
+<h5 id="aspect-make-code-strong-budget-strong-code-a-part-of-a-bigger-class-called-code-strong-monthlydata-strong-code"><a class="link" href="#aspect-make-code-strong-budget-strong-code-a-part-of-a-bigger-class-called-code-strong-monthlydata-strong-code">Aspect: Make <code><strong>Budget</strong></code> a part of a bigger class called <code><strong>MonthlyData</strong></code></a></h5>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Alternative 1 (current choice):</strong> <code><strong>Budget</strong></code> is a part of <code><strong>MonthlyData</strong></code> and any <code><strong>Budget</strong></code> operations is through <code><strong>MonthlyData</strong></code></p>
+<div class="ulist">
+<ul>
+<li>
+<p>Pros: Easier to handle <code><strong>Budget</strong></code> together with other <code><strong>MonthlyData</strong></code> objects and all data inside is synchronised as it is
+handled by a single object.</p>
+</li>
+<li>
+<p>Cons: Overhead when modifying <code><strong>Budget</strong></code> as to maintain immutability, a new <code><strong>MonthlyData</strong></code> object has to be created.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Alternative 2: <code><strong>Budget</strong></code> should be an independent class with a direct reference in <code><strong>ExpenseLa</strong></code>.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Pros: More freedom and efficiency in doing modifications on <code><strong>Budget</strong></code></p>
+</li>
+<li>
+<p>Cons: Need to maintain more references for all different objects.</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Again, we went with alternative 1 because it is easier to view <code><strong>Budget</strong></code> along with the other <code><strong>MonthlyData</strong></code> components
+as a collective. And easier to just handle 1 reference in ExpenseLa.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="filtering-transactions"><a class="link" href="#filtering-transactions">4.3. Filtering Transactions</a></h3>
+<div class="paragraph">
+<p>The <code>Filter</code> command allows the user to bring up a list of <code>Transaction</code>, and filter it by either category, month,
+or both at the same time. This is implemented by using a predicate for category and another predicate for month,
+both of which inheriting from <code>Predicate&lt;Transaction&gt;</code> to filter the <code>Transaction</code>.</p>
+</div>
+<div class="sect3">
+<h4 id="implementation-4"><a class="link" href="#implementation-4">4.3.1. Implementation</a></h4>
+<div class="paragraph">
+<p><code>FilterCommand</code> is instantiated by <code>FilterCommandParser</code> 's <code>parse(String args)</code> method, which parses the arguments supplied in the user
+command to return a <code>FilterCommand</code> object.</p>
+</div>
+<div class="paragraph">
+<p>The below sequence diagram depicts the execution of the filter feature:
+<span class="image"><img src="images/filter/FilterSequenceDiagram.png" alt="FilterSequenceDiagram"></span></p>
+</div>
+<div class="paragraph">
+<p>The below scenario shows a typical usage of the filter feature:</p>
+</div>
+<div class="paragraph">
+<p>Step 1: User executes the command filter c/FOOD m/2020-02 to bring up transactions in the category "FOOD" for the month
+of February 2020.</p>
+</div>
+<div class="paragraph">
+<p>Step 2: The <code>FilterCommandParser</code> will parse the arguments using the method <code>parse(String args)</code>.</p>
+</div>
+<div class="paragraph">
+<p>Step 3: Since user input is correct and the arguments are parsed, a new <code>FilterCommand</code> object is created by the
+<code>FilterCommandParser</code>.</p>
+</div>
+<div class="paragraph">
+<p>Step 4: The <code>FilterCommand</code> object will use a <code>Predicate</code> based on the specified category, month, or both, to filter
+the list of transactions.</p>
+</div>
+<div class="paragraph">
+<p>Step 5: The list of filtered transactions is brought up. The filter category and month UI will also update accordingly
+to show the category and month that the transactions are filtered by.</p>
+</div>
+<div class="paragraph">
+<p>The below activity diagram gives an overview of the command execution:
+<span class="image"><img src="images/filter/FilterActivityDiagram.png" alt="FilterActivityDiagram"></span></p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="design-considerations-3"><a class="link" href="#design-considerations-3">4.3.2. Design Considerations</a></h4>
+<div class="paragraph">
+<p>Aspect: Using <code>Predicate</code> to improve extendability of the <code>Filter</code> feature in the future.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>The filter feature supports increasing the number of filter types - on top of the current category and month filters.</p>
+</li>
+<li>
+<p>This is enabled by using a different <code>Predicate</code> for each filter type.</p>
+</li>
+<li>
+<p>A composed <code>Predicate</code> would then be obtained by calling <code>Predicate</code> 's <code>and(Predicate other)</code> method.</p>
+</li>
+<li>
+<p>This composed <code>Predicate</code> is then applied to filter the list of <code>Transaction</code>.</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect3">
+<h4 id="proposed-extension"><a class="link" href="#proposed-extension">4.3.3. Proposed Extension</a></h4>
+<div class="paragraph">
+<p>We plan to enhance the filter feature to support other arguments in the command to filter by different types such as
+price range or date range. This allows the user to have greater flexibility and have a better understanding of his/her
+expenses.</p>
+</div>
+<div class="paragraph">
+<p>The design consideration mentioned earlier hence facilitates this proposed extension, reducing the difficulty of such a
+future implementation.</p>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="chart-analytics"><a class="link" href="#chart-analytics">4.4. Chart Analytics</a></h3>
+<div class="paragraph">
+<p>The <strong>toggle</strong> command allows the user to switch between viewing the list of 'Transactions' and viewing an analysis of
+his expenditure.</p>
+</div>
+<div class="sect3">
+<h4 id="implementation-5"><a class="link" href="#implementation-5">4.4.1. Implementation</a></h4>
+<div class="paragraph">
+<p><strong>Toggle</strong> mechanism utilizes <code>Logic</code> operations with the <code>ToggleCommand</code> class in place of <code>Command</code>. The following
+methods are concrete implementations for the <strong>toggle</strong> operation:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>ToggleCommand#execute()</code> - Switches <code>ToggleView</code> in <code>Model</code> to view list of transactions or view analytics, and
+returns a <code>CommandResult</code> (<a href="#Design-Logic">Step 4 of Logic</a>).</p>
+</li>
+<li>
+<p><code>ToggleView#switchIsViewList()</code> - Switches the boolean value <code>isViewList</code> in <code>ToggleView</code> to the negation of it&#8217;s
+current value.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>This <code>ToggleView</code> is wrapped in <code>ExpenseLa</code> and its <code>switchIsViewList()</code> is called through
+<code>ExpenseLa#switchToggleView()</code>.</p>
+</li>
+<li>
+<p><code>ExpenseLa#switchToggleView()</code> is exposed in the <code>Model</code> interface as <code>Model#switchToggleView()</code>.</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="logging"><a class="link" href="#logging">4.5. Logging</a></h3>
 <div class="paragraph">
 <p>We are using <code>java.util.logging</code> package for logging. The <code>LogsCenter</code> class is used to manage the logging levels and logging destinations.</p>
 </div>
 <div class="ulist">
 <ul>
 <li>
-<p>The logging level can be controlled using the <code>logLevel</code> setting in the configuration file (See <a href="#Implementation-Configuration">Section 3.4, &#8220;Configuration&#8221;</a>)</p>
+<p>The logging level can be controlled using the <code>logLevel</code> setting in the configuration file (See <a href="#Implementation-Configuration">Section 4.6, &#8220;Configuration&#8221;</a>)</p>
 </li>
 <li>
 <p>The <code>Logger</code> for a class can be obtained using <code>LogsCenter.getLogger(Class)</code> which will log messages according to the specified logging level</p>
@@ -592,7 +820,7 @@ If the <code>currentStatePointer</code> is at index <code>addressBookStateList.s
 </div>
 </div>
 <div class="sect2">
-<h3 id="Implementation-Configuration"><a class="link" href="#Implementation-Configuration">3.4. Configuration</a></h3>
+<h3 id="Implementation-Configuration"><a class="link" href="#Implementation-Configuration">4.6. Configuration</a></h3>
 <div class="paragraph">
 <p>Certain properties of the application can be controlled (e.g user prefs file location, logging level) through the configuration file (default: <code>config.json</code>).</p>
 </div>
@@ -600,7 +828,7 @@ If the <code>currentStatePointer</code> is at index <code>addressBookStateList.s
 </div>
 </div>
 <div class="sect1">
-<h2 id="documentation"><a class="link" href="#documentation">4. Documentation</a></h2>
+<h2 id="documentation"><a class="link" href="#documentation">5. Documentation</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Refer to the guide <a href="Documentation.html">here</a>.</p>
@@ -608,7 +836,7 @@ If the <code>currentStatePointer</code> is at index <code>addressBookStateList.s
 </div>
 </div>
 <div class="sect1">
-<h2 id="testing"><a class="link" href="#testing">5. Testing</a></h2>
+<h2 id="testing"><a class="link" href="#testing">6. Testing</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Refer to the guide <a href="Testing.html">here</a>.</p>
@@ -616,7 +844,7 @@ If the <code>currentStatePointer</code> is at index <code>addressBookStateList.s
 </div>
 </div>
 <div class="sect1">
-<h2 id="dev-ops"><a class="link" href="#dev-ops">6. Dev Ops</a></h2>
+<h2 id="dev-ops"><a class="link" href="#dev-ops">7. Dev Ops</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Refer to the guide <a href="DevOps.html">here</a>.</p>
@@ -1081,4 +1309,4 @@ Expected: Similar to previous.</p>
 </div>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2020-03-04 07:24:36 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2020-04-03 07:18:15 UTC</div></div></div></body></html>
