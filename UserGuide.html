@@ -78,13 +78,19 @@ This feature is just like the command navigation feature in your favourite comma
 <div class="ulist">
 <ul>
 <li>
-<p><strong><code>budget b/1000 rc/no</code></strong> : set a non-recurring budget of $1000 for the current month</p>
+<p><strong><code>budget b/1000 rc/</code></strong> : set a recurring budget of $1000 for the current month and subsequent months</p>
 </li>
 <li>
-<p><strong><code>add a/100</code></strong><code>n/Wagyu Steak d/2020-02-28 c/FOOD</code> : adds an expense named <code>Wagyu Steak</code> with amount <code>$100.00</code> spent on <code>2020-02-28</code> in category <code>FOOD</code> to the expense tracker</p>
+<p>*<code>add i/ c/Income n/salary a/2500 d/2020-04-02 rc/</code> : adds a recurring income with amount <code>$2500.00</code></p>
 </li>
 <li>
-<p><strong><code>filter</code></strong><code>m/ 2020-02</code> : filters to only show transactions made on <code>2020-02</code></p>
+<p><strong><code>add a/100</code></strong><code>n/Wagyu Steak c/FOOD</code> : adds an expense named <code>Wagyu Steak</code> with amount <code>$100.00</code> spent on the day it is added in category <code>FOOD</code> to the expense tracker</p>
+</li>
+<li>
+<p><strong><code>add a/50</code></strong><code>n/shirt c/SHOPPING d/2020-04-08</code> : adds an expense named <code>shirt</code> with amount <code>50.00</code> spent on <code>2020-04-08</code> in category <code>SHOPPING</code> to the expense tracker</p>
+</li>
+<li>
+<p><strong><code>filter</code></strong><code>m/ 2020-04</code> : filters to only show transactions made on <code>2020-02</code></p>
 </li>
 <li>
 <p><strong><code>delete</code></strong><code>1</code> : deletes the expense with id <code>1</code> in the current list</p>
@@ -520,4 +526,4 @@ e.g. <code>edit 1 a/ 26.00 n/ Grab Share d/ 2020-02-19 c/ TRANSPORT</code><br>
 </ul>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2020-04-10 15:14:16 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2020-04-10 16:26:19 UTC</div></div></div></body></html>

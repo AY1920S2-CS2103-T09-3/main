@@ -747,19 +747,28 @@ future implementation.</p>
 <div class="sect2">
 <h3 id="chart-analytics"><a class="link" href="#chart-analytics">4.4. Chart Analytics</a></h3>
 <div class="paragraph">
-<p>The <strong>toggle</strong> command allows the user to switch between viewing the list of 'Transactions' and viewing an analysis of
+<p>The <strong>toggleview</strong> command allows the user to switch between viewing the list of 'Transactions' and viewing an analysis of
 his expenditure.</p>
 </div>
 <div class="sect3">
 <h4 id="implementation-5"><a class="link" href="#implementation-5">4.4.1. Implementation</a></h4>
 <div class="paragraph">
-<p><strong>Toggle</strong> mechanism utilizes <code>Logic</code> operations with the <code>ToggleCommand</code> class in place of <code>Command</code>. The following
+<p><code>MainWindow</code> decides whether to show a list of transactions or chart analysis based on <code>ToggleView#isViewList</code>, by accessing
+<code>Logic#getToggleView()</code>.</p>
+</div>
+<div class="paragraph">
+<p>Here is a Class Diagram for the implementatino of <code>ToggleView</code>:
+<span class="image"><img src="images/chart-analytics/ToggleViewClassDiagram.png" alt="ToggleViewClassDiagram"></span>
+Figure XX. Implementation of <code>ToggleView</code> class</p>
+</div>
+<div class="paragraph">
+<p>The <strong>ToggleView</strong> mechanism utilizes <code>Logic</code> operations with the <code>ToggleViewCommand</code> class in place of <code>Command</code>. The following
 methods are concrete implementations for the <strong>toggle</strong> operation:</p>
 </div>
 <div class="ulist">
 <ul>
 <li>
-<p><code>ToggleCommand#execute()</code> - Modifies the <code>ToggleView</code> in <code>Model</code> to view list of transactions or view analytics, and
+<p><code>ToggleViewCommand#execute()</code> - Modifies the <code>ToggleView</code> in <code>Model</code> to view list of transactions or view analytics, and
 returns a <code>CommandResult</code> (<a href="#Design-Logic">Step 4 of Logic</a>).</p>
 </li>
 <li>
@@ -778,6 +787,80 @@ current value.</p>
 </div>
 </li>
 </ul>
+</div>
+<div class="paragraph">
+<p>The following sequence diagram illustrates <strong>toggleview</strong> command execution:
+<span class="image"><img src="images/chart-analytics/ToggleViewSequenceDiagram.png" alt="ToggleViewSequenceDiagram"></span>
+Figure XX. Sequence diagram for <strong>toggleview</strong> execution</p>
+</div>
+<div class="sect4">
+<h5 id="example-of-usage"><a class="link" href="#example-of-usage">Example of usage</a></h5>
+<div class="paragraph">
+<p>Given next is an example and explanation of how the <strong>ToggleView</strong> mechanism behaves at each step:</p>
+</div>
+<div class="paragraph">
+<p>Step 1. The user starts up the application with an initial list loaded from external storage file. The diagram here
+depicts the example list used throughout this scenario.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/clone/cloneDG/CloneStep3.png" alt="CloneStep3" width="650">
+</div>
+<div class="title">Example list on startup</div>
+</div>
+<div class="paragraph">
+<p>Step 2. The user inputs <strong>toggleview</strong> to change the view from list of transactions to chart analysis.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/update/updateDG/UpdateStep2.png" alt="UpdateStep2" width="650">
+</div>
+<div class="title">User input for toggle view</div>
+</div>
+<div class="paragraph">
+<p>Step 3. <code>ToggleViewCommand#execute()</code> switches <code>isViewList</code> of <code>ToggleView</code> from true to false.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/update/updateDG/UpdateStep3.png" alt="UpdateStep3" width="650">
+</div>
+<div class="title"><code>isViewList</code> of <code>ToggleView</code> switched from <code>ToggleViewCommand#execute()</code></div>
+</div>
+<div class="paragraph">
+<p>Step 4. <code>MainWindow#executeCommand()</code> checks the boolean value of isViewList which is false, and displays chart analysis.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/update/updateDG/UpdateStep4Part1.png" alt="UpdateStep4Part1" width="650">
+</div>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/update/updateDG/UpdateStep4Part3.png" alt="UpdateStep4Part3" width="650">
+</div>
+<div class="title">Switched from showing list of transactions to chart analysis</div>
+</div>
+<div class="paragraph">
+<p>Step 5. User inputs <strong>toggleview</strong> again to change view back to list of transactions.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/update/updateDG/UpdateStep4Part3.png" alt="UpdateStep4Part3" width="650">
+</div>
+<div class="title">Switched from showing list of transactions to chart analysis</div>
+</div>
+</div>
+<div class="sect4">
+<h5 id="execution-shown-to-user"><a class="link" href="#execution-shown-to-user">Execution shown to user</a></h5>
+<div class="paragraph">
+<p>The following activity diagram gives an overview of what ExpenseLa shows the user when executing <strong>toggleview</strong> command:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/chart-analytics/ToggleViewActivityDiagram.png" alt="ToggleViewActivityDiagram">
+</div>
+<div class="title">Figure 10. Activity diagram for execution of toggleview command</div>
+</div>
 </div>
 </div>
 </div>
@@ -1309,4 +1392,4 @@ Expected: Similar to previous.</p>
 </div>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2020-04-10 15:14:16 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2020-04-10 16:26:19 UTC</div></div></div></body></html>
