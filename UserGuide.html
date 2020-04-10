@@ -18,14 +18,15 @@
 <li><a href="#reset-total-balance-code-resetbalance-code">3.3. Reset total balance <code>resetbalance</code></a></li>
 <li><a href="#key-in-transaction-code-add-code">3.4. Key in transaction : <code>add</code></a></li>
 <li><a href="#filter-transactions-code-filter-code">3.5. Filter transactions : <code>filter</code></a></li>
-<li><a href="#deleting-a-transaction-code-delete-code">3.6. Deleting a transaction : <code>delete</code></a></li>
-<li><a href="#edit-a-transaction-code-edit-code">3.7. Edit a transaction : <code>edit</code></a></li>
-<li><a href="#analysis-of-transactions-code-toggle-code">3.8. Analysis of transactions : <code>toggle</code></a></li>
-<li><a href="#find-transaction-by-name-code-find-code">3.9. Find transaction by name : <code>find</code></a></li>
-<li><a href="#list-of-transactions-code-list-code">3.10. List of transactions : <code>list</code></a></li>
-<li><a href="#clear-all-data-code-clear-code">3.11. Clear all data : <code>clear</code></a></li>
-<li><a href="#exiting-the-program-code-exit-code">3.12. Exiting the program : <code>exit</code></a></li>
-<li><a href="#saving-the-data">3.13. Saving the data</a></li>
+<li><a href="#edit-a-transaction-code-edit-code">3.6. Edit a transaction : <code>edit</code></a></li>
+<li><a href="#analysis-of-transactions-code-toggleview-code">3.7. Analysis of transactions : <code>toggleview</code></a></li>
+<li><a href="#find-transaction-by-name-code-find-code">3.8. Find transaction by name : <code>find</code></a></li>
+<li><a href="#list-of-transactions-code-list-code">3.9. List of transactions : <code>list</code></a></li>
+<li><a href="#clear-all-recurring-transactions-stored-code-clearrecurring-code">3.10. Clear all recurring transactions stored : <code>clearrecurring</code></a></li>
+<li><a href="#export-transaction-data-to-csv-code-export-code">3.11. Export transaction data to csv : <code>export</code></a></li>
+<li><a href="#clear-all-data-code-clear-code">3.12. Clear all data : <code>clear</code></a></li>
+<li><a href="#exiting-the-program-code-exit-code">3.13. Exiting the program : <code>exit</code></a></li>
+<li><a href="#saving-the-data">3.14. Saving the data</a></li>
 </ul>
 </li>
 <li><a href="#faq">4. FAQ</a></li>
@@ -68,6 +69,11 @@
 e.g. typing <strong><code>help</code></strong> and pressing <kbd>Enter</kbd> will open the help window.</p>
 </li>
 <li>
+<p>You can navigate through your command history by pressing the <kbd>Up</kbd> or <kbd>Down</kbd> arrow key.
+Only successful commands are stored in the command history. There can be at most 50 commands stored.
+This feature is just like the command navigation feature in your favourite command line or shell.</p>
+</li>
+<li>
 <p>Some example commands you can try:</p>
 <div class="ulist">
 <ul>
@@ -78,10 +84,10 @@ e.g. typing <strong><code>help</code></strong> and pressing <kbd>Enter</kbd> wil
 <p><strong><code>add a/100</code></strong><code>n/Wagyu Steak d/2020-02-28 c/FOOD</code> : adds an expense named <code>Wagyu Steak</code> with amount <code>$100.00</code> spent on <code>2020-02-28</code> in category <code>FOOD</code> to the expense tracker</p>
 </li>
 <li>
-<p><strong><code>delete</code></strong><code>1</code> : deletes the expense with id <code>1</code> in the current list</p>
+<p><strong><code>filter</code></strong><code>m/ 2020-02</code> : filters to only show transactions made on <code>2020-02</code></p>
 </li>
 <li>
-<p><strong><code>filter</code></strong><code>m/ 2020-02</code> : filters to only show transactions made on <code>2020-02</code></p>
+<p><strong><code>delete</code></strong><code>1</code> : deletes the expense with id <code>1</code> in the current list</p>
 </li>
 <li>
 <p><strong><code>exit</code></strong> : exits the app</p>
@@ -110,10 +116,16 @@ e.g. typing <strong><code>help</code></strong> and pressing <kbd>Enter</kbd> wil
 <p>Words in <code>UPPER_CASE</code> are the parameters to be supplied by the user e.g. in <code>filter c/OBJECT</code>, <code>OBJECT</code> is a parameter which can be used as <code>filter c/FOOD</code>.</p>
 </li>
 <li>
+<p>Parameters are not case sensitive, but prefixes are</p>
+</li>
+<li>
 <p>Items in square brackets are optional e.g <code>spend a/AMOUNT n/ OBJECT [d/ DATE] [c/ CAT]</code> and can used as <code>add a/100 n/Pizza</code> or <code>add a/100 n/Pizza d/2020-02-02 c/Food</code></p>
 </li>
 <li>
 <p>Parameters can be in any order e.g. if the command specifies <code>n/NAME a/AMOUNT</code>, <code>a/AMOUNT n/NAME</code> is also acceptable.</p>
+</li>
+<li>
+<p>The length of command a user can input is at most 140 characters.</p>
 </li>
 </ul>
 </div>
@@ -124,6 +136,11 @@ e.g. typing <strong><code>help</code></strong> and pressing <kbd>Enter</kbd> wil
 <div class="paragraph">
 <p>Format: <code>help</code></p>
 </div>
+<div class="imageblock">
+<div class="content">
+<img src="images/Help.png" alt="Help" width="790">
+</div>
+</div>
 </div>
 <div class="sect2">
 <h3 id="set-a-monthly-budget-code-budget-code"><a class="link" href="#set-a-monthly-budget-code-budget-code">3.2. Set a monthly budget : <code>budget</code></a></h3>
@@ -131,8 +148,8 @@ e.g. typing <strong><code>help</code></strong> and pressing <kbd>Enter</kbd> wil
 <p>Sets a spendable budget for the current month</p>
 </div>
 <div class="paragraph">
-<p>Format: <code>budget b/AMOUNT rc/no</code> (to set a budget for the given month only)
-        <code>budget b/AMOUNT rc/yes</code> (to set repeating budget of $AMOUNT for the coming months)</p>
+<p>Format: <code>budget b/AMOUNT</code> (to set a budget for the given month only)
+        <code>budget b/AMOUNT rc/</code> (to set repeating budget of $AMOUNT for the coming months)</p>
 </div>
 <div class="paragraph">
 <p>Examples:</p>
@@ -140,10 +157,10 @@ e.g. typing <strong><code>help</code></strong> and pressing <kbd>Enter</kbd> wil
 <div class="ulist">
 <ul>
 <li>
-<p><code>budget b/1000 rc/no</code></p>
+<p><code>budget b/1000 rc/</code></p>
 </li>
 <li>
-<p><code>budget rc/yes b/1500</code></p>
+<p><code>budget b/1500</code></p>
 </li>
 </ul>
 </div>
@@ -160,7 +177,11 @@ e.g. typing <strong><code>help</code></strong> and pressing <kbd>Enter</kbd> wil
 <p>Adds an expense or income to the expense tracker. Expenses/incomes are stored as a transaction.</p>
 </div>
 <div class="paragraph">
-<p>Format: `add [i/] n/ NAME a/ AMOUNT [d/ DATE] [c/ CATEGORY] [r/ REMARK]  `</p>
+<p>Format: <code>add [i/] n/ NAME a/ AMOUNT [d/ DATE] [c/ CATEGORY] [r/ REMARK]  [rc/]</code></p>
+</div>
+<div class="paragraph">
+<p>Expected Outcome: A new transaction would be created in the list of transactions. If the newly
+created transaction is part of the currently filtered transaction, it&#8217;ll be visible in the list</p>
 </div>
 <div class="admonitionblock tip">
 <table>
@@ -198,6 +219,18 @@ Not including i/ will make transaction an expense by default while including i/ 
 </tr>
 </table>
 </div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+Including rc/ will make transaction recurring every month on the same day set in the transaction date
+</td>
+</tr>
+</table>
+</div>
 <div class="paragraph">
 <p>Examples:</p>
 </div>
@@ -210,7 +243,7 @@ Not including i/ will make transaction an expense by default while including i/ 
 <p><code>add a/ 16.00 n/ Pizza r/ Lunch c/ FOOD</code></p>
 </li>
 <li>
-<p><code>add i/ a/ 200.00 n/ pocket money c/INCOME</code></p>
+<p><code>add i/ a/ 200.00 n/ pocket money c/INCOME rc/</code></p>
 </li>
 </ul>
 </div>
@@ -221,8 +254,12 @@ Not including i/ will make transaction an expense by default while including i/ 
 <p>Filters transactions for user to see by filter type.</p>
 </div>
 <div class="paragraph">
-<p>Format: <code>filter /m YYYY-MM</code> to view a certain month&#8217;s transactions
-        <code>filter /c CATEGORY</code> to view transactions of a certain category</p>
+<p>Format: <code>filter m/ YYYY-MM</code> to view a certain month&#8217;s transactions
+        <code>filter c/ CATEGORY</code> to view transactions of a certain category</p>
+</div>
+<div class="paragraph">
+<p>Expected Outcome: Filter is changed to the filter specified. List of transactions will only
+show transactions that fulfill the filter criteria</p>
 </div>
 <div class="paragraph">
 <p>Examples:</p>
@@ -230,36 +267,32 @@ Not including i/ will make transaction an expense by default while including i/ 
 <div class="ulist">
 <ul>
 <li>
-<p><code>filter m/ 2020-02</code></p>
+<p><code>filter m/ 2020-04</code> (filter by month and remove category filter)</p>
 </li>
 <li>
-<p><code>filter c/ TRANSPORT</code></p>
+<p><code>filter c/ TRANSPORT</code> (filter by category and remove month filter)</p>
 </li>
 <li>
-<p><code>filter m/ 2020-03 c/ FOOD</code></p>
+<p><code>filter m/ 2020-04 c/ FOOD</code> (filter by both category and month)</p>
+<div class="imageblock">
+<div class="content">
+<img src="images/Filter.png" alt="Filter" width="790">
+</div>
+</div>
+<div class="paragraph">
+<p>=== Deleting a transaction : <code>delete</code></p>
+</div>
 </li>
 </ul>
 </div>
-</div>
-<div class="sect2">
-<h3 id="deleting-a-transaction-code-delete-code"><a class="link" href="#deleting-a-transaction-code-delete-code">3.6. Deleting a transaction : <code>delete</code></a></h3>
 <div class="paragraph">
 <p>Deletes the specified transaction from the expense tracker.</p>
 </div>
 <div class="paragraph">
 <p>Format: <code>delete TRANSACTION_ID</code></p>
 </div>
-<div class="admonitionblock tip">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-tip" title="Tip"></i>
-</td>
-<td class="content">
-Every transaction is given a unique <code>TRANSACTION_ID</code> when added to the expense tracker.
-</td>
-</tr>
-</table>
+<div class="paragraph">
+<p>Expected Outcome: Transaction at the specified index in the current transaction list is deleted</p>
 </div>
 <div class="admonitionblock tip">
 <table>
@@ -268,7 +301,7 @@ Every transaction is given a unique <code>TRANSACTION_ID</code> when added to th
 <i class="fa icon-tip" title="Tip"></i>
 </td>
 <td class="content">
-The transaction ID of a particular transaction can be found either by searching to the transaction with the search function.
+<code>TRANSACTION_ID</code> refers to the index of the transaction in the list visible to user.
 </td>
 </tr>
 </table>
@@ -280,18 +313,21 @@ The transaction ID of a particular transaction can be found either by searching 
 <ul>
 <li>
 <p><code>delete 3</code><br>
-Deletes the transaction with ID 3 in the expense tracker.</p>
+Deletes the transaction with index number 3 in the expense tracker&#8217;s current transaction list.</p>
 </li>
 </ul>
 </div>
 </div>
 <div class="sect2">
-<h3 id="edit-a-transaction-code-edit-code"><a class="link" href="#edit-a-transaction-code-edit-code">3.7. Edit a transaction : <code>edit</code></a></h3>
+<h3 id="edit-a-transaction-code-edit-code"><a class="link" href="#edit-a-transaction-code-edit-code">3.6. Edit a transaction : <code>edit</code></a></h3>
 <div class="paragraph">
 <p>Edit the specified transaction from the expense tracker</p>
 </div>
 <div class="paragraph">
 <p>Format: <code>edit TRANSACTION_ID [n/ NAME] [a/ AMOUNT] [d/ DATE] [c/ CAT] [r/ REMARK]</code></p>
+</div>
+<div class="paragraph">
+<p>Expected Outcome: Transaction at the given index has its parameters changed as specified</p>
 </div>
 <div class="paragraph">
 <p>Examples:</p>
@@ -311,13 +347,26 @@ Deletes the transaction with ID 3 in the expense tracker.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="analysis-of-transactions-code-toggle-code"><a class="link" href="#analysis-of-transactions-code-toggle-code">3.8. Analysis of transactions : <code>toggle</code></a></h3>
+<h3 id="analysis-of-transactions-code-toggleview-code"><a class="link" href="#analysis-of-transactions-code-toggleview-code">3.7. Analysis of transactions : <code>toggleview</code></a></h3>
 <div class="paragraph">
-<p>Toggle between list view of transactions and analytics view with bar graph and pie chart to show expense trend</p>
+<p>Toggle between viewing list of transactions and analytics with bar graph and pie chart to show expense trend</p>
+</div>
+<div class="paragraph">
+<p>Expected Outcome: changed view to charts if previously was list view and to list view if previously was chart view</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/ListView.png" alt="ListView" width="790">
+</div>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/ChartView.png" alt="ChartView" width="790">
+</div>
 </div>
 </div>
 <div class="sect2">
-<h3 id="find-transaction-by-name-code-find-code"><a class="link" href="#find-transaction-by-name-code-find-code">3.9. Find transaction by name : <code>find</code></a></h3>
+<h3 id="find-transaction-by-name-code-find-code"><a class="link" href="#find-transaction-by-name-code-find-code">3.8. Find transaction by name : <code>find</code></a></h3>
 <div class="paragraph">
 <p>Find Transaction that matches one of the words from a given list of keywords</p>
 </div>
@@ -325,30 +374,61 @@ Deletes the transaction with ID 3 in the expense tracker.</p>
 <p>Format: <code>find KEYWORD_1 [KEYWORD_2] &#8230;&#8203; [KEYWORD_N]</code></p>
 </div>
 <div class="paragraph">
+<p>Expected Outcome: Clears all filter and display all transactions whose name matches any of the keyword</p>
+</div>
+<div class="paragraph">
 <p>Examples:</p>
 </div>
 <div class="ulist">
 <ul>
 <li>
-<p><code>find bottle school</code></p>
+<p><code>find bottle school</code> (find all transactions whose name contain either bottle or school)</p>
 </li>
 </ul>
 </div>
 </div>
 <div class="sect2">
-<h3 id="list-of-transactions-code-list-code"><a class="link" href="#list-of-transactions-code-list-code">3.10. List of transactions : <code>list</code></a></h3>
+<h3 id="list-of-transactions-code-list-code"><a class="link" href="#list-of-transactions-code-list-code">3.9. List of transactions : <code>list</code></a></h3>
 <div class="paragraph">
 <p>List all transactions and reset all filters</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="clear-all-data-code-clear-code"><a class="link" href="#clear-all-data-code-clear-code">3.11. Clear all data : <code>clear</code></a></h3>
+<h3 id="clear-all-recurring-transactions-stored-code-clearrecurring-code"><a class="link" href="#clear-all-recurring-transactions-stored-code-clearrecurring-code">3.10. Clear all recurring transactions stored : <code>clearrecurring</code></a></h3>
 <div class="paragraph">
-<p>Clear all data in expenseLa including monthly data and total balance</p>
+<p>Clear all recurring transactions stored</p>
+</div>
+<div class="paragraph">
+<p>Expected Outcome: All recurring transactions in the json file GlobalData.json will be cleared</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="exiting-the-program-code-exit-code"><a class="link" href="#exiting-the-program-code-exit-code">3.12. Exiting the program : <code>exit</code></a></h3>
+<h3 id="export-transaction-data-to-csv-code-export-code"><a class="link" href="#export-transaction-data-to-csv-code-export-code">3.11. Export transaction data to csv : <code>export</code></a></h3>
+<div class="paragraph">
+<p>Export the filtered transaction list to a csv file</p>
+</div>
+<div class="paragraph">
+<p>Expected Outcome: A csv file will be created at the root directory and all transactions currently visible in the app
+will be exported to the csv file.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/Csv.png" alt="Csv" width="790">
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="clear-all-data-code-clear-code"><a class="link" href="#clear-all-data-code-clear-code">3.12. Clear all data : <code>clear</code></a></h3>
+<div class="paragraph">
+<p>Clear all data in expenseLa including monthly data and global data</p>
+</div>
+<div class="paragraph">
+<p>Expected Outcome: All transactions are deleted, balance is set to 0 and monthly data is also set to 0.
+All recurring data such as budget and transactions are also cleared</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="exiting-the-program-code-exit-code"><a class="link" href="#exiting-the-program-code-exit-code">3.13. Exiting the program : <code>exit</code></a></h3>
 <div class="paragraph">
 <p>Exits the program.</p>
 </div>
@@ -357,7 +437,7 @@ Deletes the transaction with ID 3 in the expense tracker.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="saving-the-data"><a class="link" href="#saving-the-data">3.13. Saving the data</a></h3>
+<h3 id="saving-the-data"><a class="link" href="#saving-the-data">3.14. Saving the data</a></h3>
 <div class="paragraph">
 <p>ExpenseLa data are saved in the hard disk automatically as a json file after any command that changes the data.<br>
 There is no need to save manually.</p>
@@ -380,20 +460,20 @@ There is no need to save manually.</p>
 <div class="ulist">
 <ul>
 <li>
-<p><strong>Budget</strong> : <code>budget a/ AMOUNT rc/ no</code><br>
-           <code>budget rc/ yes a/ AMOUNT</code><br>
-e.g. <code>budget a/ 1000 rc/ no</code><br>
-     <code>budget a/ 1500 rc/ yes</code></p>
+<p><strong>Budget</strong> : <code>budget b/ AMOUNT</code><br>
+           <code>budget rc/ b/ AMOUNT</code><br>
+e.g. <code>budget b/ 1000</code><br>
+     <code>budget b/ 1500 rc/</code></p>
 </li>
 <li>
-<p><strong>add</strong> : <code>add a/ AMOUNT n/ NAME [d/ DATE] [c/ CATEGORY] [r/ REMARK]</code><br>
+<p><strong>add</strong> : <code>add a/ AMOUNT n/ NAME [d/ DATE] [c/ CATEGORY] [r/ REMARK] [rc/]</code><br>
 e.g. * <code>add a/ 26.00 n/ Grab Share d/ 2020-02-19 c/ TRANSPORT</code><br>
        <code>add a/ 16.00 n/ Pizza r/ Lunch c/ FOOD</code><br>
-       <code>add i/ a/ 200.00 n/ pocket money c/INCOME</code></p>
+       <code>add i/ a/ 200.00 n/ pocket money c/INCOME rc/</code></p>
 </li>
 <li>
-<p><strong>Filter</strong> : <code>filter /m YYYY-MM</code><br>
-             <code>filter /c CATEGORY</code><br>
+<p><strong>Filter</strong> : <code>filter m/ YYYY-MM</code><br>
+             <code>filter c/ CATEGORY</code><br>
 e.g. <code>filter m/ 2020-02</code><br>
      <code>filter c/ FOOD</code><br>
      <code>filter c/ TRANSPORT m/ 2020-03</code></p>
@@ -414,7 +494,7 @@ e.g. <code>edit 1 a/ 26.00 n/ Grab Share d/ 2020-02-19 c/ TRANSPORT</code><br>
      <code>edit 3 a/ 200.00 n/ pocket money</code></p>
 </li>
 <li>
-<p><strong>Toggle</strong> : <code>toggle</code></p>
+<p><strong>Toggle View</strong> : <code>toggleview</code></p>
 </li>
 <li>
 <p><strong>Reset Balance</strong>: <code>resetbalance</code></p>
@@ -429,9 +509,15 @@ e.g. <code>edit 1 a/ 26.00 n/ Grab Share d/ 2020-02-19 c/ TRANSPORT</code><br>
 <p><strong>List</strong> : <code>list</code></p>
 </li>
 <li>
+<p><strong>Export</strong> : <code>export</code></p>
+</li>
+<li>
+<p><strong>Clear Recurring Transactions</strong>: <code>clearrecurring</code></p>
+</li>
+<li>
 <p><strong>Help</strong> : <code>help</code></p>
 </li>
 </ul>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2020-04-09 04:03:35 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2020-04-10 15:14:16 UTC</div></div></div></body></html>
