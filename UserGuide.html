@@ -24,9 +24,10 @@
 <li><a href="#list-of-transactions-code-list-code">3.9. List of transactions : <code>list</code></a></li>
 <li><a href="#clear-all-recurring-transactions-stored-code-clearrecurring-code">3.10. Clear all recurring transactions stored : <code>clearrecurring</code></a></li>
 <li><a href="#export-transaction-data-to-csv-code-export-code">3.11. Export transaction data to csv : <code>export</code></a></li>
-<li><a href="#clear-all-data-code-clear-code">3.12. Clear all data : <code>clear</code></a></li>
-<li><a href="#exiting-the-program-code-exit-code">3.13. Exiting the program : <code>exit</code></a></li>
-<li><a href="#saving-the-data">3.14. Saving the data</a></li>
+<li><a href="#import-transaction-data-from-csv-code-import-code">3.12. Import transaction data from csv : <code>import</code></a></li>
+<li><a href="#clear-all-data-code-clear-code">3.13. Clear all data : <code>clear</code></a></li>
+<li><a href="#exiting-the-program-code-exit-code">3.14. Exiting the program : <code>exit</code></a></li>
+<li><a href="#saving-the-data">3.15. Saving the data</a></li>
 </ul>
 </li>
 <li><a href="#faq">4. FAQ</a></li>
@@ -60,9 +61,13 @@
 <p>Double-click the file to start the app. The GUI should appear in a few seconds.</p>
 <div class="imageblock">
 <div class="content">
-<img src="images/Ui.png" alt="Ui" width="790">
+<img src="images/Ui.png" alt="[width=&quot;790&quot;]">
 </div>
 </div>
+</li>
+<li>
+<p>Filters are only to filter transaction list, MonthlyData is data for the current month and not the month
+shown in the filter</p>
 </li>
 <li>
 <p>Type the command in the command box and press <kbd>Enter</kbd> to execute it.<br>
@@ -78,6 +83,9 @@ This feature is just like the command navigation feature in your favourite comma
 <div class="ulist">
 <ul>
 <li>
+<p><strong><code>clear</code></strong> : clear the expenseLa app to start at a clean slate</p>
+</li>
+<li>
 <p><strong><code>budget b/1000 rc/</code></strong> : set a recurring budget of $1000 for the current month and subsequent months</p>
 </li>
 <li>
@@ -85,6 +93,12 @@ This feature is just like the command navigation feature in your favourite comma
 </li>
 <li>
 <p><strong><code>add a/100</code></strong><code>n/Wagyu Steak c/FOOD</code> : adds an expense named <code>Wagyu Steak</code> with amount <code>$100.00</code> spent on the day it is added in category <code>FOOD</code> to the expense tracker</p>
+</li>
+<li>
+<p><strong><code>add a/10</code></strong><code>n/Laksa c/FOOD</code> : adds an expense named <code>Laksa</code> with amount <code>$10.00</code> spent on the day it is added in category <code>FOOD</code> to the expense tracker</p>
+</li>
+<li>
+<p><strong><code>add a/5.5</code></strong><code>n/Chicken Rice c/FOOD</code> : adds an expense named <code>Chicken Rice</code> with amount <code>$5.50</code> spent on the day it is added in category <code>FOOD</code> to the expense tracker</p>
 </li>
 <li>
 <p><strong><code>add a/50</code></strong><code>n/shirt c/SHOPPING d/2020-04-08</code> : adds an expense named <code>shirt</code> with amount <code>50.00</code> spent on <code>2020-04-08</code> in category <code>SHOPPING</code> to the expense tracker</p>
@@ -424,7 +438,17 @@ will be exported to the csv file.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="clear-all-data-code-clear-code"><a class="link" href="#clear-all-data-code-clear-code">3.12. Clear all data : <code>clear</code></a></h3>
+<h3 id="import-transaction-data-from-csv-code-import-code"><a class="link" href="#import-transaction-data-from-csv-code-import-code">3.12. Import transaction data from csv : <code>import</code></a></h3>
+<div class="paragraph">
+<p>Import transactions from csv and add it to transaction list, duplicate transactions are ignored.</p>
+</div>
+<div class="paragraph">
+<p>Expected Outcome: All transactions in the csv that is in the correct format and does not exist in the current transaction lsit
+will be added to transaction list</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="clear-all-data-code-clear-code"><a class="link" href="#clear-all-data-code-clear-code">3.13. Clear all data : <code>clear</code></a></h3>
 <div class="paragraph">
 <p>Clear all data in expenseLa including monthly data and global data</p>
 </div>
@@ -434,7 +458,7 @@ All recurring data such as budget and transactions are also cleared</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="exiting-the-program-code-exit-code"><a class="link" href="#exiting-the-program-code-exit-code">3.13. Exiting the program : <code>exit</code></a></h3>
+<h3 id="exiting-the-program-code-exit-code"><a class="link" href="#exiting-the-program-code-exit-code">3.14. Exiting the program : <code>exit</code></a></h3>
 <div class="paragraph">
 <p>Exits the program.</p>
 </div>
@@ -443,7 +467,7 @@ All recurring data such as budget and transactions are also cleared</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="saving-the-data"><a class="link" href="#saving-the-data">3.14. Saving the data</a></h3>
+<h3 id="saving-the-data"><a class="link" href="#saving-the-data">3.15. Saving the data</a></h3>
 <div class="paragraph">
 <p>ExpenseLa data are saved in the hard disk automatically as a json file after any command that changes the data.<br>
 There is no need to save manually.</p>
@@ -526,4 +550,4 @@ e.g. <code>edit 1 a/ 26.00 n/ Grab Share d/ 2020-02-19 c/ TRANSPORT</code><br>
 </ul>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2020-04-11 17:43:43 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2020-04-11 17:57:16 UTC</div></div></div></body></html>
