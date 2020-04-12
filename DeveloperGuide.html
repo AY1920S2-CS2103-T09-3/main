@@ -3,6 +3,9 @@
 <link rel="stylesheet" href="stylesheets/coderay-asciidoctor.css"></head><body class="article"><div id="seedu-header"><nav class="navbar navbar-lg navbar-light bg-lighter"><div class="container"><a class="navbar-brand" href="https://se-edu.github.io/"><img src="images/SeEduLogo.png" alt="SE-EDU"></a><ul class="navbar-nav"><li class="nav-item"><a class="nav-link active" href="index.html">ExpenseLa</a></li><li class="nav-item"><a class="nav-link" href="https://se-edu.github.io/collate">Collate</a></li><li class="nav-item"><a class="nav-link" href="https://se-edu.github.io/se-book">Book</a></li><li class="nav-item"><a class="nav-link" href="https://se-edu.github.io/learningresources">Resources</a></li></ul></div></nav></div><div id="site-header"><nav class="navbar navbar-light bg-light"><div class="container"><a class="navbar-brand" href="index.html">ExpenseLa</a><ul class="navbar-nav"><li class="nav-item"><a class="nav-link" href="UserGuide.html">User Guide</a></li><li class="nav-item"><a class="nav-link active" href="DeveloperGuide.html">Developer Guide</a></li><li class="nav-item"><a class="nav-link" href="LearningOutcomes.html">LOs</a></li><li class="nav-item"><a class="nav-link" href="AboutUs.html">About Us</a></li><li class="nav-item"><a class="nav-link" href="ContactUs.html">Contact Us</a></li><li class="navitem"><a class="nav-link" href="https://github.com/AY1920S2-CS2103-T09-3/main"><span class="fa fa-github fa-lg" aria-hidden="true"></span>&nbsp;View on GitHub</a></li></ul></div></nav></div><div id="header"><h1>ExpenseLa - Developer Guide</h1></div><div id="content"><div id="preamble">
 <div class="sectionbody">
 <div class="paragraph">
+<p><span class="image"><img src="images/logos/ExpenseLa_Logo.png" alt="ExpenseLa Logo"></span></p>
+</div>
+<div class="paragraph">
 <p>By: <code>Team Halim</code>      Since: <code>Jan 2020</code>      Licence: <code>MIT</code></p>
 </div>
 </div>
@@ -33,8 +36,10 @@
 <li><a href="#command-history-navigation">4.3. Command History navigation</a></li>
 <li><a href="#filtering-transactions">4.4. Filtering Transactions</a></li>
 <li><a href="#chart-analytics">4.5. Chart Analytics</a></li>
-<li><a href="#logging">4.6. Logging</a></li>
-<li><a href="#Implementation-Configuration">4.7. Configuration</a></li>
+<li><a href="#proposed-data-encryption">4.6. [Proposed] Data Encryption</a></li>
+<li><a href="#proposed-expensela-monthly-statement">4.7. [Proposed] ExpenseLa Monthly Statement</a></li>
+<li><a href="#logging">4.8. Logging</a></li>
+<li><a href="#Implementation-Configuration">4.9. Configuration</a></li>
 </ul>
 </li>
 <li><a href="#documentation">5. Documentation</a></li>
@@ -316,29 +321,25 @@ The lifeline for <code>DeleteCommandParser</code> should end at the destroy mark
 <p>stores the <code>ExpenseLa</code> data.</p>
 </li>
 <li>
+<p>stores a <code>MonthlyData</code> object which contains budget, expense, and income information set by the user.</p>
+</li>
+<li>
+<p>stores a <code>ToggleView</code> object that represents the nature of transaction information displayed to the user.</p>
+</li>
+<li>
+<p>stores a <code>Filter</code> object which represents the filter on the transactions as set by the user</p>
+</li>
+<li>
 <p>stores <code>TransactionList</code> which contains the list of all transactions</p>
 </li>
 <li>
-<p>exposes an unmodifiable <code>ObservableList&lt;Transaction&gt;</code> that can be 'observed' e.g. the UI can be bound to this list so that the UI automatically updates when the data in the list change.</p>
+<p>exposes an unmodifiable <code>ObservableList&lt;Transaction&gt;</code> that can be 'observed' e.g. the UI can be bound to this list
+so that the UI automatically updates when the data in the list change.</p>
 </li>
 <li>
 <p>does not depend on any of the other three components.</p>
 </li>
 </ul>
-</div>
-<div class="admonitionblock note">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-note" title="Note"></i>
-</td>
-<td class="content">
-As a more OOP model, we can store a <code>Tag</code> list in <code>Address Book</code>, which <code>Person</code> can reference. This would allow <code>Address Book</code> to only require one <code>Tag</code> object per unique <code>Tag</code>, instead of each <code>Person</code> needing their own <code>Tag</code> object. An example of how such a model may look like is given below.<br>
-<br>
-<span class="image"><img src="images/BetterModelClassDiagram.png" alt="BetterModelClassDiagram"></span>
-</td>
-</tr>
-</table>
 </div>
 </div>
 <div class="sect2">
@@ -674,7 +675,7 @@ value in <code><strong>GlobalData</strong></code> is now set to the new <code><s
 <div class="sect3">
 <h4 id="design-considerations-2"><a class="link" href="#design-considerations-2">4.2.2. Design considerations</a></h4>
 <div class="paragraph">
-<p>We have considered various ways as to how <code><strong>Budget</strong></code> should be stored in <code><strong>ExpensLa</strong></code>. In this section, we will explain the
+<p>We have considered various ways as to how <code><strong>Budget</strong></code> should be stored in <code><strong>ExpenseLa</strong></code>. In this section, we will explain the
 rationale on our course of actions.</p>
 </div>
 <div class="sect4">
@@ -752,29 +753,35 @@ both of which inheriting from <code>Predicate&lt;Transaction&gt;</code> to filte
 command to return a <code>FilterCommand</code> object.</p>
 </div>
 <div class="paragraph">
-<p>The below sequence diagram depicts the execution of the filter feature:
+<p>The below sequence diagram depicts the execution of the filter feature to display all transactions with Category "FOOD":
 <span class="image"><img src="images/filter/FilterSequenceDiagram.png" alt="FilterSequenceDiagram"></span></p>
 </div>
 <div class="paragraph">
 <p>The below scenario shows a typical usage of the filter feature:</p>
 </div>
 <div class="paragraph">
-<p>Step 1: User executes the command filter c/FOOD m/2020-02 to bring up transactions in the category "FOOD" for the month
-of February 2020.</p>
+<p>Step 1: Upon application launch, the filter for all categories and the current month is automatically applied.
+<span class="image"><img src="images/filter/Filter_SS_1.PNG" alt="Filter SS 1"></span></p>
 </div>
 <div class="paragraph">
-<p>Step 2: The <code>FilterCommandParser</code> will parse the arguments using the method <code>parse(String args)</code>.</p>
+<p>Step 2: User executes the command <code>filter c/food m/2020-02</code> to bring up transactions in the category "FOOD" for the month
+of February 2020. (Note: The command in the command line disappears upon hitting Enter, the command in the command line
+is purely for illustration purposes).
+<span class="image"><img src="images/filter/Filter_SS_2.PNG" alt="Filter SS 2"></span></p>
 </div>
 <div class="paragraph">
-<p>Step 3: Since user input is correct and the arguments are parsed, a new <code>FilterCommand</code> object is created by the
+<p>Step 3: The <code>FilterCommandParser</code> will parse the arguments using the method <code>parse(String args)</code>.</p>
+</div>
+<div class="paragraph">
+<p>Step 4: Since user input is correct and the arguments are parsed, a new <code>FilterCommand</code> object is created by the
 <code>FilterCommandParser</code>.</p>
 </div>
 <div class="paragraph">
-<p>Step 4: The <code>FilterCommand</code> object will use a <code>Predicate</code> based on the specified category, month, or both, to filter
+<p>Step 5: The <code>FilterCommand</code> object will use a <code>Predicate</code> based on the specified category, month, or both, to filter
 the list of transactions.</p>
 </div>
 <div class="paragraph">
-<p>Step 5: The list of filtered transactions is brought up. The filter category and month UI will also update accordingly
+<p>Step 6: The list of filtered transactions is brought up. The filter category and month UI will also update accordingly
 to show the category and month that the transactions are filtered by.</p>
 </div>
 <div class="paragraph">
@@ -822,6 +829,10 @@ future implementation.</p>
 <div class="paragraph">
 <p>The <strong>toggleview</strong> command allows the user to switch between viewing the list of 'Transactions' and viewing an analysis of
 his expenditure.</p>
+</div>
+<div class="paragraph">
+<p>In the expenditure analysis view we have a bar chart to show expenditure breakdown by date as well as a pie chart to
+show expenditure breakdown by category.</p>
 </div>
 <div class="sect3">
 <h4 id="implementation-6"><a class="link" href="#implementation-6">4.5.1. Implementation</a></h4>
@@ -938,14 +949,33 @@ depicts the example list used throughout this scenario.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="logging"><a class="link" href="#logging">4.6. Logging</a></h3>
+<h3 id="proposed-data-encryption"><a class="link" href="#proposed-data-encryption">4.6. [Proposed] Data Encryption</a></h3>
+<div class="paragraph">
+<p>Given the sensitive nature of the information provided by users, we would like to safeguard the information provided by
+our users through encryption. Naturally, the information would be encrypted and decrypted in the back-end without the user
+requiring to do any of the encryption, decryption, or even any knowledge of how it works.</p>
+</div>
+<div class="sect3">
+<h4 id="proposed-implementation"><a class="link" href="#proposed-implementation">4.6.1. Proposed Implementation</a></h4>
+
+</div>
+</div>
+<div class="sect2">
+<h3 id="proposed-expensela-monthly-statement"><a class="link" href="#proposed-expensela-monthly-statement">4.7. [Proposed] ExpenseLa Monthly Statement</a></h3>
+<div class="paragraph">
+<p>Just as how banks issue a monthly statement of account, we believe that it would be helpful to provide
+our users with an overview of their expenses in the past month</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="logging"><a class="link" href="#logging">4.8. Logging</a></h3>
 <div class="paragraph">
 <p>We are using <code>java.util.logging</code> package for logging. The <code>LogsCenter</code> class is used to manage the logging levels and logging destinations.</p>
 </div>
 <div class="ulist">
 <ul>
 <li>
-<p>The logging level can be controlled using the <code>logLevel</code> setting in the configuration file (See <a href="#Implementation-Configuration">Section 4.7, &#8220;Configuration&#8221;</a>)</p>
+<p>The logging level can be controlled using the <code>logLevel</code> setting in the configuration file (See <a href="#Implementation-Configuration">Section 4.9, &#8220;Configuration&#8221;</a>)</p>
 </li>
 <li>
 <p>The <code>Logger</code> for a class can be obtained using <code>LogsCenter.getLogger(Class)</code> which will log messages according to the specified logging level</p>
@@ -976,7 +1006,7 @@ depicts the example list used throughout this scenario.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="Implementation-Configuration"><a class="link" href="#Implementation-Configuration">4.7. Configuration</a></h3>
+<h3 id="Implementation-Configuration"><a class="link" href="#Implementation-Configuration">4.9. Configuration</a></h3>
 <div class="paragraph">
 <p>Certain properties of the application can be controlled (e.g user prefs file location, logging level) through the configuration file (default: <code>config.json</code>).</p>
 </div>
@@ -1465,4 +1495,4 @@ Expected: Similar to previous.</p>
 </div>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2020-04-11 18:18:00 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2020-04-12 12:47:36 UTC</div></div></div></body></html>
