@@ -22,7 +22,7 @@
 <li><a href="#design">3. Design</a>
 <ul class="sectlevel2">
 <li><a href="#Design-Architecture">3.1. Architecture</a></li>
-<li><a href="#Design-Ui">3.2. UI component</a></li>
+<li><a href="#Design-Ui">3.2. UI component (Choi Min Suk)</a></li>
 <li><a href="#Design-Logic">3.3. Logic component (Hubert Halim)</a></li>
 <li><a href="#Design-Model">3.4. Model component</a></li>
 <li><a href="#Design-Storage">3.5. Storage component (BenjaminFheng)</a></li>
@@ -36,11 +36,12 @@
 <li><a href="#setting-budgets-hubert-halim">4.3. Setting budgets (Hubert Halim)</a></li>
 <li><a href="#command-history-navigation-hubert-halim">4.4. Command History navigation (Hubert Halim)</a></li>
 <li><a href="#filtering-transactions">4.5. Filtering Transactions</a></li>
-<li><a href="#chart-analytics">4.6. Chart Analytics</a></li>
-<li><a href="#proposed-data-encryption">4.7. [Proposed] Data Encryption</a></li>
-<li><a href="#proposed-expensela-monthly-statement">4.8. [Proposed] ExpenseLa Monthly Statement</a></li>
-<li><a href="#logging">4.9. Logging</a></li>
-<li><a href="#Implementation-Configuration">4.10. Configuration</a></li>
+<li><a href="#chart-analytics-choi-min-suk">4.6. Chart Analytics (Choi Min Suk)</a></li>
+<li><a href="#export-choi-min-suk">4.7. Export (Choi Min Suk)</a></li>
+<li><a href="#proposed-data-encryption">4.8. [Proposed] Data Encryption</a></li>
+<li><a href="#proposed-expensela-monthly-statement">4.9. [Proposed] ExpenseLa Monthly Statement</a></li>
+<li><a href="#logging">4.10. Logging</a></li>
+<li><a href="#Implementation-Configuration">4.11. Configuration</a></li>
 </ul>
 </li>
 <li><a href="#documentation">5. Documentation</a></li>
@@ -204,7 +205,7 @@ The following class plays an important role at the architecture level:</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="Design-Ui"><a class="link" href="#Design-Ui">3.2. UI component</a></h3>
+<h3 id="Design-Ui"><a class="link" href="#Design-Ui">3.2. UI component (Choi Min Suk)</a></h3>
 <div class="imageblock">
 <div class="content">
 <img src="images/UiClassDiagram.png" alt="UiClassDiagram">
@@ -218,7 +219,7 @@ The following class plays an important role at the architecture level:</p>
 <p>The UI consists of a <code>MainWindow</code> that is made up of parts e.g.<code>CommandBox</code>, <code>ResultDisplay</code>, <code>TransactionListPanel</code>, <code>StatusBarFooter</code> etc. All these, including the <code>MainWindow</code>, inherit from the abstract <code>UiPart</code> class.</p>
 </div>
 <div class="paragraph">
-<p>The <code>UI</code> component uses JavaFx UI framework. The layout of these UI parts are defined in matching <code>.fxml</code> files that are in the <code>src/main/resources/view</code> folder. For example, the layout of the <a href="https://github.com/AY1920S2-CS2103-T09-3/main/tree/master/src/main/java/seedu/address/ui/MainWindow.java"><code>MainWindow</code></a> is specified in <a href="https://github.com/AY1920S2-CS2103-T09-3/main/tree/master/src/main/resources/view/MainWindow.fxml"><code>MainWindow.fxml</code></a></p>
+<p>The <code>UI</code> component uses JavaFx UI framework. The layout of these UI parts are defined in matching <code>.fxml</code> files that are in the <code>src/main/resources/view</code> folder. For example, the layout of the <a href="https://github.com/AY1920S2-CS2103-T09-3/main/tree/master/src/main/java/seedu/expensela/ui/MainWindow.java"><code>MainWindow</code></a> is specified in <a href="https://github.com/AY1920S2-CS2103-T09-3/main/tree/master/src/main/resources/view/MainWindow.fxml"><code>MainWindow.fxml</code></a></p>
 </div>
 <div class="paragraph">
 <p>The <code>UI</code> component does the following actions:</p>
@@ -1094,7 +1095,7 @@ future implementation.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="chart-analytics"><a class="link" href="#chart-analytics">4.6. Chart Analytics</a></h3>
+<h3 id="chart-analytics-choi-min-suk"><a class="link" href="#chart-analytics-choi-min-suk">4.6. Chart Analytics (Choi Min Suk)</a></h3>
 <div class="paragraph">
 <p>The <strong>toggleview</strong> command allows the user to switch between viewing the list of 'Transactions' and viewing an analysis of
 his expenditure.</p>
@@ -1110,9 +1111,10 @@ show expenditure breakdown by category.</p>
 <code>Logic#getToggleView()</code>.</p>
 </div>
 <div class="paragraph">
-<p>Here is a Class Diagram for the implementatino of <code>ToggleView</code>:
-<span class="image"><img src="images/chart-analytics/ToggleViewClassDiagram.png" alt="ToggleViewClassDiagram"></span>
-Figure XX. Implementation of <code>ToggleView</code> class</p>
+<p>Here is a Class Diagram for the implementation of <code>ToggleView</code>:</p>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="images/chart-analytics/ToggleViewClassDiagram.png" alt="ToggleViewClassDiagram"></span></p>
 </div>
 <div class="paragraph">
 <p>The <strong>ToggleView</strong> mechanism utilizes <code>Logic</code> operations with the <code>ToggleViewCommand</code> class in place of <code>Command</code>. The following
@@ -1142,9 +1144,13 @@ current value.</p>
 </ul>
 </div>
 <div class="paragraph">
-<p>The following sequence diagram illustrates <strong>toggleview</strong> command execution:
-<span class="image"><img src="images/chart-analytics/ToggleViewSequenceDiagram.png" alt="ToggleViewSequenceDiagram"></span>
-Figure XX. Sequence diagram for <strong>toggleview</strong> execution</p>
+<p>The following sequence diagram illustrates <strong>toggleview</strong> command execution:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/chart-analytics/ToggleViewSequenceDiagram.png" alt="ToggleViewSequenceDiagram">
+</div>
+<div class="title">Figure 18. Sequence diagram showing execution of <strong>toggleview</strong></div>
 </div>
 <div class="sect4">
 <h5 id="example-of-usage"><a class="link" href="#example-of-usage">Example of usage</a></h5>
@@ -1157,7 +1163,7 @@ depicts the example list used throughout this scenario.</p>
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="images/clone/cloneDG/CloneStep3.png" alt="CloneStep3" width="650">
+<img src="images/chart-analytics/ToggleViewStep1.png" alt="ToggleViewStep1" width="650">
 </div>
 <div class="title">Example list on startup</div>
 </div>
@@ -1166,7 +1172,7 @@ depicts the example list used throughout this scenario.</p>
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="images/update/updateDG/UpdateStep2.png" alt="UpdateStep2" width="650">
+<img src="images/chart-analytics/ToggleViewStep2.png" alt="ToggleViewStep2">
 </div>
 <div class="title">User input for toggle view</div>
 </div>
@@ -1175,21 +1181,17 @@ depicts the example list used throughout this scenario.</p>
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="images/update/updateDG/UpdateStep3.png" alt="UpdateStep3" width="650">
+<img src="images/chart-analytics/ToggleViewStep3.PNG" alt="ToggleViewStep3">
 </div>
 <div class="title"><code>isViewList</code> of <code>ToggleView</code> switched from <code>ToggleViewCommand#execute()</code></div>
 </div>
 <div class="paragraph">
-<p>Step 4. <code>MainWindow#executeCommand()</code> checks the boolean value of isViewList which is false, and displays chart analysis.</p>
+<p>Step 4. <code>MainWindow#executeCommand()</code> checks the boolean value of isViewList in ToggleView, which is false,
+and displays chart analysis.</p>
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="images/update/updateDG/UpdateStep4Part1.png" alt="UpdateStep4Part1" width="650">
-</div>
-</div>
-<div class="imageblock">
-<div class="content">
-<img src="images/update/updateDG/UpdateStep4Part3.png" alt="UpdateStep4Part3" width="650">
+<img src="images/chart-analytics/ToggleViewStep4.png" alt="ToggleViewStep4" width="650">
 </div>
 <div class="title">Switched from showing list of transactions to chart analysis</div>
 </div>
@@ -1198,9 +1200,43 @@ depicts the example list used throughout this scenario.</p>
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="images/update/updateDG/UpdateStep4Part3.png" alt="UpdateStep4Part3" width="650">
+<img src="images/chart-analytics/ToggleViewStep2.png" alt="ToggleViewStep2">
+</div>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/chart-analytics/ToggleViewStep1.PNG" alt="ToggleViewStep1" width="650">
 </div>
 <div class="title">Switched from showing list of transactions to chart analysis</div>
+</div>
+<div class="paragraph">
+<p>Step 6. User can set filter to a certain month to view a different kind of bar chart.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/chart-analytics/ToggleViewStep6.PNG" alt="ToggleViewStep6" width="650">
+</div>
+<div class="title">Example of stacked bar chart of expenditure for a certain month</div>
+</div>
+<div class="paragraph">
+<p>The following code snippet from <code>MainWindow#executeCommand()</code> checking of the boolean value of isViewList in ToggleView,
+and deciding whether to show a list of transactions of chart analysis, and what bar graph to show:</p>
+</div>
+<div class="listingblock">
+<div class="title">MainWindow#executeCommand()</div>
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="java"><span class="comment">// The if else statement checks the value of isViewList from ToggleView</span>
+<span class="keyword">if</span> (logic.getToggleView().getIsViewList()) {
+    <span class="comment">// Creates ui for list of transactions</span>
+    transactionListPanel = <span class="keyword">new</span> TransactionListPanel(logic.getFilteredTransactionList());
+    transactionListAndChartAnalyticsPanelPlaceholder.getChildren().add(transactionListPanel.getRoot());
+} <span class="keyword">else</span> {
+    <span class="comment">// Creates ui for chart analysis</span>
+    <span class="comment">// Calls logic.getIsFilterMonth() to check if the filter is set to a specific month or not, to decide which bar graph to build</span>
+    chartAnalyticsPanel = <span class="keyword">new</span> ChartAnalyticsPanel(logic.getFilteredTransactionList(), logic.getIsFilterMonth());
+    transactionListAndChartAnalyticsPanelPlaceholder.getChildren().add(chartAnalyticsPanel.getRoot());
+}</code></pre>
+</div>
 </div>
 </div>
 <div class="sect4">
@@ -1212,39 +1248,166 @@ depicts the example list used throughout this scenario.</p>
 <div class="content">
 <img src="images/chart-analytics/ToggleViewActivityDiagram.png" alt="ToggleViewActivityDiagram">
 </div>
-<div class="title">Figure 18. Activity diagram for execution of toggleview command</div>
+<div class="title">Figure 19. Activity diagram for execution of toggleview command</div>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="design-considerations-6"><a class="link" href="#design-considerations-6">4.6.2. Design considerations</a></h4>
+<div class="paragraph">
+<p>This section shows some of the design considerations taken when implementing the undo and redo features.</p>
+</div>
+<div class="sect4">
+<h5 id="aspect-design-used-to-implement-toggelview-feature"><a class="link" href="#aspect-design-used-to-implement-toggelview-feature">Aspect: Design used to implement toggelview feature</a></h5>
+<div class="ulist">
+<ul>
+<li>
+<p>Alternative 1 (current choice): Create a ToggleView Class to keep a boolean value of isViewList to keep track of
+showing list of transactions or chart analysis.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Pros: Easily extendable next time to accommodate more different kind of views by changing boolean to possibly enum.</p>
+</li>
+<li>
+<p>Pros: Easy to implement functions to change values in <code>ToggleView</code> object, which allows easy extendability next time also.</p>
+</li>
+<li>
+<p>Cons: Needs to implement many functions through <code>Logic</code> and <code>Model</code>.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Alternative 2: Create a boolean value in <code>Model</code> to track whether to show list of transactions or chart analysis.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Pros: Easy implementation and checking of boolean value by <code>MainWindow</code> to check which view to show.</p>
+</li>
+<li>
+<p>Cons: Not extendable next time when trying to accommodate different kind of views.</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Alternative 1 was chosen because it is easily extendable, in case we want to improve or develop on the feature in the
+future. It also follows better OOP principles, making the code much neater and understandable.</p>
 </div>
 </div>
 </div>
 </div>
 <div class="sect2">
-<h3 id="proposed-data-encryption"><a class="link" href="#proposed-data-encryption">4.7. [Proposed] Data Encryption</a></h3>
+<h3 id="export-choi-min-suk"><a class="link" href="#export-choi-min-suk">4.7. Export (Choi Min Suk)</a></h3>
+<div class="paragraph">
+<p>The <strong>export</strong> command allows user to export currently filtered transactions to a csv file, in case he would like to use
+the data for his own analysis.</p>
+</div>
+<div class="sect3">
+<h4 id="implementation-8"><a class="link" href="#implementation-8">4.7.1. Implementation</a></h4>
+<div class="paragraph">
+<p><code>ExportCommand</code> is instantiated by <code>ExpenseLaParser#parseCommand(String userInput)</code>, which attempts to split the userInput
+into the command word and its parameters. Since <code>ExportCommand</code> does not require any arguments, it is instantiated directly.</p>
+</div>
+<div class="paragraph">
+<p><code>ExportCommand</code> obtains the filtered list of transaction to export using <code>Model#getFilteredTransactionList()</code>, which then
+attempts to create a csv file in the current directory using the attributes of each transaction.</p>
+</div>
+<div class="paragraph">
+<p>The sequence diagram below shows how the execution of <strong>export</strong> is like:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/export/ExportSequenceDiagram.png" alt="ExportSequenceDiagram">
+</div>
+<div class="title">Figure 20. Sequence diagram of how <strong>export</strong> command is applied at the back-end.</div>
+</div>
+<div class="paragraph">
+<p>The following conditions will cause a <code><strong>CommandException</strong></code> to be thrown by the command:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Empty filtered transaction list</p>
+</li>
+<li>
+<p>Failure in creating the file</p>
+</li>
+<li>
+<p>Failure in writing to the file (Possibly due to the directory changing while the command is being executed)</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>The image below shows how the csv file looks when user executes <strong>export</strong> command successfully:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/export/ExportCsv.PNG" alt="ExportCsv" width="650">
+</div>
+<div class="title">Figure 21. List of transactions in a csv file opened in Microsoft Excel</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="proposed-extension-2"><a class="link" href="#proposed-extension-2">4.7.2. Proposed extension</a></h4>
+<div class="paragraph">
+<p>In the near future, we plan to enhance the export feature. We want to improve the export command to take in view as a
+possible argument, thus allowing the user to choose between exporting list of transactions or the chart analysis. The
+user can use the chart analysis generated for visual presentations, especially if the expense tracker is for a business.</p>
+</div>
+<div class="paragraph">
+<p>The image below shows how a possible future implementation of this feature could look like:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/export/ExportChartCommand.PNG" alt="ExportChartCommand">
+</div>
+<div class="title">Figure 22. Expected command to export chart analytics</div>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/export/ExportBarGraph.PNG" alt="ExportBarGraph" width="550">
+</div>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/export/ExportPieChart.PNG" alt="ExportPieChart" width="550">
+</div>
+<div class="title">Figure 23. Expected images to be exported when <strong>export chartanalysis</strong></div>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="proposed-data-encryption"><a class="link" href="#proposed-data-encryption">4.8. [Proposed] Data Encryption</a></h3>
 <div class="paragraph">
 <p>Given the sensitive nature of the information provided by users, we would like to safeguard the information provided by
 our users through encryption. Naturally, the information would be encrypted and decrypted in the back-end without the user
 requiring to do any of the encryption, decryption, or even any knowledge of how it works.</p>
 </div>
 <div class="sect3">
-<h4 id="proposed-implementation"><a class="link" href="#proposed-implementation">4.7.1. Proposed Implementation</a></h4>
+<h4 id="proposed-implementation"><a class="link" href="#proposed-implementation">4.8.1. Proposed Implementation</a></h4>
 
 </div>
 </div>
 <div class="sect2">
-<h3 id="proposed-expensela-monthly-statement"><a class="link" href="#proposed-expensela-monthly-statement">4.8. [Proposed] ExpenseLa Monthly Statement</a></h3>
+<h3 id="proposed-expensela-monthly-statement"><a class="link" href="#proposed-expensela-monthly-statement">4.9. [Proposed] ExpenseLa Monthly Statement</a></h3>
 <div class="paragraph">
 <p>Just as how banks issue a monthly statement of account, we believe that it would be helpful to provide
 our users with an overview of their expenses in the past month</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="logging"><a class="link" href="#logging">4.9. Logging</a></h3>
+<h3 id="logging"><a class="link" href="#logging">4.10. Logging</a></h3>
 <div class="paragraph">
 <p>We are using <code>java.util.logging</code> package for logging. The <code>LogsCenter</code> class is used to manage the logging levels and logging destinations.</p>
 </div>
 <div class="ulist">
 <ul>
 <li>
-<p>The logging level can be controlled using the <code>logLevel</code> setting in the configuration file (See <a href="#Implementation-Configuration">Section 4.10, &#8220;Configuration&#8221;</a>)</p>
+<p>The logging level can be controlled using the <code>logLevel</code> setting in the configuration file (See <a href="#Implementation-Configuration">Section 4.11, &#8220;Configuration&#8221;</a>)</p>
 </li>
 <li>
 <p>The <code>Logger</code> for a class can be obtained using <code>LogsCenter.getLogger(Class)</code> which will log messages according to the specified logging level</p>
@@ -1275,7 +1438,7 @@ our users with an overview of their expenses in the past month</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="Implementation-Configuration"><a class="link" href="#Implementation-Configuration">4.10. Configuration</a></h3>
+<h3 id="Implementation-Configuration"><a class="link" href="#Implementation-Configuration">4.11. Configuration</a></h3>
 <div class="paragraph">
 <p>Certain properties of the application can be controlled (e.g user prefs file location, logging level) through the configuration file (default: <code>config.json</code>).</p>
 </div>
@@ -1366,111 +1529,186 @@ our users with an overview of their expenses in the past month</p>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>* * *</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">user</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">general user</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">add a new expense entry</p></td>
-<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">keep track of my expenses</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>* * *</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">user</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">someone who earns income</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">add a new income entry</p></td>
-<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">keep track of my income</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>* * *</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">user</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">high-income user</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">keep track of all the money I earn</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">make decisions on where my most lucrative source of income is</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>* * *</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">low-income user</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">set budget for current month</p></td>
-<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">limit my expenditure for the month</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>* * *</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">user</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">low-income user</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">be notified by the application if i am spending too much money</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">be wary of overshooting my budget</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>* * *</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">consistent thrifty user</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">set budget for every month(recurrent budget) once</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">budget for subsequent months are automatically set</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">have no need to constant;y set my unchanging budget</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>* * *</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">user</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">be visually alerted when i spend a certain proportion of my budget</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">user with varying income</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">be flexible with my budgets</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">spend more or less on certain months depending on my financial situation</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>* * *</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">visual user</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">be visually alerted when I spend a certain proportion of my budget</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">adjust my spending habit for the rest of the month</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>* * *</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">user</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">careless user</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">delete an expense or income entry</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">remove entries that I added in by mistake</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>* * *</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">user</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">forgetful user</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">find an entry by keyword</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">locate details of my expense or income</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">check if I spent money on a particular thing</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>* * *</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">user</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">spendthrift user</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">filter expense based on category</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">see how much money i spend on that particular category</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">know if I generally spend a lot of money or only on certain months</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>* * *</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">user</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">forward-looking user</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">look at my spending trend by week or month</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">keep track of my income</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>* * *</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">user trying to save money</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">filter expense based on date or time period</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">see how much money i spend in that time period</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">see how much money I have spent in that time period and make better decisions</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>* * *</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">user</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">user trying to save money</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">view amount of budget left to spend</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">adjust spending habit for the rest of the month</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>* * *</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">user</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">view total money i have</p></td>
-<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">general user</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">view total money I have</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">be able to tell how much I can spend</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>* * *</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">user</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">user trying to save money</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">view total expense for a particular month</p></td>
-<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">decide on my future expenditures</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>* * *</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">user</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">visually analytical user</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">view pie chart of money spent based on category</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">see where i spend the most money on</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">see where I spend the most money on</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>* * *</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">user</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">visually analytical user</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">view bar chart of money spent based on time period</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">see when i spend the most money</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">see when I spend the most money</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>* * *</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">organized user</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">organize my expenditure into different categories</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">better able to track where I am spending my money</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>* * *</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">not one-off user</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">all my expenditures and income to be saved</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">continue on from previous whenever I exit and launch back the application</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>* *</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">user</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">smart analytical user</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">export my expenditure and income</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">use the data to make my own analysis</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>* *</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">secretive user</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">set a password to login tp the application</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">prevent unwanted users from viewing my expenses</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>* *</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">businessman</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">have multiple accounts</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">manage my expenses not only for myself but my business</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>* *</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">parent</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">have multiple accounts</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">help manage my children’s expenses</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>* *</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">user with many friends</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">add friends in the application</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>* *</code></p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">user</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">help each other in their savings</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>* *</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">concerned friend</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">look at my friend&#8217;s spending habit</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">keep a lookout for their expenditure</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>*</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">user who owes people money</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">view the people who I owe money to</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">view the people who i owe money to</p></td>
-<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">keep track of who I owe</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>*</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">user who lends people money</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">request payment from people who owe me money</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">keep track of my loans</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>*</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">sociable user</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">indicate when my expenditure is within the budget</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">share the achievement with my friends</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>*</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">lazy user</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">have the application make recommendations on my spending habits</p></td>
 </tr>
 </tbody>
 </table>
-<div class="paragraph">
-<p><em>{More to be added}</em></p>
-</div>
 </div>
 </div>
 <div class="sect1">
@@ -1764,4 +2002,4 @@ Expected: Similar to previous.</p>
 </div>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2020-04-12 15:11:04 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2020-04-12 15:39:34 UTC</div></div></div></body></html>
