@@ -23,23 +23,24 @@
 <ul class="sectlevel2">
 <li><a href="#Design-Architecture">3.1. Architecture</a></li>
 <li><a href="#Design-Ui">3.2. UI component</a></li>
-<li><a href="#Design-Logic">3.3. Logic component</a></li>
+<li><a href="#Design-Logic">3.3. Logic component (Hubert Halim)</a></li>
 <li><a href="#Design-Model">3.4. Model component</a></li>
-<li><a href="#Design-Storage">3.5. Storage component</a></li>
+<li><a href="#Design-Storage">3.5. Storage component (BenjaminFheng)</a></li>
 <li><a href="#Design-Commons">3.6. Common classes</a></li>
 </ul>
 </li>
 <li><a href="#implementation">4. Implementation</a>
 <ul class="sectlevel2">
-<li><a href="#adding-transactions">4.1. Adding transactions</a></li>
-<li><a href="#setting-budgets">4.2. Setting budgets</a></li>
-<li><a href="#command-history-navigation">4.3. Command History navigation</a></li>
-<li><a href="#filtering-transactions">4.4. Filtering Transactions</a></li>
-<li><a href="#chart-analytics">4.5. Chart Analytics</a></li>
-<li><a href="#proposed-data-encryption">4.6. [Proposed] Data Encryption</a></li>
-<li><a href="#proposed-expensela-monthly-statement">4.7. [Proposed] ExpenseLa Monthly Statement</a></li>
-<li><a href="#logging">4.8. Logging</a></li>
-<li><a href="#Implementation-Configuration">4.9. Configuration</a></li>
+<li><a href="#adding-transactions-benjaminfheng">4.1. Adding transactions (BenjaminFheng)</a></li>
+<li><a href="#editing-transactions-benjaminfheng">4.2. Editing transactions (BenjaminFheng)</a></li>
+<li><a href="#setting-budgets-hubert-halim">4.3. Setting budgets (Hubert Halim)</a></li>
+<li><a href="#command-history-navigation-hubert-halim">4.4. Command History navigation (Hubert Halim)</a></li>
+<li><a href="#filtering-transactions">4.5. Filtering Transactions</a></li>
+<li><a href="#chart-analytics">4.6. Chart Analytics</a></li>
+<li><a href="#proposed-data-encryption">4.7. [Proposed] Data Encryption</a></li>
+<li><a href="#proposed-expensela-monthly-statement">4.8. [Proposed] ExpenseLa Monthly Statement</a></li>
+<li><a href="#logging">4.9. Logging</a></li>
+<li><a href="#Implementation-Configuration">4.10. Configuration</a></li>
 </ul>
 </li>
 <li><a href="#documentation">5. Documentation</a></li>
@@ -232,12 +233,9 @@ The following class plays an important role at the architecture level:</p>
 </li>
 </ul>
 </div>
-<div class="paragraph">
-<p>Hubert Halim</p>
-</div>
 </div>
 <div class="sect2">
-<h3 id="Design-Logic"><a class="link" href="#Design-Logic">3.3. Logic component</a></h3>
+<h3 id="Design-Logic"><a class="link" href="#Design-Logic">3.3. Logic component (Hubert Halim)</a></h3>
 <div id="fig-LogicClassDiagram" class="imageblock">
 <div class="content">
 <img src="images/LogicClassDiagram.png" alt="LogicClassDiagram">
@@ -343,7 +341,7 @@ so that the UI automatically updates when the data in the list change.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="Design-Storage"><a class="link" href="#Design-Storage">3.5. Storage component</a></h3>
+<h3 id="Design-Storage"><a class="link" href="#Design-Storage">3.5. Storage component (BenjaminFheng)</a></h3>
 <div class="imageblock">
 <div class="content">
 <img src="images/StorageClassDiagram.png" alt="StorageClassDiagram">
@@ -364,6 +362,9 @@ so that the UI automatically updates when the data in the list change.</p>
 <li>
 <p>can save the ExpenseLa data in json format and read it back.</p>
 </li>
+<li>
+<p>can save GlobalData data in json format and read it back.</p>
+</li>
 </ul>
 </div>
 </div>
@@ -382,7 +383,7 @@ so that the UI automatically updates when the data in the list change.</p>
 <p>This section describes some noteworthy details on how certain features are implemented.</p>
 </div>
 <div class="sect2">
-<h3 id="adding-transactions"><a class="link" href="#adding-transactions">4.1. Adding transactions</a></h3>
+<h3 id="adding-transactions-benjaminfheng"><a class="link" href="#adding-transactions-benjaminfheng">4.1. Adding transactions (BenjaminFheng)</a></h3>
 <div class="paragraph">
 <p>We allow users to add Expense/Income transactions into ExpenseLa which denotes a positive or negative inflow of money. This section shows how we handle these requests from the user.</p>
 </div>
@@ -392,20 +393,57 @@ so that the UI automatically updates when the data in the list change.</p>
 <p>We store every single <code>Transaction</code> added by the user into an <code>ObservableList&lt;Transaction&gt;</code>, which is a list object in <code>TransactionList</code>. We used an <code>ObservableList</code> to easily reflect changes to the list by any other component of ExpenseLa using the list.</p>
 </div>
 <div class="paragraph">
-<p>There are two ways of implementing a Transaction:
+<p>These are the ways of implementing either a positive or negative Transaction:
 * Adding an expense (negative transaction): add
 * Adding an income (positive transaction): add i/
 These two commands will indicate whether the transaction is positive or negative.</p>
 </div>
 <div class="paragraph">
-<p>When inserting a new Expense/Income, the <code>AddTransactionCommandParser</code> will detemine which object to initialise depending on whether the i/ syntax is present.</p>
+<p>Indicating whether it is a recurring transaction or not will depend if rc/ is present in the input</p>
+</div>
+<div class="paragraph">
+<p>When inserting a new Expense/Income, the <code>AddCommandParser</code> will determine which object to initialise depending on whether the "i/" CLI syntax is present. Afterwhich, the AddCommandParser will parse the values of the transaction depending on whether the respective CLI Syntaxes are present.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code><strong>Name</strong></code> is parsed by <code>AddCommandParser#parseName(ArgumentMultimap)</code>, CLI Syntax is n/.</p>
+</li>
+<li>
+<p><code><strong>Amount</strong></code> is parsed by <code>AddCommandParser#parseAmount(ArgumentMultimap)</code>, CLI Syntax is a/.</p>
+</li>
+<li>
+<p><code><strong>Date</strong></code> is parsed by <code>AddCommandParser#parseDate(ArgumentMultimap)</code>, CLI Syntax is d/.</p>
+</li>
+<li>
+<p><code><strong>Category</strong></code> is parsed by <code>AddCommandParser#parseCategory(ArgumentMultimap)</code>, CLI Syntax is c/.</p>
+</li>
+<li>
+<p><code><strong>Remark</strong></code> is parsed by <code>AddCommandParser#parseRemark(ArgumentMultimap)</code>, CLI Syntax is r/.</p>
+</li>
+<li>
+<p>CLI Syntax "rc/" will set the transaction to be a monthly recurring transaction.</p>
+</li>
+</ul>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<code><strong>ArgumentMultimap</strong></code> is a class that stores all the parsed parameters taken from the user input.
+</td>
+</tr>
+</table>
 </div>
 <div class="paragraph">
 <p>The following sequence diagram shows how the add transaction operation works:</p>
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="images/UndoSequenceDiagram.png" alt="UndoSequenceDiagram">
+<img src="images/add-command/AddCommandSequenceDiagram.png" alt="AddCommandSequenceDiagram">
 </div>
 </div>
 <div class="paragraph">
@@ -426,7 +464,7 @@ These two commands will indicate whether the transaction is positive or negative
 <p>Illegal values in parameters (i.e. special character and symbols entered for an integer only field)</p>
 </li>
 <li>
-<p>Multiple occurences of parameters which only expects single entry</p>
+<p>Multiple occurence of parameters which only expects single entry</p>
 </li>
 </ul>
 </div>
@@ -437,7 +475,7 @@ These two commands will indicate whether the transaction is positive or negative
 <i class="fa icon-note" title="Note"></i>
 </td>
 <td class="content">
-Incorrect user input will display error message
+Incorrect user input will display ParseError message.
 </td>
 </tr>
 </table>
@@ -446,20 +484,7 @@ Incorrect user input will display error message
 <p>We will demonstrate how a <code>Transaction</code> is added into <code>ExpenseLa</code>:</p>
 </div>
 <div class="paragraph">
-<p>Step 1. The user executres the command add <strong>n/Pizza a/20.5 d/2020-02-02</strong> to insert a negative transaction with its <code>Name</code> set to "Pizza", its <code>Amount</code> set to "20.50" and the <code>Date</code> set to 02 Feb 2020. The input is now checked and an attempt to parse each parameter occurs:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p><code><strong>Name</strong></code> is parsed by <code>AddCommandParser#parseName(ArgumentMultimap)</code></p>
-</li>
-<li>
-<p><code><strong>Value</strong></code> is parsed by <code>AddCommandParser#parseAmount(ArgumentMultimap)</code></p>
-</li>
-<li>
-<p><code><strong>Date</strong></code> is parse by <code>AddCommandParser#parseDate(ArgumentMultimap)</code></p>
-</li>
-</ul>
+<p>Step 1. The user executes the command <strong>add n/Pizza a/20.5 d/2020-02-02</strong> to insert a negative transaction with its <code>Name</code> set to "Pizza", its <code>Amount</code> set to "20.50" and the <code>Date</code> set to 02 Feb 2020. The input is now checked and an attempt to parse each parameter occurs:</p>
 </div>
 <div class="admonitionblock note">
 <table>
@@ -468,7 +493,7 @@ Incorrect user input will display error message
 <i class="fa icon-note" title="Note"></i>
 </td>
 <td class="content">
-<code><strong>ArgumentMultimap</strong></code> is a class that stores all the parsed parameters taken from the user input.
+<code><strong>Category</strong></code> is set to default category <code>MISC</code>
 </td>
 </tr>
 </table>
@@ -478,75 +503,88 @@ Incorrect user input will display error message
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="images/UndoRedoState4.png" alt="UndoRedoState4">
+<img src="images/add-command/AddTransactionToList1.png" alt="AddTransactionToList1">
 </div>
 </div>
 <div class="paragraph">
-<p>Step 2. The user executes <strong>add i/ n/Salary a/3000 r/Monthly Salary to indicate his monthly pay</strong> to insert a positive <code><strong>Transaction</strong></code>.
-The input is now checked in a similar fashion as in Step 1 except that:</p>
+<p>Step 2. The user executes <strong>add i/ n/Salary a/3000 d/2020-02-03 r/Monthly Salary c/income rc/ </strong> to indicate his monthly pay, to insert a positive <code><strong>Transaction</strong></code>.</p>
 </div>
-<div class="ulist">
-<ul>
-<li>
-<p><code><strong>Remark</strong></code> is parsed by <code>AddCommandParser#parseRemark(ArgumentMultimap)</code></p>
-</li>
-</ul>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<code><strong>Category</strong></code> has a set enum list of values FOOD, SHOPPING, TRANSPORT, GROCERIES, HEALTH, RECREATION, MISC, UTILITIES, INCOME.
+</td>
+</tr>
+</table>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+"rc/" CLI Syntax will set the transaction to be a recurring transaction.
+</td>
+</tr>
+</table>
 </div>
 <div class="paragraph">
 <p>Again, since the input is valid, the positive <code>Transaction</code> is successfully added into the transaction list. The transaction list
 now contains 2 <code><strong>Transaction</strong></code> objects.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/add-command/AddTransactionToList2.png" alt="AddTransactionToList2">
+</div>
 </div>
 <div class="paragraph">
 <p>The following activity diagram summarizes what happens when the user executes a command to add a new <code>Transaction</code>:</p>
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="images/UndoRedoState5.png" alt="UndoRedoState5">
+<img src="images/add-command/AddTransactionActivityDiagram.png" alt="AddTransactionActivityDiagram" width="650">
 </div>
-</div>
-<div class="paragraph">
-<p>The following activity diagram summarizes what happens when a user executes a new command:</p>
-</div>
-<div class="imageblock">
-<div class="content">
-<img src="images/CommitActivityDiagram.png" alt="CommitActivityDiagram">
-</div>
-</div>
-<div class="paragraph">
-<p>Figure 10. Activity diagram of adding a <code>Transaction</code> into the transaction list.</p>
+<div class="title">Figure 10 10. Activity diagram of adding a <code>Transaction</code> into the transaction list.</div>
 </div>
 </div>
 <div class="sect3">
-<h4 id="design-considerations"><a class="link" href="#design-considerations">4.1.2. Design Considerations</a></h4>
+<h4 id="design-considerations"><a class="link" href="#design-considerations">4.1.2. Design considerations</a></h4>
 <div class="paragraph">
-<p>There are many different ways to implement how a transaction is added into <code>ExpenseLa</code>. In this section, we will be justifying why we chose to implement it the way we did.</p>
+<p>There are many different ways to implement how a transaction is added into <code><strong>Expensela</strong></code>. In this section, we will justify why we chose to implement it the way we did.</p>
 </div>
 <div class="sect4">
-<h5 id="aspect-differentiating-between-positive-and-negative-code-transactions-code"><a class="link" href="#aspect-differentiating-between-positive-and-negative-code-transactions-code">Aspect: Differentiating between positive and negative <code>Transactions</code></a></h5>
+<h5 id="aspect-differentiating-between-strong-positive-strong-and-strong-negative-strong-transactions"><a class="link" href="#aspect-differentiating-between-strong-positive-strong-and-strong-negative-strong-transactions">Aspect: Differentiating between <strong>positive</strong> and <strong>negative</strong> transactions.</a></h5>
 <div class="ulist">
 <ul>
 <li>
-<p><strong>Alternative 1: (current choice):</strong> Introduce a CliSyntax to differentiate between positive and negative <code>Transaction</code></p>
+<p><strong>Alternative 1: (current choice):</strong> Adding a simple "i/" syntax in the input to differentiate between positive and negative transactions</p>
 <div class="ulist">
 <ul>
 <li>
-<p>Pros: All transactions are differentiated easily with the positive or negative sign.</p>
+<p>Pros: Increases the speed and simplicity of adding a positive or negative transaction. Updating balance in MonthlyData information only requires an iteration through
+all the transaction amounts in transaction list for calculation.</p>
 </li>
 <li>
-<p>Cons: Reduces the readability of the program as polymorphism can be confusing.</p>
+<p>Cons: Transactions may not be easily distinguishable as positive or negative transactions on first sight, and may only be distinguished when the transaction amount is inspected.
+This may cause slower processing times when extracting all only positive or only negative transactions.</p>
 </li>
 </ul>
 </div>
 </li>
 <li>
-<p><strong>Alternative 2:</strong> Keep <code><strong>Expense</strong></code> and <code><strong>Income</strong></code> classes separate, with each having their own specialized methods.</p>
+<p><strong>Alternative 2: Having separate classes for </strong>positive<strong> and </strong>negative** transactions.</p>
 <div class="ulist">
 <ul>
 <li>
-<p>Pros: Maintains an intuitive design: <code><strong>Expense</strong></code> deducts money and <code><strong>Income</strong></code> increases money.</p>
+<p>Pros: Maintains an intuitive design: <code><strong>NegativeTransaction</strong></code> deducts money and <code><strong>PositiveTransaction</strong></code> increases money.</p>
 </li>
 <li>
-<p>Cons: Incurs significant overhead and duplicated codes since it is likely that both <code><strong>Expense</strong></code> and <code><strong>Income</strong></code> will
+<p>Cons: May incur significant overhead since it is likely that both <code><strong>NegativeTransaction</strong></code> and <code><strong>PositiveTransaction</strong></code> will
 have very similar methods.</p>
 </li>
 </ul>
@@ -555,13 +593,202 @@ have very similar methods.</p>
 </ul>
 </div>
 <div class="paragraph">
-<p>Hubert Halim</p>
+<p>Alternative 1 was chosen because we want the application to be as simple and quick as possible to indicate positive and negative transactions. We focused on separating
+the data between months so that the analytics function could calculate data faster.</p>
+</div>
+</div>
+<div class="sect4">
+<h5 id="aspect-managing-how-code-strong-recurringtransactions-strong-code-are-handled"><a class="link" href="#aspect-managing-how-code-strong-recurringtransactions-strong-code-are-handled">Aspect: Managing how <code><strong>RecurringTransactions</strong></code> are handled.</a></h5>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Alternative 1: (current choice):</strong> Adding a simple "rc/" syntax in the input to differentiate between recurring and non-recurring transactions. "rc/" is quickly parsed by the
+AddCommandParser and the transaction is labelled as recurring, which is added to RecurringTransactionsList before the command is added to the TransactionsList in Model.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Pros: "rc/" is quick and intuitive to indicate during input. Almost no hassle to add the information to RecurringTransactionsList.</p>
+</li>
+<li>
+<p>Cons: Inability for existing transactions to set as recurring transactions.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><strong>Alternative 2:</strong> Create a separate command to indicate which transactions are recurring and the range of when it recurs.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Pros: Transactions are more customizable for users. Users are able to set recurring transactions to repeat over required months.</p>
+</li>
+<li>
+<p>Cons: Users may easily lose track of the transactions that are recurring which will affect their monthly budgeting.</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Alternative 1 was chosen because we want to again keep the recurring transactions intuitive and simple. Users can clear their recurring transaction lists whenever
+they become invalid, and input the new recurring transactions whenever there are changes</p>
 </div>
 </div>
 </div>
 </div>
 <div class="sect2">
-<h3 id="setting-budgets"><a class="link" href="#setting-budgets">4.2. Setting budgets</a></h3>
+<h3 id="editing-transactions-benjaminfheng"><a class="link" href="#editing-transactions-benjaminfheng">4.2. Editing transactions (BenjaminFheng)</a></h3>
+<div class="paragraph">
+<p>The <strong>edit </strong>functionality modifies details of a specified <code><strong>Transaction</strong></code> in the existing list and saves
+modifications to the external storage file.</p>
+</div>
+<div class="sect3">
+<h4 id="implementation-3"><a class="link" href="#implementation-3">4.2.1. Implementation</a></h4>
+<div class="paragraph">
+<p><strong>Edit</strong> mechanism utilizes <code><strong>Logic</strong></code> operations with the <code><strong>EditCommand</strong></code> class in place of
+<code><strong>Command</strong></code>, and a unique <code><strong>EditCommandParser</strong></code> class. The following methods are the implementation for
+<strong>edit</strong> operations:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>EditCommandParser#parse()</code> - Parses the user&#8217;s input via the index of the transaction and creates an <code><strong>EditCommand</strong></code> to execute the command.</p>
+</li>
+<li>
+<p><code>EditCommand#execute()</code> - Modifies the <code><strong>Transaction</strong></code> in <code><strong>Model</strong></code> with new details and returns a
+<code><strong>CommandResult</strong></code>.</p>
+</li>
+<li>
+<p><code>TransactionList#setTransaction(Transaction target, Transaction editedTransaction)</code> - Sets the modified <code><strong>Transaction</strong></code> to its correct position in the
+existing <code><strong>TransactionList</strong></code>.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Command example: <strong>edit 1 n/[NAME] a/[AMOUNT] r/[REMARK]</strong> will edit the name, amount and remark of transaction of index 1 with
+the respective inputs.</p>
+</div>
+<div class="paragraph">
+<p>Below is an example usage scenario for editing a transaction and explanation of how the <strong>edit</strong> mechanism
+behaves at each step:</p>
+</div>
+<div class="paragraph">
+<p>Step 1. The user starts up the application with an initial list loaded from a sample transaction list.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/edit-command/editCommand1.png" alt="editCommand1" width="650">
+</div>
+<div class="title">Initial transaction list</div>
+</div>
+<div class="paragraph">
+<p>Step 2. The user inputs <strong>edit 1 n/Laksa Noodle a/6.00</strong> to update the transaction (with index 1) name to "Laksa Noodle" and value
+to "6". Input is parsed by <code>EditCommandParser#parse()</code> which creates an <code><strong>EditCommand</strong></code>.</p>
+</div>
+<div class="paragraph">
+<p>Step 3. <code>EditCommand#execute()</code> creates a new transaction that reflects the changes and gets the index of current
+transaction to be updated.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/edit-command/editCommand2.png" alt="editCommand2" width="650">
+</div>
+<div class="title">New edited transaction in transaction list</div>
+</div>
+<div class="paragraph">
+<p>Step 4. <code>UpdateCommand#execute()</code> replaces original transaction in the list with the updated transaction.</p>
+</div>
+<div class="paragraph">
+<p>The following activity diagram gives an overview of what ExpenseLa shows the user when executing <strong>edit</strong> command:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/edit-command/EditActivityDiagram.png" alt="EditActivityDiagram" width="650">
+</div>
+<div class="title">Figure 11. Activity diagram for execution of update command</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="design-considerations-2"><a class="link" href="#design-considerations-2">4.2.2. Design considerations</a></h4>
+<div class="paragraph">
+<p>This subsection explores some alternative designs considered for certain aspects of the feature&#8217;s implementation.</p>
+</div>
+<div class="sect4">
+<h5 id="aspect-modifying-details-of-a-transaction"><a class="link" href="#aspect-modifying-details-of-a-transaction">Aspect: Modifying details of a transaction</a></h5>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Alternative 1 (current choice)</strong>: Replace the values of the original transaction with new updated values.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Pros: Can easily check for inputs that result in no changes.</p>
+</li>
+<li>
+<p>Cons: May incur overhead when creating new instance of <code><strong>Transaction</strong></code>.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><strong>Alternative 2</strong>: Modify the transaction directly using setter methods.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Pros: Easy to implement and efficient.</p>
+</li>
+<li>
+<p>Cons: Modifying transactions violates the immutability principle, possibly resulting in bugs for UI or
+accessing modified transaction fields.</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p><strong>Alternative 1 chosen</strong> to maintain better coding practices and maintain immutability of transactions for the entire project.
+Overhead of creating new <code><strong>Transaction</strong></code> is insignificant due to relatively small object size.</p>
+</div>
+</div>
+<div class="sect4">
+<h5 id="aspect-edit-transaction-by-getting-it-s-index-or-by-unique-transaction-id"><a class="link" href="#aspect-edit-transaction-by-getting-it-s-index-or-by-unique-transaction-id">Aspect: Edit transaction by getting it&#8217;s index or by unique transaction ID</a></h5>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Alternative 1 (current choice)</strong>: Get the index of original transaction in the transactions list and update its values in the list.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Pros: High certainty of obtaining the correct transaction, editing its values and replacing the same index in the transaction list.</p>
+</li>
+<li>
+<p>Cons: If there are too many transactions in the list, it might be tedious to obtain the transaction index by scrolling.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><strong>Alternative 2</strong>: Iterate through the transactions list and update the transaction with the correct transaction ID.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Pros: Virtually impossible to not be able to distinguish between similar transactions of different IDs.</p>
+</li>
+<li>
+<p>Cons: Transactions ID would cause significant overhead when looking into each transaction for it&#8217;s ID.</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="setting-budgets-hubert-halim"><a class="link" href="#setting-budgets-hubert-halim">4.3. Setting budgets (Hubert Halim)</a></h3>
 <div class="paragraph">
 <p>We allow the user to maintain a <code><strong>Budget</strong></code> for the current month and subsequent months. This section details how <code><strong>ExpenseLa</strong></code> handles
 requests made by the user who is trying to set a budget both for a one time and recurring budget. <code><strong>Budget</strong></code> is contained inside
@@ -584,7 +811,7 @@ in <code><strong>GlobalData</strong></code>.</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="implementation-3"><a class="link" href="#implementation-3">4.2.1. Implementation</a></h4>
+<h4 id="implementation-4"><a class="link" href="#implementation-4">4.3.1. Implementation</a></h4>
 <div class="paragraph">
 <p>Whenever the user attempts to set a new <code><strong>Budget</strong></code>, <code><strong>ExpenseLa</strong></code> will create a new MonthlyData object with the given amount.
 The application will then call <code>ModelManager#setMonthlyData(MonthlyData toSet)</code>. During the creation of the new MonthlyData, the
@@ -663,17 +890,17 @@ value in <code><strong>GlobalData</strong></code> is now set to the new <code><s
 <div class="content">
 <img src="images/set-budget/SetBudgetSequenceDiagram.png" alt="SetBudgetSequenceDiagram">
 </div>
-<div class="title">Figure 10. Sequence diagram showing how a <code><strong>Budget</strong></code> is set</div>
+<div class="title">Figure 12. Sequence diagram showing how a <code><strong>Budget</strong></code> is set</div>
 </div>
 <div class="imageblock">
 <div class="content">
 <img src="images/set-budget/SetBudgetActivityDiagram.png" alt="SetBudgetActivityDiagram">
 </div>
-<div class="title">Figure 11. Activity diagram showing how a <code><strong>Budget</strong></code> is set</div>
+<div class="title">Figure 13. Activity diagram showing how a <code><strong>Budget</strong></code> is set</div>
 </div>
 </div>
 <div class="sect3">
-<h4 id="design-considerations-2"><a class="link" href="#design-considerations-2">4.2.2. Design considerations</a></h4>
+<h4 id="design-considerations-3"><a class="link" href="#design-considerations-3">4.3.2. Design considerations</a></h4>
 <div class="paragraph">
 <p>We have considered various ways as to how <code><strong>Budget</strong></code> should be stored in <code><strong>ExpenseLa</strong></code>. In this section, we will explain the
 rationale on our course of actions.</p>
@@ -719,14 +946,14 @@ as a collective. And easier to just handle 1 reference in ExpenseLa.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="command-history-navigation"><a class="link" href="#command-history-navigation">4.3. Command History navigation</a></h3>
+<h3 id="command-history-navigation-hubert-halim"><a class="link" href="#command-history-navigation-hubert-halim">4.4. Command History navigation (Hubert Halim)</a></h3>
 <div class="paragraph">
 <p>Users can navigate to previous commands by pressing the up or down button on the keyboard.
 Only successful commands are stored in the CommandHistory list and only a maximum of 50 commands can
 be stored at a time.</p>
 </div>
 <div class="sect3">
-<h4 id="implementation-4"><a class="link" href="#implementation-4">4.3.1. Implementation</a></h4>
+<h4 id="implementation-5"><a class="link" href="#implementation-5">4.4.1. Implementation</a></h4>
 <div class="paragraph">
 <p>Every time the user key in a command and press <kbd>Enter</kbd>, <code>CommandBox#handleCommandEntered</code> method will be called.
 The method will attempt to execute the command by calling <code>CommandExecutor#execute</code> method. That method throws an error
@@ -747,29 +974,29 @@ Offset starts from -1 indicating <code>CommandBox</code> is empty and resets to 
 <div class="content">
 <img src="images/command-history/CommandHistorySequenceDiagram.png" alt="CommandHistorySequenceDiagram">
 </div>
-<div class="title">Figure 12. Sequence diagram showing what happens when user enters a Command</div>
+<div class="title">Figure 14. Sequence diagram showing what happens when user enters a Command</div>
 </div>
 <div class="imageblock">
 <div class="content">
 <img src="images/command-history/CommandHistoryActivityDiagram.png" alt="CommandHistoryActivityDiagram">
 </div>
-<div class="title">Figure 13. Activity diagram showing what happens when user enters a Command</div>
+<div class="title">Figure 15. Activity diagram showing what happens when user enters a Command</div>
 </div>
 <div class="imageblock">
 <div class="content">
 <img src="images/command-history/CommandHistoryNavigateSequenceDiagram.png" alt="CommandHistoryNavigateSequenceDiagram">
 </div>
-<div class="title">Figure 14. Sequence diagram showing what happens when presses Up/Down button</div>
+<div class="title">Figure 16. Sequence diagram showing what happens when presses Up/Down button</div>
 </div>
 <div class="imageblock">
 <div class="content">
 <img src="images/command-history/CommandHistoryNavigateActivityDiagram.png" alt="CommandHistoryNavigateActivityDiagram">
 </div>
-<div class="title">Figure 15. Activity diagram showing what happens when presses Up/Down button</div>
+<div class="title">Figure 17. Activity diagram showing what happens when presses Up/Down button</div>
 </div>
 </div>
 <div class="sect3">
-<h4 id="design-considerations-3"><a class="link" href="#design-considerations-3">4.3.2. Design considerations</a></h4>
+<h4 id="design-considerations-4"><a class="link" href="#design-considerations-4">4.4.2. Design considerations</a></h4>
 <div class="paragraph">
 <p>We have considered various ways as to how to implement <code><strong>CommandHistory</strong></code> to support navigation to previous commands
 Since we need to capture keyboard events when user press the keyboard, we decided to implement the event listener and handler
@@ -782,14 +1009,14 @@ command is not stored.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="filtering-transactions"><a class="link" href="#filtering-transactions">4.4. Filtering Transactions</a></h3>
+<h3 id="filtering-transactions"><a class="link" href="#filtering-transactions">4.5. Filtering Transactions</a></h3>
 <div class="paragraph">
 <p>The <code>Filter</code> command allows the user to bring up a list of <code>Transaction</code>, and filter it by either category, month,
 or both at the same time. This is implemented by using a predicate for category and another predicate for month,
 both of which inheriting from <code>Predicate&lt;Transaction&gt;</code> to filter the <code>Transaction</code>.</p>
 </div>
 <div class="sect3">
-<h4 id="implementation-5"><a class="link" href="#implementation-5">4.4.1. Implementation</a></h4>
+<h4 id="implementation-6"><a class="link" href="#implementation-6">4.5.1. Implementation</a></h4>
 <div class="paragraph">
 <p><code>FilterCommand</code> is instantiated by <code>FilterCommandParser</code> 's <code>parse(String args)</code> method, which parses the arguments supplied in the user
 command to return a <code>FilterCommand</code> object.</p>
@@ -832,7 +1059,7 @@ to show the category and month that the transactions are filtered by.</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="design-considerations-4"><a class="link" href="#design-considerations-4">4.4.2. Design Considerations</a></h4>
+<h4 id="design-considerations-5"><a class="link" href="#design-considerations-5">4.5.2. Design Considerations</a></h4>
 <div class="paragraph">
 <p>Aspect: Using <code>Predicate</code> to improve extendability of the <code>Filter</code> feature in the future.</p>
 </div>
@@ -854,7 +1081,7 @@ to show the category and month that the transactions are filtered by.</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="proposed-extension"><a class="link" href="#proposed-extension">4.4.3. Proposed Extension</a></h4>
+<h4 id="proposed-extension"><a class="link" href="#proposed-extension">4.5.3. Proposed Extension</a></h4>
 <div class="paragraph">
 <p>We plan to enhance the filter feature to support other arguments in the command to filter by different types such as
 price range or date range. This allows the user to have greater flexibility and have a better understanding of his/her
@@ -867,7 +1094,7 @@ future implementation.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="chart-analytics"><a class="link" href="#chart-analytics">4.5. Chart Analytics</a></h3>
+<h3 id="chart-analytics"><a class="link" href="#chart-analytics">4.6. Chart Analytics</a></h3>
 <div class="paragraph">
 <p>The <strong>toggleview</strong> command allows the user to switch between viewing the list of 'Transactions' and viewing an analysis of
 his expenditure.</p>
@@ -877,7 +1104,7 @@ his expenditure.</p>
 show expenditure breakdown by category.</p>
 </div>
 <div class="sect3">
-<h4 id="implementation-6"><a class="link" href="#implementation-6">4.5.1. Implementation</a></h4>
+<h4 id="implementation-7"><a class="link" href="#implementation-7">4.6.1. Implementation</a></h4>
 <div class="paragraph">
 <p><code>MainWindow</code> decides whether to show a list of transactions or chart analysis based on <code>ToggleView#isViewList</code>, by accessing
 <code>Logic#getToggleView()</code>.</p>
@@ -985,39 +1212,39 @@ depicts the example list used throughout this scenario.</p>
 <div class="content">
 <img src="images/chart-analytics/ToggleViewActivityDiagram.png" alt="ToggleViewActivityDiagram">
 </div>
-<div class="title">Figure 16. Activity diagram for execution of toggleview command</div>
+<div class="title">Figure 18. Activity diagram for execution of toggleview command</div>
 </div>
 </div>
 </div>
 </div>
 <div class="sect2">
-<h3 id="proposed-data-encryption"><a class="link" href="#proposed-data-encryption">4.6. [Proposed] Data Encryption</a></h3>
+<h3 id="proposed-data-encryption"><a class="link" href="#proposed-data-encryption">4.7. [Proposed] Data Encryption</a></h3>
 <div class="paragraph">
 <p>Given the sensitive nature of the information provided by users, we would like to safeguard the information provided by
 our users through encryption. Naturally, the information would be encrypted and decrypted in the back-end without the user
 requiring to do any of the encryption, decryption, or even any knowledge of how it works.</p>
 </div>
 <div class="sect3">
-<h4 id="proposed-implementation"><a class="link" href="#proposed-implementation">4.6.1. Proposed Implementation</a></h4>
+<h4 id="proposed-implementation"><a class="link" href="#proposed-implementation">4.7.1. Proposed Implementation</a></h4>
 
 </div>
 </div>
 <div class="sect2">
-<h3 id="proposed-expensela-monthly-statement"><a class="link" href="#proposed-expensela-monthly-statement">4.7. [Proposed] ExpenseLa Monthly Statement</a></h3>
+<h3 id="proposed-expensela-monthly-statement"><a class="link" href="#proposed-expensela-monthly-statement">4.8. [Proposed] ExpenseLa Monthly Statement</a></h3>
 <div class="paragraph">
 <p>Just as how banks issue a monthly statement of account, we believe that it would be helpful to provide
 our users with an overview of their expenses in the past month</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="logging"><a class="link" href="#logging">4.8. Logging</a></h3>
+<h3 id="logging"><a class="link" href="#logging">4.9. Logging</a></h3>
 <div class="paragraph">
 <p>We are using <code>java.util.logging</code> package for logging. The <code>LogsCenter</code> class is used to manage the logging levels and logging destinations.</p>
 </div>
 <div class="ulist">
 <ul>
 <li>
-<p>The logging level can be controlled using the <code>logLevel</code> setting in the configuration file (See <a href="#Implementation-Configuration">Section 4.9, &#8220;Configuration&#8221;</a>)</p>
+<p>The logging level can be controlled using the <code>logLevel</code> setting in the configuration file (See <a href="#Implementation-Configuration">Section 4.10, &#8220;Configuration&#8221;</a>)</p>
 </li>
 <li>
 <p>The <code>Logger</code> for a class can be obtained using <code>LogsCenter.getLogger(Class)</code> which will log messages according to the specified logging level</p>
@@ -1048,7 +1275,7 @@ our users with an overview of their expenses in the past month</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="Implementation-Configuration"><a class="link" href="#Implementation-Configuration">4.9. Configuration</a></h3>
+<h3 id="Implementation-Configuration"><a class="link" href="#Implementation-Configuration">4.10. Configuration</a></h3>
 <div class="paragraph">
 <p>Certain properties of the application can be controlled (e.g user prefs file location, logging level) through the configuration file (default: <code>config.json</code>).</p>
 </div>
@@ -1537,4 +1764,4 @@ Expected: Similar to previous.</p>
 </div>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2020-04-12 13:05:44 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2020-04-12 15:11:04 UTC</div></div></div></body></html>

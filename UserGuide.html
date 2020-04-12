@@ -10,12 +10,12 @@
 <div id="toctitle"></div>
 <ul class="sectlevel1">
 <li><a href="#product-overview">1. Product Overview</a></li>
-<li><a href="#quick-start">2. Quick Start</a></li>
+<li><a href="#quick-start-hubert-halim">2. Quick Start (Hubert Halim)</a></li>
 <li><a href="#Features">3. Features Present</a>
 <ul class="sectlevel2">
 <li><a href="#viewing-help-code-help-code">3.1. Viewing help : <code>help</code></a></li>
-<li><a href="#set-a-monthly-budget-code-budget-code">3.2. Set a monthly budget : <code>budget</code></a></li>
-<li><a href="#reset-total-balance-code-resetbalance-code">3.3. Reset total balance <code>resetbalance</code></a></li>
+<li><a href="#set-a-monthly-budget-code-budget-code-hubert-halim">3.2. Set a monthly budget : <code>budget</code> (Hubert Halim)</a></li>
+<li><a href="#reset-total-balance-code-resetbalance-code-hubert-halim">3.3. Reset total balance <code>resetbalance</code> (Hubert Halim)</a></li>
 <li><a href="#key-in-transaction-code-add-code">3.4. Key in transaction : <code>add</code></a></li>
 <li><a href="#filter-transactions-code-filter-code">3.5. Filter transactions : <code>filter</code></a></li>
 <li><a href="#deleting-a-transaction-code-delete-code">3.6. Deleting a transaction : <code>delete</code></a></li>
@@ -26,7 +26,7 @@
 <li><a href="#clear-all-recurring-transactions-stored-code-clearrecurring-code">3.11. Clear all recurring transactions stored : <code>clearrecurring</code></a></li>
 <li><a href="#export-transaction-data-to-csv-code-export-code">3.12. Export transaction data to csv : <code>export</code></a></li>
 <li><a href="#import-transaction-data-from-csv-code-import-code">3.13. Import transaction data from csv : <code>import</code></a></li>
-<li><a href="#clear-all-data-code-clear-code">3.14. Clear all data : <code>clear</code></a></li>
+<li><a href="#clear-all-data-code-clear-code-hubert-halim">3.14. Clear all data : <code>clear</code> (Hubert Halim)</a></li>
 <li><a href="#exiting-the-program-code-exit-code">3.15. Exiting the program : <code>exit</code></a></li>
 <li><a href="#saving-the-data">3.16. Saving the data</a></li>
 </ul>
@@ -45,7 +45,7 @@
 </div>
 </div>
 <div class="sect1">
-<h2 id="quick-start"><a class="link" href="#quick-start">2. Quick Start</a></h2>
+<h2 id="quick-start-hubert-halim"><a class="link" href="#quick-start-hubert-halim">2. Quick Start (Hubert Halim)</a></h2>
 <div class="sectionbody">
 <div class="olist arabic">
 <ol class="arabic">
@@ -76,8 +76,8 @@ Filter panel and Transaction List panel(Chart Analytics Panel)</p>
 </div>
 </li>
 <li>
-<p>Filters are only to filter transaction list, MonthlyData is data for the current month and not the month
-shown in the filter</p>
+<p>Filters are only to filter transaction list and chart analytics, MonthlyData is data for the current month and not the month
+shown in the filter. So filter does not apply to MonthlyData</p>
 </li>
 <li>
 <p>Type the command in the command box and press <kbd>Enter</kbd> to execute it.<br>
@@ -89,7 +89,7 @@ Only successful commands are stored in the command history. There can be at most
 This feature is just like the command navigation feature in your favourite command line or shell.</p>
 </li>
 <li>
-<p>Some example commands you can try:</p>
+<p>An example command sequence you can try:</p>
 <div class="ulist">
 <ul>
 <li>
@@ -99,7 +99,7 @@ This feature is just like the command navigation feature in your favourite comma
 <p><strong><code>budget b/1000 rc/</code></strong> : set a recurring budget of $1000 for the current month and subsequent months</p>
 </li>
 <li>
-<p>*<code>add i/ c/Income n/salary a/2500 d/2020-04-02 rc/</code> : adds a recurring income with amount <code>$2500.00</code></p>
+<p><strong><code>add i/ c/Income n/salary a/2500 d/2020-04-02 rc/</code></strong> : adds a recurring income with amount <code>$2500.00</code></p>
 </li>
 <li>
 <p><strong><code>add a/100</code></strong><code>n/Wagyu Steak c/FOOD</code> : adds an expense named <code>Wagyu Steak</code> with amount <code>$100.00</code> spent on the day it is added in category <code>FOOD</code> to the expense tracker</p>
@@ -114,7 +114,7 @@ This feature is just like the command navigation feature in your favourite comma
 <p><strong><code>add a/50</code></strong><code>n/shirt c/SHOPPING d/2020-04-08</code> : adds an expense named <code>shirt</code> with amount <code>50.00</code> spent on <code>2020-04-08</code> in category <code>SHOPPING</code> to the expense tracker</p>
 </li>
 <li>
-<p><strong><code>filter</code></strong><code>m/ 2020-04</code> : filters to only show transactions made on <code>2020-02</code></p>
+<p><strong><code>filter</code></strong><code>m/ 2020-04</code> : filters to only show transactions made on <code>2020-04</code></p>
 </li>
 <li>
 <p><strong><code>delete</code></strong><code>1</code> : deletes the expense with id <code>1</code> in the current list</p>
@@ -173,7 +173,7 @@ This feature is just like the command navigation feature in your favourite comma
 </div>
 </div>
 <div class="sect2">
-<h3 id="set-a-monthly-budget-code-budget-code"><a class="link" href="#set-a-monthly-budget-code-budget-code">3.2. Set a monthly budget : <code>budget</code></a></h3>
+<h3 id="set-a-monthly-budget-code-budget-code-hubert-halim"><a class="link" href="#set-a-monthly-budget-code-budget-code-hubert-halim">3.2. Set a monthly budget : <code>budget</code> (Hubert Halim)</a></h3>
 <div class="paragraph">
 <p>Sets a spendable budget for the current month</p>
 </div>
@@ -196,7 +196,7 @@ This feature is just like the command navigation feature in your favourite comma
 </div>
 </div>
 <div class="sect2">
-<h3 id="reset-total-balance-code-resetbalance-code"><a class="link" href="#reset-total-balance-code-resetbalance-code">3.3. Reset total balance <code>resetbalance</code></a></h3>
+<h3 id="reset-total-balance-code-resetbalance-code-hubert-halim"><a class="link" href="#reset-total-balance-code-resetbalance-code-hubert-halim">3.3. Reset total balance <code>resetbalance</code> (Hubert Halim)</a></h3>
 <div class="paragraph">
 <p>Reset Balance value to the total from the amount of all transactions in stored in the application so far.
 This command is used in case user messes up with json file or there is an unhandled bug in the app that
@@ -385,7 +385,10 @@ Deletes the transaction with index number 3 in the expense tracker&#8217;s curre
 <p>Toggle between viewing list of transactions and analytics with bar graph and pie chart to show expense trend</p>
 </div>
 <div class="paragraph">
-<p>Expected Outcome: changed view to charts if previously was list view and to list view if previously was chart view</p>
+<p>Expected Outcome: changed view to charts if previously was list view and to list view if previously was chart view.
+For Chart Analytics view, a pie chart will show transactions by different categories. A bar chart will either display
+transactions by day of the week (filter is set to a specific month) or
+transactions by month for this year and last year(filter is set to all).</p>
 </div>
 <div class="imageblock">
 <div class="content">
@@ -461,7 +464,7 @@ will be added to transaction list</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="clear-all-data-code-clear-code"><a class="link" href="#clear-all-data-code-clear-code">3.14. Clear all data : <code>clear</code></a></h3>
+<h3 id="clear-all-data-code-clear-code-hubert-halim"><a class="link" href="#clear-all-data-code-clear-code-hubert-halim">3.14. Clear all data : <code>clear</code> (Hubert Halim)</a></h3>
 <div class="paragraph">
 <p>Clear all data in expenseLa including monthly data and global data</p>
 </div>
@@ -566,4 +569,4 @@ e.g. <code>edit 1 a/ 26.00 n/ Grab Share d/ 2020-02-19 c/ TRANSPORT</code><br>
 </ul>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2020-04-12 13:05:44 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2020-04-12 15:11:04 UTC</div></div></div></body></html>
