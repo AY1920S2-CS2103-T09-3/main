@@ -451,6 +451,18 @@ so that the UI automatically updates when the data in the list change.</p>
 </tr>
 </table>
 </div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<code><strong>Category</strong></code> has a set enum list of values FOOD, SHOPPING, TRANSPORT, GROCERIES, HEALTH, RECREATION, MISC, UTILITIES, INCOME.
+</td>
+</tr>
+</table>
+</div>
 <div class="paragraph">
 <p>The following sequence diagram shows how the add transaction operation works:</p>
 </div>
@@ -494,7 +506,7 @@ Incorrect user input will display <code>ParseException</code> message.
 </table>
 </div>
 <div class="paragraph">
-<p>We will demonstrate how a <code>Transaction</code> is added into <code>ExpenseLa</code>:</p>
+<p><strong>We will demonstrate how a <code>Transaction</code> is added into <code>ExpenseLa</code> below:</strong></p>
 </div>
 <div class="paragraph">
 <p>Step 1. The user executes the command <strong>add n/Pizza a/20.5 d/2020-02-02</strong> to insert a negative transaction with its <code>Name</code> set to "Pizza", its <code>Amount</code> set to "20.50" and the <code>Date</code> set to 02 Feb 2020. The input is now checked and an attempt to parse each parameter occurs:</p>
@@ -529,18 +541,6 @@ Incorrect user input will display <code>ParseException</code> message.
 <i class="fa icon-note" title="Note"></i>
 </td>
 <td class="content">
-<code><strong>Category</strong></code> has a set enum list of values FOOD, SHOPPING, TRANSPORT, GROCERIES, HEALTH, RECREATION, MISC, UTILITIES, INCOME.
-</td>
-</tr>
-</table>
-</div>
-<div class="admonitionblock note">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-note" title="Note"></i>
-</td>
-<td class="content">
 "rc/" CLI Syntax will set the transaction to be a recurring transaction.
 </td>
 </tr>
@@ -562,7 +562,7 @@ now contains 2 <code><strong>Transaction</strong></code> objects.</p>
 <div class="content">
 <img src="images/add-command/AddTransactionActivityDiagram.png" alt="AddTransactionActivityDiagram" width="650">
 </div>
-<div class="title">Figure 10 10. Activity diagram of adding a <code>Transaction</code> into the transaction list.</div>
+<div class="title">Figure 10. Activity diagram of adding a <code>Transaction</code> into the transaction list.</div>
 </div>
 </div>
 <div class="sect3">
@@ -683,8 +683,8 @@ existing <code><strong>TransactionList</strong></code>.</p>
 the respective inputs.</p>
 </div>
 <div class="paragraph">
-<p>Below is an example usage scenario for editing a transaction and explanation of how the <strong>edit</strong> mechanism
-behaves at each step:</p>
+<p><strong>Below is an example usage scenario for editing a transaction and explanation of how the edit mechanism
+behaves at each step:</strong></p>
 </div>
 <div class="paragraph">
 <p>Step 1. The user starts up the application with an initial list loaded from a sample transaction list.</p>
@@ -2298,13 +2298,74 @@ may be relevant for the purposes of exporting the statement.</p>
 <div class="sect1">
 <h2 id="glossary"><a class="link" href="#glossary">Appendix E: Glossary</a></h2>
 <div class="sectionbody">
-<div class="dlist">
-<dl>
-<dt class="hdlist1"><a id="mainstream-os"></a> Mainstream OS</dt>
-<dd>
-<p>Windows, Linux, Unix, OS-X</p>
-</dd>
-</dl>
+<div class="hdlist">
+<table>
+<tr>
+<td class="hdlist1">
+<a id="expensela"></a> ExpenseLa
+</td>
+<td class="hdlist2">
+<p>Stands for the application that this developer guide is written for.</p>
+</td>
+</tr>
+<tr>
+<td class="hdlist1">
+<a id="api"></a> API
+</td>
+<td class="hdlist2">
+<p>Stands for "Application Programming Interface" which simplifies programming by abstracting the underlying implementation and only exposing objects or actions the developer needs.</p>
+</td>
+</tr>
+<tr>
+<td class="hdlist1">
+<a id="puml"></a> PlantUML
+</td>
+<td class="hdlist2">
+<p>Stands for a software tool that we use to render the diagrams used in this document.</p>
+</td>
+</tr>
+<tr>
+<td class="hdlist1">
+<a id="mainstream-os"></a> Mainstream OS
+</td>
+<td class="hdlist2">
+<p>Stands for commonly used Operating Systems (OS) such as Windows, Linux, Unix, OS-X</p>
+</td>
+</tr>
+<tr>
+<td class="hdlist1">
+<a id="system-administration"></a> System Administration
+</td>
+<td class="hdlist2">
+<p>Stands for the field of work in which someone manages one or more systems, be they software, hardware, servers or workstations
+with the goal of ensuring the systems are running efficiently and effectively.</p>
+</td>
+</tr>
+<tr>
+<td class="hdlist1">
+<a id="MSS"></a> MSS
+</td>
+<td class="hdlist2">
+<p>Stands for Main Success Scenario that describes the interaction for a given use case, which assumes that nothing goes wrong.</p>
+</td>
+</tr>
+<tr>
+<td class="hdlist1">
+<a id="CLI-syntax"></a> CLI Syntax
+</td>
+<td class="hdlist2">
+<p>Stands for the Command Line Interface Syntax such as "a/" and "c/" that preceeds input values which act as indicators for the system to detect those values.</p>
+</td>
+</tr>
+<tr>
+<td class="hdlist1">
+<a id="Ui"></a> UI
+</td>
+<td class="hdlist2">
+<p>Stands for the user interface which is the display which interacts with the user.</p>
+</td>
+</tr>
+</table>
 </div>
 </div>
 </div>
@@ -2312,10 +2373,10 @@ may be relevant for the purposes of exporting the statement.</p>
 <h2 id="product-survey"><a class="link" href="#product-survey">Appendix F: Product Survey</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p><strong>Product Name</strong></p>
+<p><strong>ExpenseLa</strong></p>
 </div>
 <div class="paragraph">
-<p>Author: &#8230;&#8203;</p>
+<p>Author: Team Halim</p>
 </div>
 <div class="paragraph">
 <p>Pros:</p>
@@ -2323,10 +2384,16 @@ may be relevant for the purposes of exporting the statement.</p>
 <div class="ulist">
 <ul>
 <li>
-<p>&#8230;&#8203;</p>
+<p>Very easy and quick tracking for people that prefer command line interfaces.</p>
 </li>
 <li>
-<p>&#8230;&#8203;</p>
+<p>Analytics serve as a quick bird&#8217;s eye view on monthly spending.</p>
+</li>
+<li>
+<p>Analytics breakdown of spending per category helps me gain insights on the categories which I have spent too much money on.</p>
+</li>
+<li>
+<p>Well made prompts to warn me when I am going to exceed my monthly budget. Helps to better my budgeting practices.</p>
 </li>
 </ul>
 </div>
@@ -2336,10 +2403,10 @@ may be relevant for the purposes of exporting the statement.</p>
 <div class="ulist">
 <ul>
 <li>
-<p>&#8230;&#8203;</p>
+<p>Takes quite a bit of time to learn all the commands.</p>
 </li>
 <li>
-<p>&#8230;&#8203;</p>
+<p>It can get quite tedious to input every single transaction at any time. Could possibly automate some inputs.</p>
 </li>
 </ul>
 </div>
@@ -2454,4 +2521,4 @@ Expected: Similar to previous.</p>
 </div>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2020-04-13 02:34:33 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2020-04-13 07:25:06 UTC</div></div></div></body></html>
