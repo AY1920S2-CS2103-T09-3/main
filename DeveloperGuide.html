@@ -6,7 +6,7 @@
 <p><span class="image"><img src="images/logos/ExpenseLa_Logo.png" alt="ExpenseLa Logo"></span></p>
 </div>
 <div class="paragraph">
-<p>By: <code>ExpenseLa Team</code>      Since: <code>Feb 2020</code>      Licence: <code>MIT</code></p>
+<p>By: <code>Team AY1920S2-CS2103-T09-3</code>      Since: <code>Feb 2020</code>      Licence: <code>MIT</code></p>
 </div>
 </div>
 <div id="toc" class="toc">
@@ -21,10 +21,10 @@
 <li><a href="#setting-up">2. Setting up</a></li>
 <li><a href="#design">3. Design</a>
 <ul class="sectlevel2">
-<li><a href="#Design-Architecture">3.1. Architecture</a></li>
+<li><a href="#Design-Architecture">3.1. Architecture (Pang Kim Jin)</a></li>
 <li><a href="#Design-Ui">3.2. UI component (Choi Min Suk)</a></li>
 <li><a href="#Design-Logic">3.3. Logic component (Hubert Halim)</a></li>
-<li><a href="#Design-Model">3.4. Model component</a></li>
+<li><a href="#Design-Model">3.4. Model component (Pang Kim Jin)</a></li>
 <li><a href="#Design-Storage">3.5. Storage component (BenjaminFheng)</a></li>
 <li><a href="#Design-Commons">3.6. Common classes</a></li>
 </ul>
@@ -35,11 +35,11 @@
 <li><a href="#editing-transactions-benjaminfheng">4.2. Editing transactions (BenjaminFheng)</a></li>
 <li><a href="#setting-budgets-hubert-halim">4.3. Setting budgets (Hubert Halim)</a></li>
 <li><a href="#command-history-navigation-hubert-halim">4.4. Command History navigation (Hubert Halim)</a></li>
-<li><a href="#filtering-transactions">4.5. Filtering Transactions</a></li>
-<li><a href="#chart-analytics-choi-min-suk">4.6. Chart Analytics (Choi Min Suk)</a></li>
+<li><a href="#filtering-transactions-pang-kim-jin">4.5. Filtering Transactions (Pang Kim Jin)</a></li>
+<li><a href="#chart-analytics-choi-min-suk-pang-kim-jin">4.6. Chart Analytics (Choi Min Suk + Pang Kim Jin)</a></li>
 <li><a href="#export-choi-min-suk">4.7. Export (Choi Min Suk)</a></li>
-<li><a href="#proposed-data-encryption">4.8. [Proposed] Data Encryption</a></li>
-<li><a href="#proposed-expensela-monthly-statement">4.9. [Proposed] ExpenseLa Monthly Statement</a></li>
+<li><a href="#proposed-data-encryption-pang-kim-jin">4.8. [Proposed] Data Encryption (Pang Kim Jin)</a></li>
+<li><a href="#proposed-expensela-monthly-statement-pang-kim-jin">4.9. [Proposed] ExpenseLa Monthly Statement (Pang Kim Jin)</a></li>
 <li><a href="#logging">4.10. Logging</a></li>
 <li><a href="#Implementation-Configuration">4.11. Configuration</a></li>
 </ul>
@@ -49,11 +49,7 @@
 <li><a href="#dev-ops">7. Dev Ops</a></li>
 <li><a href="#product-scope">Appendix A: Product Scope</a></li>
 <li><a href="#user-stories">Appendix B: User Stories</a></li>
-<li><a href="#use-cases">Appendix C: Use Cases</a>
-<ul class="sectlevel2">
-<li><a href="#use-case-filter-transactions-by-category">C.1. Use case: filter transactions by category</a></li>
-</ul>
-</li>
+<li><a href="#use-cases-hubert-halim">Appendix C: Use Cases (Hubert Halim)</a></li>
 <li><a href="#non-functional-requirements">Appendix D: Non Functional Requirements</a></li>
 <li><a href="#glossary">Appendix E: Glossary</a></li>
 <li><a href="#product-survey">Appendix F: Product Survey</a></li>
@@ -99,7 +95,7 @@
 <h2 id="design"><a class="link" href="#design">3. Design</a></h2>
 <div class="sectionbody">
 <div class="sect2">
-<h3 id="Design-Architecture"><a class="link" href="#Design-Architecture">3.1. Architecture</a></h3>
+<h3 id="Design-Architecture"><a class="link" href="#Design-Architecture">3.1. Architecture (Pang Kim Jin)</a></h3>
 <div class="paragraph">
 <p>In this section, we will be introducing the individual components that form ExpenseLa using various diagrams.</p>
 </div>
@@ -126,7 +122,7 @@ Refer to the <a href="UsingPlantUml.html">Using PlantUML guide</a> to learn how 
 </table>
 </div>
 <div class="paragraph">
-<p><code>Main</code> has two classes called <a href="https://github.com/AY1920S2-CS2103-T09-3/main/tree/master/src/main/java/seedu/address/Main.java"><code>Main</code></a> and <a href="https://github.com/AY1920S2-CS2103-T09-3/main/tree/master/src/main/java/seedu/address/MainApp.java"><code>MainApp</code></a>. It is responsible for,</p>
+<p><code>Main</code> has two classes called <a href="https://github.com/AY1920S2-CS2103-T09-3/main/tree/master/src/main/java/seedu/expensela/Main.java"><code>Main</code></a> and <a href="https://github.com/AY1920S2-CS2103-T09-3/main/tree/master/src/main/java/seedu/expensela/MainApp.java"><code>MainApp</code></a>. It is responsible for,</p>
 </div>
 <div class="ulist">
 <ul>
@@ -213,7 +209,7 @@ The following class plays an important role at the architecture level:</p>
 <div class="title">Figure 4. Structure of the UI Component</div>
 </div>
 <div class="paragraph">
-<p><strong>API</strong> : <a href="https://github.com/AY1920S2-CS2103-T09-3/main/tree/master/src/main/java/seedu/address/ui/Ui.java"><code>Ui.java</code></a></p>
+<p><strong>API</strong> : <a href="https://github.com/AY1920S2-CS2103-T09-3/main/tree/master/src/main/java/seedu/expensela/ui/Ui.java"><code>Ui.java</code></a></p>
 </div>
 <div class="paragraph">
 <p>The UI consists of a <code>MainWindow</code> that is made up of parts e.g.<code>CommandBox</code>, <code>ResultDisplay</code>, <code>TransactionListPanel</code>, <code>StatusBarFooter</code> etc. All these, including the <code>MainWindow</code>, inherit from the abstract <code>UiPart</code> class.</p>
@@ -245,7 +241,7 @@ The following class plays an important role at the architecture level:</p>
 </div>
 <div class="paragraph">
 <p><strong>API</strong> :
-<a href="https://github.com/AY1920S2-CS2103-T09-3/main/tree/master/src/main/java/seedu/address/logic/Logic.java"><code>Logic.java</code></a></p>
+<a href="https://github.com/AY1920S2-CS2103-T09-3/main/tree/master/src/main/java/seedu/expensela/logic/Logic.java"><code>Logic.java</code></a></p>
 </div>
 <div class="paragraph">
 <p>Logic is an interface which <code>LogicManager</code> implements, allowing access to the API. The following items are examples on how the LogicManager class can be interacted with:</p>
@@ -298,7 +294,7 @@ The lifeline for <code>DeleteCommandParser</code> should end at the destroy mark
 </div>
 </div>
 <div class="sect2">
-<h3 id="Design-Model"><a class="link" href="#Design-Model">3.4. Model component</a></h3>
+<h3 id="Design-Model"><a class="link" href="#Design-Model">3.4. Model component (Pang Kim Jin)</a></h3>
 <div class="imageblock">
 <div class="content">
 <img src="images/ModelClassDiagram.png" alt="ModelClassDiagram">
@@ -306,7 +302,7 @@ The lifeline for <code>DeleteCommandParser</code> should end at the destroy mark
 <div class="title">Figure 8. Structure of the Model Component</div>
 </div>
 <div class="paragraph">
-<p><strong>API</strong> : <a href="https://github.com/AY1920S2-CS2103-T09-3/main/tree/master/src/main/java/seedu/address/model/Model.java"><code>Model.java</code></a></p>
+<p><strong>API</strong> : <a href="https://github.com/AY1920S2-CS2103-T09-3/main/tree/master/src/main/java/seedu/expensela/model/Model.java"><code>Model.java</code></a></p>
 </div>
 <div class="paragraph">
 <p>The <code>Model</code>,</p>
@@ -314,10 +310,16 @@ The lifeline for <code>DeleteCommandParser</code> should end at the destroy mark
 <div class="ulist">
 <ul>
 <li>
+<p>stores an ArrayList which contains the user&#8217;s command history.</p>
+</li>
+<li>
 <p>stores a <code>UserPref</code> object that represents the user&#8217;s preferences.</p>
 </li>
 <li>
 <p>stores the <code>ExpenseLa</code> data.</p>
+</li>
+<li>
+<p>stores the <code>GlobalData</code> which contains the recurring budget, transactions, total balance, and last updated date.</p>
 </li>
 <li>
 <p>stores a <code>MonthlyData</code> object which contains budget, expense, and income information set by the user.</p>
@@ -350,7 +352,7 @@ so that the UI automatically updates when the data in the list change.</p>
 <div class="title">Figure 9. Structure of the Storage Component</div>
 </div>
 <div class="paragraph">
-<p><strong>API</strong> : <a href="https://github.com/AY1920S2-CS2103-T09-3/main/tree/master/src/main/java/seedu/address/storage/Storage.java"><code>Storage.java</code></a></p>
+<p><strong>API</strong> : <a href="https://github.com/AY1920S2-CS2103-T09-3/main/tree/master/src/main/java/seedu/expensela/storage/Storage.java"><code>Storage.java</code></a></p>
 </div>
 <div class="paragraph">
 <p>The <code>Storage</code> component,</p>
@@ -361,10 +363,10 @@ so that the UI automatically updates when the data in the list change.</p>
 <p>can save <code>UserPref</code> objects in json format and read it back.</p>
 </li>
 <li>
-<p>can save the ExpenseLa data in json format and read it back.</p>
+<p>can save the <code>ExpenseLa</code> data in json format and read it back.</p>
 </li>
 <li>
-<p>can save GlobalData data in json format and read it back.</p>
+<p>can save <code>GlobalData</code> data in json format and read it back.</p>
 </li>
 </ul>
 </div>
@@ -394,10 +396,20 @@ so that the UI automatically updates when the data in the list change.</p>
 <p>We store every single <code>Transaction</code> added by the user into an <code>ObservableList&lt;Transaction&gt;</code>, which is a list object in <code>TransactionList</code>. We used an <code>ObservableList</code> to easily reflect changes to the list by any other component of ExpenseLa using the list.</p>
 </div>
 <div class="paragraph">
-<p>These are the ways of implementing either a positive or negative Transaction:
-* Adding an expense (negative transaction): add
-* Adding an income (positive transaction): add i/
-These two commands will indicate whether the transaction is positive or negative.</p>
+<p>These are the ways of implementing either a positive or negative Transaction:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Adding an expense (negative transaction): add</p>
+</li>
+<li>
+<p>Adding an income (positive transaction): add i/</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>These two commands will indicate whether the transaction is positive or negative.</p>
 </div>
 <div class="paragraph">
 <p>Indicating whether it is a recurring transaction or not will depend if rc/ is present in the input</p>
@@ -476,7 +488,7 @@ These two commands will indicate whether the transaction is positive or negative
 <i class="fa icon-note" title="Note"></i>
 </td>
 <td class="content">
-Incorrect user input will display ParseError message.
+Incorrect user input will display <code>ParseException</code> message.
 </td>
 </tr>
 </table>
@@ -556,7 +568,7 @@ now contains 2 <code><strong>Transaction</strong></code> objects.</p>
 <div class="sect3">
 <h4 id="design-considerations"><a class="link" href="#design-considerations">4.1.2. Design considerations</a></h4>
 <div class="paragraph">
-<p>There are many different ways to implement how a transaction is added into <code><strong>Expensela</strong></code>. In this section, we will justify why we chose to implement it the way we did.</p>
+<p>There are many different ways to implement how a transaction is added into <code><strong>ExpenseLa</strong></code>. In this section, we will justify why we chose to implement it the way we did.</p>
 </div>
 <div class="sect4">
 <h5 id="aspect-differentiating-between-strong-positive-strong-and-strong-negative-strong-transactions"><a class="link" href="#aspect-differentiating-between-strong-positive-strong-and-strong-negative-strong-transactions">Aspect: Differentiating between <strong>positive</strong> and <strong>negative</strong> transactions.</a></h5>
@@ -567,7 +579,7 @@ now contains 2 <code><strong>Transaction</strong></code> objects.</p>
 <div class="ulist">
 <ul>
 <li>
-<p>Pros: Increases the speed and simplicity of adding a positive or negative transaction. Updating balance in MonthlyData information only requires an iteration through
+<p>Pros: Increases the speed and simplicity of adding a positive or negative transaction. Updating balance in <code>MonthlyData</code> information only requires an iteration through
 all the transaction amounts in transaction list for calculation.</p>
 </li>
 <li>
@@ -684,12 +696,12 @@ behaves at each step:</p>
 <div class="title">Initial transaction list</div>
 </div>
 <div class="paragraph">
-<p>Step 2. The user inputs <strong>edit 1 n/Laksa Noodle a/6.00</strong> to update the transaction (with index 1) name to "Laksa Noodle" and value
+<p>Step 2. The user inputs <strong>edit 1 n/Laksa Noodle a/6.00</strong> to edit the transaction (with index 1) name to "Laksa Noodle" and value
 to "6". Input is parsed by <code>EditCommandParser#parse()</code> which creates an <code><strong>EditCommand</strong></code>.</p>
 </div>
 <div class="paragraph">
 <p>Step 3. <code>EditCommand#execute()</code> creates a new transaction that reflects the changes and gets the index of current
-transaction to be updated.</p>
+transaction to be edited.</p>
 </div>
 <div class="imageblock">
 <div class="content">
@@ -698,7 +710,7 @@ transaction to be updated.</p>
 <div class="title">New edited transaction in transaction list</div>
 </div>
 <div class="paragraph">
-<p>Step 4. <code>UpdateCommand#execute()</code> replaces original transaction in the list with the updated transaction.</p>
+<p>Step 4. <code>EditCommand#execute()</code> replaces original transaction in the list with the eddited transaction.</p>
 </div>
 <div class="paragraph">
 <p>The following activity diagram gives an overview of what ExpenseLa shows the user when executing <strong>edit</strong> command:</p>
@@ -707,7 +719,7 @@ transaction to be updated.</p>
 <div class="content">
 <img src="images/edit-command/EditActivityDiagram.png" alt="EditActivityDiagram" width="650">
 </div>
-<div class="title">Figure 11. Activity diagram for execution of update command</div>
+<div class="title">Figure 11. Activity diagram for execution of edit command</div>
 </div>
 </div>
 <div class="sect3">
@@ -720,7 +732,7 @@ transaction to be updated.</p>
 <div class="ulist">
 <ul>
 <li>
-<p><strong>Alternative 1 (current choice)</strong>: Replace the values of the original transaction with new updated values.</p>
+<p><strong>Alternative 1 (current choice)</strong>: Replace the values of the original transaction with new editd values.</p>
 <div class="ulist">
 <ul>
 <li>
@@ -758,7 +770,7 @@ Overhead of creating new <code><strong>Transaction</strong></code> is insignific
 <div class="ulist">
 <ul>
 <li>
-<p><strong>Alternative 1 (current choice)</strong>: Get the index of original transaction in the transactions list and update its values in the list.</p>
+<p><strong>Alternative 1 (current choice)</strong>: Get the index of original transaction in the transactions list and edit its values in the list.</p>
 <div class="ulist">
 <ul>
 <li>
@@ -771,7 +783,7 @@ Overhead of creating new <code><strong>Transaction</strong></code> is insignific
 </div>
 </li>
 <li>
-<p><strong>Alternative 2</strong>: Iterate through the transactions list and update the transaction with the correct transaction ID.</p>
+<p><strong>Alternative 2</strong>: Iterate through the transactions list and edit the transaction with the correct transaction ID.</p>
 <div class="ulist">
 <ul>
 <li>
@@ -1010,7 +1022,7 @@ command is not stored.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="filtering-transactions"><a class="link" href="#filtering-transactions">4.5. Filtering Transactions</a></h3>
+<h3 id="filtering-transactions-pang-kim-jin"><a class="link" href="#filtering-transactions-pang-kim-jin">4.5. Filtering Transactions (Pang Kim Jin)</a></h3>
 <div class="paragraph">
 <p>The <code>Filter</code> command allows the user to bring up a list of <code>Transaction</code>, and filter it by either category, month,
 or both at the same time. This is implemented by using a predicate for category and another predicate for month,
@@ -1019,12 +1031,12 @@ both of which inheriting from <code>Predicate&lt;Transaction&gt;</code> to filte
 <div class="sect3">
 <h4 id="implementation-6"><a class="link" href="#implementation-6">4.5.1. Implementation</a></h4>
 <div class="paragraph">
-<p><code>FilterCommand</code> is instantiated by <code>FilterCommandParser</code> 's <code>parse(String args)</code> method, which parses the arguments supplied in the user
+<p><code>FilterCommand</code> is instantiated by <code>FilterCommandParser#parse(String args)</code> method, which parses the arguments supplied in the user
 command to return a <code>FilterCommand</code> object.</p>
 </div>
 <div class="paragraph">
-<p>The below sequence diagram depicts the execution of the filter feature to display all transactions with Category "FOOD":
-<span class="image"><img src="images/filter/FilterSequenceDiagram.png" alt="FilterSequenceDiagram"></span></p>
+<p>The below sequence diagram depicts the interactions within the <code>Logic</code> component for the execute("filter c/FOOD m/2020-04") call:
+<span class="image"><img src="images/FilterSequenceDiagram.png" alt="FilterSequenceDiagram"></span></p>
 </div>
 <div class="paragraph">
 <p>The below scenario shows a typical usage of the filter feature:</p>
@@ -1040,14 +1052,14 @@ is purely for illustration purposes).
 <span class="image"><img src="images/filter/Filter_SS_2.PNG" alt="Filter SS 2"></span></p>
 </div>
 <div class="paragraph">
-<p>Step 3: The <code>FilterCommandParser</code> will parse the arguments using the method <code>parse(String args)</code>.</p>
+<p>Step 3: The <code>FilterCommandParser#parse(String args)</code> parses the arguments.</p>
 </div>
 <div class="paragraph">
 <p>Step 4: Since user input is correct and the arguments are parsed, a new <code>FilterCommand</code> object is created by the
 <code>FilterCommandParser</code>.</p>
 </div>
 <div class="paragraph">
-<p>Step 5: The <code>FilterCommand</code> object will use a <code>Predicate</code> based on the specified category, month, or both, to filter
+<p>Step 5: The <code>FilterCommand</code> object will use a <code>Predicate&lt;Transaction&gt;</code> based on the specified category, month, or both, to filter
 the list of transactions.</p>
 </div>
 <div class="paragraph">
@@ -1062,23 +1074,42 @@ to show the category and month that the transactions are filtered by.</p>
 <div class="sect3">
 <h4 id="design-considerations-5"><a class="link" href="#design-considerations-5">4.5.2. Design Considerations</a></h4>
 <div class="paragraph">
-<p>Aspect: Using <code>Predicate</code> to improve extendability of the <code>Filter</code> feature in the future.</p>
+<p><strong>Aspect: Using <code>Predicate</code> to improve extendability of the <code>Filter</code> feature in the future.</strong></p>
 </div>
 <div class="ulist">
 <ul>
 <li>
-<p>The filter feature supports increasing the number of filter types - on top of the current category and month filters.</p>
+<p>Alternative 1 (current choice): Create a new <code>Predicate&lt;Transaction&gt;</code> for each new filter type</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Pros: Greater flexibility can be provided for each filter type since different filter types have different requirements (e.g. Month vs Category)</p>
 </li>
 <li>
-<p>This is enabled by using a different <code>Predicate</code> for each filter type.</p>
-</li>
-<li>
-<p>A composed <code>Predicate</code> would then be obtained by calling <code>Predicate</code> 's <code>and(Predicate other)</code> method.</p>
-</li>
-<li>
-<p>This composed <code>Predicate</code> is then applied to filter the list of <code>Transaction</code>.</p>
+<p>Cons: Tedious to implement a new class for each new type of filter</p>
 </li>
 </ul>
+</div>
+</li>
+<li>
+<p>Alternative 2: Use a single <code>Predicate&lt;Transaction&gt;</code> to filter for all filter types</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Pros: Easy to implement</p>
+</li>
+<li>
+<p>Cons: Prone to being inflexible for extensions</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>We decided to go with Alternative 1 since the current filter feature supports increasing the number of filter types
+- on top of the current category and month filters. Despite having a different <code>Predicate</code> for each filter type, we use
+a composed <code>Predicate</code> comprising of both <code>Predicate</code> s, making it much easier to support extensions to this feature.</p>
 </div>
 </div>
 <div class="sect3">
@@ -1095,7 +1126,7 @@ future implementation.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="chart-analytics-choi-min-suk"><a class="link" href="#chart-analytics-choi-min-suk">4.6. Chart Analytics (Choi Min Suk)</a></h3>
+<h3 id="chart-analytics-choi-min-suk-pang-kim-jin"><a class="link" href="#chart-analytics-choi-min-suk-pang-kim-jin">4.6. Chart Analytics (Choi Min Suk + Pang Kim Jin)</a></h3>
 <div class="paragraph">
 <p>The <strong>toggleview</strong> command allows the user to switch between viewing the list of 'Transactions' and viewing an analysis of
 his expenditure.</p>
@@ -1183,7 +1214,7 @@ depicts the example list used throughout this scenario.</p>
 <div class="content">
 <img src="images/chart-analytics/ToggleViewStep3.PNG" alt="ToggleViewStep3">
 </div>
-<div class="title"><code>isViewList</code> of <code>ToggleView</code> switched from <code>ToggleViewCommand#execute()</code></div>
+<div class="title">isViewList of ToggleView switched from ToggleViewCommand#execute()</div>
 </div>
 <div class="paragraph">
 <p>Step 4. <code>MainWindow#executeCommand()</code> checks the boolean value of isViewList in ToggleView, which is false,
@@ -1381,7 +1412,7 @@ user can use the chart analysis generated for visual presentations, especially i
 </div>
 </div>
 <div class="sect2">
-<h3 id="proposed-data-encryption"><a class="link" href="#proposed-data-encryption">4.8. [Proposed] Data Encryption</a></h3>
+<h3 id="proposed-data-encryption-pang-kim-jin"><a class="link" href="#proposed-data-encryption-pang-kim-jin">4.8. [Proposed] Data Encryption (Pang Kim Jin)</a></h3>
 <div class="paragraph">
 <p>Given the sensitive nature of the information provided by users, we would like to safeguard the information provided by
 our users through encryption. Naturally, the information would be encrypted and decrypted in the back-end without the user
@@ -1389,14 +1420,172 @@ requiring to do any of the encryption, decryption, or even any knowledge of how 
 </div>
 <div class="sect3">
 <h4 id="proposed-implementation"><a class="link" href="#proposed-implementation">4.8.1. Proposed Implementation</a></h4>
-
+<div class="paragraph">
+<p>We thus propose a <code>Keystore</code> module to contain authorisation certificates or public key certificates
+interacting with the <code>Logic</code> and <code>Storage</code> modules. With this addition, the following architecture diagram
+gives an overview of how it would fit in:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/DataEncryptionClassDiagram.png" alt="DataEncryptionClassDiagram">
+</div>
+</div>
+<div class="paragraph">
+<p>The <code>Keystore</code> module would have a <code>KeystoreManager</code> which implements the following methods:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>KeystoreManager#setCipher(Cipher cipher)</code> - sets the <code>Cipher</code> for encryption usage.</p>
+</li>
+<li>
+<p><code>KeystoreManager#encryptExpenseLa(ExpenseLa expenseLa)</code> - encrypts the given <code>ExpenseLa</code> object with the encryption cipher set with every
+call to <code>LogicManager#execute()</code> method.</p>
+</li>
+<li>
+<p><code>KeystoreManager#decryptExpenseLa(ExpenseLa expenseLa)</code> - Decrypts the encrypted json file upon application launch.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>The following class diagram provides a depiction of the above:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/DataEncryptionClassDiagram2.png" alt="DataEncryptionClassDiagram2">
+</div>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<code>KeystoreManager#encryptExpenseLa(ExpenseLa expenseLa)</code> and <code>KeystoreManager#decryptExpenseLa(ExpenseLa expenseLa)</code>
+will be using the Advanced Encryption Standard (AES 256) encryption algorithm.
+</td>
+</tr>
+</table>
+</div>
+</div>
+<div class="sect3">
+<h4 id="design-considerations-7"><a class="link" href="#design-considerations-7">4.8.2. Design Considerations</a></h4>
+<div class="paragraph">
+<p><strong>Aspect: Encryption Algorithm</strong></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Alternative 1: Data Encryption Standard</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Pros: Simpler to implement encryption and decryption</p>
+</li>
+<li>
+<p>Cons: Weaker security, easy to brute force</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Alternative 2 (current choice) : Advanced Encryption Standard</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Pros: 256 bit key is exponentially more secure than DES' 56 bit key</p>
+</li>
+<li>
+<p>Cons: Harder to implement</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
 </div>
 </div>
 <div class="sect2">
-<h3 id="proposed-expensela-monthly-statement"><a class="link" href="#proposed-expensela-monthly-statement">4.9. [Proposed] ExpenseLa Monthly Statement</a></h3>
+<h3 id="proposed-expensela-monthly-statement-pang-kim-jin"><a class="link" href="#proposed-expensela-monthly-statement-pang-kim-jin">4.9. [Proposed] ExpenseLa Monthly Statement (Pang Kim Jin)</a></h3>
 <div class="paragraph">
-<p>Just as how banks issue a monthly statement of account, we believe that it would be helpful to provide
-our users with an overview of their expenses in the past month</p>
+<p>Similar to how banks issue a statement of account, we believe that it would be helpful to provide
+our users with an overview of their expenses. This statement would include the user&#8217;s balance,
+budget, expense, income, and transactions in a user specified time frame.The user can choose to include/exclude certain
+transactions based on their categories or dates.</p>
+</div>
+<div class="sect3">
+<h4 id="proposed-implementation-2"><a class="link" href="#proposed-implementation-2">4.9.1. Proposed Implementation</a></h4>
+<div class="paragraph">
+<p>To generate the statement, we propose a <code>StatementCommand</code> that extends <code>Command</code> and works with <code>ModelManager</code> just like
+all other commands, as depicted in the following diagram:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/StatementCommandClassDiagram.png" alt="StatementCommandClassDiagram">
+</div>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>The user uses the <code>FilterCommand</code> to  filter the list of transactions to show only the transactions with the
+user&#8217;s preferred category and transaction month</p>
+</li>
+<li>
+<p>Then <code>StatementCommand#execute()</code> will retrieve the <code>FilteredList</code> of transactions
+and generate a Portable Document Format (PDF) file with Java&#8217;s PDFWrite API.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Below is a truncated example of the PDF ExpenseLa statement:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/statement/Statement.png" alt="Statement">
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="design-considerations-8"><a class="link" href="#design-considerations-8">4.9.2. Design Considerations</a></h4>
+<div class="paragraph">
+<p><strong>Aspect: Time and Nature of Transactions to Export</strong></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Alternative 1 (current choice): Users get to choose when to generate their statement and which month and categories of
+transactions to include.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Pros: Users get a statement tailored according to their needs.</p>
+</li>
+<li>
+<p>Cons: Users may forget to include certain types of transactions.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Alternative 2: At the end of every month, a statement of all transactions and user information is exported</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Pros: Users get a comprehensive view of their expenses</p>
+</li>
+<li>
+<p>Cons: Users may be overloaded with information</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Ultimately we chose Alternative 1 as we prioritise our user&#8217;s freedom of choice and we understand that not all transactions
+may be relevant for the purposes of exporting the statement.</p>
+</div>
 </div>
 </div>
 <div class="sect2">
@@ -1712,7 +1901,7 @@ our users with an overview of their expenses in the past month</p>
 </div>
 </div>
 <div class="sect1">
-<h2 id="use-cases"><a class="link" href="#use-cases">Appendix C: Use Cases</a></h2>
+<h2 id="use-cases-hubert-halim"><a class="link" href="#use-cases-hubert-halim">Appendix C: Use Cases (Hubert Halim)</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>(For all use cases below, the <strong>System</strong> is the <code>ExpenseLa</code> and the <strong>Actor</strong> is the <code>user</code>, unless specified otherwise)</p>
@@ -1724,16 +1913,16 @@ our users with an overview of their expenses in the past month</p>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>User requests to list expenses</p>
+<p>User requests to list all transactions</p>
 </li>
 <li>
-<p>System shows a list of expenses</p>
+<p>System removes all filters and show all expenses</p>
 </li>
 <li>
-<p>User requests to delete a specific expense in the list</p>
+<p>User requests to delete a specific transaction in the list</p>
 </li>
 <li>
-<p>System deletes the expense</p>
+<p>System deletes the transaction</p>
 <div class="paragraph">
 <p>Use case ends.</p>
 </div>
@@ -1766,21 +1955,20 @@ our users with an overview of their expenses in the past month</p>
 </li>
 </ul>
 </div>
-<div class="sect2">
-<h3 id="use-case-filter-transactions-by-category"><a class="link" href="#use-case-filter-transactions-by-category">C.1. Use case: filter transactions by category</a></h3>
+<h3 id="use-case-filter-transactions-by-category" class="discrete">Use case: filter transactions by category</h3>
 <div class="paragraph">
 <p><strong>MSS</strong></p>
 </div>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>User requests to list filtered expenses</p>
+<p>User requests to list filtered transactions</p>
 </li>
 <li>
-<p>System queries list of expenses</p>
+<p>System queries list of transactions</p>
 </li>
 <li>
-<p>Add all expenses in given category to filtered list</p>
+<p>Apply filter predicate to update list of filtered  transactions</p>
 </li>
 <li>
 <p>System shows filtered list</p>
@@ -1816,9 +2004,273 @@ our users with an overview of their expenses in the past month</p>
 </li>
 </ul>
 </div>
+<h3 id="use-case-set-recurring-monthly-budget" class="discrete">Use case: Set recurring monthly budget</h3>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>User requests to set a recurring budget of a specified amount.</p>
+</li>
+<li>
+<p><code><strong>ExpenseLa</strong></code> processes the request and sets the specified amount as the budget for the current month.</p>
+</li>
+<li>
+<p><code><strong>ExpenseLa</strong></code> then update the value of recurringBudget variable in GlobalData to  the specified amount.</p>
 <div class="paragraph">
-<p><em>{More to be added}</em></p>
+<p>Use case ends.</p>
 </div>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p><strong>Extensions</strong></p>
+</div>
+<div class="ulist none">
+<ul class="none">
+<li>
+<p>1a. The parameters specified by the user are not valid.</p>
+<div class="ulist none">
+<ul class="none">
+<li>
+<p>1a1. <code><strong>ExpenseLa</strong></code> displays an invalid parameter error to the user and the monthly budget is not updated.</p>
+<div class="paragraph">
+<p>Use case ends.</p>
+</div>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+<h3 id="use-case-add-an-expense" class="discrete">Use Case: Add an expense</h3>
+<div class="paragraph">
+<p><strong>MSS</strong></p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>User requests to add a new expense into their expensela.</p>
+</li>
+<li>
+<p>The system processes the request and adds the expense transaction into the transactions list.</p>
+<div class="paragraph">
+<p>Use case ends.</p>
+</div>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p><strong>Extensions</strong></p>
+</div>
+<div class="ulist none">
+<ul class="none">
+<li>
+<p>1a. The parameters specified by the user are not valid.</p>
+<div class="ulist none">
+<ul class="none">
+<li>
+<p>1a1. The system displays an invalid parameter error to the user and the transactions list is not updated.</p>
+<div class="paragraph">
+<p>Use case ends.</p>
+</div>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+<h3 id="use-case-add-a-recurring-income" class="discrete">Use Case: Add a recurring income</h3>
+<div class="paragraph">
+<p><strong>MSS</strong></p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>User requests to add a new recurring income into their expensela.</p>
+</li>
+<li>
+<p>The system processes the request and adds the income transaction into the transactions list.</p>
+</li>
+<li>
+<p>The system then add the income transaction to RecurringTransactionList in GlobalData.</p>
+<div class="paragraph">
+<p>Use case ends.</p>
+</div>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p><strong>Extensions</strong></p>
+</div>
+<div class="ulist none">
+<ul class="none">
+<li>
+<p>1a. The parameters specified by the user are not valid.</p>
+<div class="ulist none">
+<ul class="none">
+<li>
+<p>1a1. The system displays an invalid parameter error to the user and the transactions list is not updated.</p>
+<div class="paragraph">
+<p>Use case ends.</p>
+</div>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+<h3 id="use-case-show-chart-analytics-view" class="discrete">Use Case: Show chart analytics view</h3>
+<div class="paragraph">
+<p><strong>MSS</strong></p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>User requests to toggle to chart analytics view.</p>
+</li>
+<li>
+<p>The system switches the view to charts view.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>2a. The filter for month is set to all, bar chart displays data of the last 2 years by month.</p>
+</li>
+<li>
+<p>2b. The filter for month is set to a specific month, bar chart displays data by day of the week.</p>
+<div class="paragraph">
+<p>Use case ends.</p>
+</div>
+</li>
+</ul>
+</div>
+</li>
+</ol>
+</div>
+<h3 id="use-case-clear-transaction-list" class="discrete">Use Case: Clear transaction list</h3>
+<div class="paragraph">
+<p>MSS*</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>User requests to clear all transactions.</p>
+</li>
+<li>
+<p>The system clears transaction list in ExpenseLa.</p>
+</li>
+<li>
+<p>The system resets MonthlyData and GlobalData</p>
+<div class="paragraph">
+<p>Use case ends.</p>
+</div>
+</li>
+</ol>
+</div>
+<h3 id="use-case-export-to-csv-file" class="discrete">Use Case: Export to CSV file</h3>
+<div class="paragraph">
+<p><strong>MSS</strong></p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>User requests to export current list being viewed to a CSV file.</p>
+</li>
+<li>
+<p>The system saves the transactions to that csv file named <code>transactions.csv</code> by the system.</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>Use case ends.</p>
+</div>
+<div class="paragraph">
+<p><strong>Extensions</strong></p>
+</div>
+<div class="ulist none">
+<ul class="none">
+<li>
+<p>1a. The file does not exists.</p>
+<div class="ulist none">
+<ul class="none">
+<li>
+<p>1a1. The system creates a file with the name <code>transactions.csv</code>.</p>
+<div class="paragraph">
+<p>Use case resumes at step 2.</p>
+</div>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+<h3 id="use-case-import-from-csv-file" class="discrete">Use Case: Import from CSV file</h3>
+<div class="paragraph">
+<p><strong>MSS</strong></p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>User requests to import transaction data from a CSV file.</p>
+</li>
+<li>
+<p>Import the transactions data from the file specified by the user ignoring duplicate and invalid transactions</p>
+<div class="paragraph">
+<p>Use case ends.</p>
+</div>
+</li>
+</ol>
+</div>
+<div class="ulist none">
+<ul class="none">
+<li>
+<p>1a. The file specified by user does not exists.</p>
+<div class="ulist none">
+<ul class="none">
+<li>
+<p>1a1. The system shows an error message prompting user to rectify their command.</p>
+<div class="paragraph">
+<p>Use case ends.</p>
+</div>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+<h3 id="use-case-find-transactions-whose-name-contains-certain-words" class="discrete">Use Case: Find transactions whose name contains certain words</h3>
+<div class="paragraph">
+<p><strong>MSS</strong></p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>User requests to list transactions whose name contains certain words.</p>
+</li>
+<li>
+<p>The system queries all transactions</p>
+</li>
+<li>
+<p>The system applies predicate to filter only transactions that contain the words specified by user</p>
+<div class="paragraph">
+<p>Use case ends.</p>
+</div>
+</li>
+</ol>
+</div>
+<div class="ulist none">
+<ul class="none">
+<li>
+<p>2a. The list is empty.</p>
+<div class="paragraph">
+<p>Use case ends.</p>
+</div>
+</li>
+<li>
+<p>3a. The list is empty.</p>
+<div class="paragraph">
+<p>Use case ends.</p>
+</div>
+</li>
+</ul>
 </div>
 </div>
 </div>
@@ -2002,4 +2454,4 @@ Expected: Similar to previous.</p>
 </div>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2020-04-12 15:39:34 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2020-04-13 02:34:33 UTC</div></div></div></body></html>

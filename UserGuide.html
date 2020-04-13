@@ -16,19 +16,21 @@
 <li><a href="#viewing-help-code-help-code">3.1. Viewing help : <code>help</code></a></li>
 <li><a href="#set-a-monthly-budget-code-budget-code-hubert-halim">3.2. Set a monthly budget : <code>budget</code> (Hubert Halim)</a></li>
 <li><a href="#reset-total-balance-code-resetbalance-code-hubert-halim">3.3. Reset total balance <code>resetbalance</code> (Hubert Halim)</a></li>
-<li><a href="#key-in-transaction-code-add-code">3.4. Key in transaction : <code>add</code></a></li>
-<li><a href="#filter-transactions-code-filter-code">3.5. Filter transactions : <code>filter</code></a></li>
-<li><a href="#deleting-a-transaction-code-delete-code">3.6. Deleting a transaction : <code>delete</code></a></li>
-<li><a href="#edit-a-transaction-code-edit-code">3.7. Edit a transaction : <code>edit</code></a></li>
-<li><a href="#analysis-of-transactions-code-toggleview-code">3.8. Analysis of transactions : <code>toggleview</code></a></li>
+<li><a href="#key-in-transaction-code-add-code-fheng-guo-jing-benjamin">3.4. Key in transaction : <code>add</code> (Fheng Guo Jing, Benjamin)</a></li>
+<li><a href="#filter-transactions-code-filter-code-pang-kim-jin">3.5. Filter transactions : <code>filter</code> (Pang Kim Jin)</a></li>
+<li><a href="#deleting-a-transaction-code-delete-code-fheng-guo-jing-benjamin">3.6. Deleting a transaction : <code>delete</code> (Fheng Guo Jing, Benjamin)</a></li>
+<li><a href="#edit-a-transaction-code-edit-code-fheng-guo-jing-benjamin">3.7. Edit a transaction : <code>edit</code> (Fheng Guo Jing, Benjamin)</a></li>
+<li><a href="#analysis-of-transactions-code-toggleview-code-choi-min-suk-pang-kim-jin">3.8. Analysis of transactions : <code>toggleview</code> (Choi Min Suk + Pang Kim Jin)</a></li>
 <li><a href="#find-transaction-by-name-code-find-code">3.9. Find transaction by name : <code>find</code></a></li>
 <li><a href="#list-of-transactions-code-list-code">3.10. List of transactions : <code>list</code></a></li>
-<li><a href="#clear-all-recurring-transactions-stored-code-clearrecurring-code">3.11. Clear all recurring transactions stored : <code>clearrecurring</code></a></li>
-<li><a href="#export-transaction-data-to-csv-code-export-code">3.12. Export transaction data to csv : <code>export</code></a></li>
-<li><a href="#import-transaction-data-from-csv-code-import-code">3.13. Import transaction data from csv : <code>import</code></a></li>
+<li><a href="#clear-all-recurring-transactions-stored-code-clearrecurring-code-fheng-guo-jing-benjamin">3.11. Clear all recurring transactions stored : <code>clearrecurring</code> (Fheng Guo Jing, Benjamin)</a></li>
+<li><a href="#export-transaction-data-to-csv-code-export-code-choi-min-suk">3.12. Export transaction data to csv : <code>export</code> (Choi Min Suk)</a></li>
+<li><a href="#import-transaction-data-from-csv-code-import-code-fheng-guo-jing-benjamin">3.13. Import transaction data from csv : <code>import</code> (Fheng Guo Jing, Benjamin)</a></li>
 <li><a href="#clear-all-data-code-clear-code-hubert-halim">3.14. Clear all data : <code>clear</code> (Hubert Halim)</a></li>
 <li><a href="#exiting-the-program-code-exit-code">3.15. Exiting the program : <code>exit</code></a></li>
 <li><a href="#saving-the-data">3.16. Saving the data</a></li>
+<li><a href="#data-encryption-coming-in-v2-0-pang-kim-jin">3.17. Data Encryption [coming in v2.0] (Pang Kim Jin)</a></li>
+<li><a href="#expensela-statement-code-statement-code-coming-in-v2-0-pang-kim-jin">3.18. ExpenseLa Statement <code>Statement</code> [coming in v2.0] (Pang Kim Jin)</a></li>
 </ul>
 </li>
 <li><a href="#faq">4. FAQ</a></li>
@@ -40,7 +42,7 @@
 <h2 id="product-overview"><a class="link" href="#product-overview">1. Product Overview</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>ExpenseLA is for money-conscious NUS students who wish to track their spending, in order to make better informed decisions when it comes to saving money. ExpenseLA maintains a record of your daily incoming and outgoing transactions to constantly keep track of your finances! ExpenseLA is optimized for those who prefer to work with a Command Line Interface (CLI) while still enjoying the benefits of having a Graphical User Interface (GUI). If you want a simple, no-frills expense tracker, look no further than ExpenseLA!</p>
+<p>ExpenseLa is for money-conscious NUS students who wish to track their spending, in order to make better informed decisions when it comes to saving money. ExpenseLa maintains a record of your daily incoming and outgoing transactions to constantly keep track of your finances! ExpenseLa is optimized for those who prefer to work with a Command Line Interface (CLI) while still enjoying the benefits of having a Graphical User Interface (GUI). If you want a simple, no-frills expense tracker, look no further than ExpenseLa!</p>
 </div>
 </div>
 </div>
@@ -56,7 +58,7 @@
 <p>Download the latest <code>expensela.jar</code> <a href="https://github.com/AY1920S2-CS2103-T09-3/main/releases">here</a>.</p>
 </li>
 <li>
-<p>Copy the file to the folder you want to use as the home folder for your Address Book.</p>
+<p>Copy the file to the folder you want to use as the home folder for your ExpenseLa.</p>
 </li>
 <li>
 <p>Double-click the file to start the app. The GUI should appear in a few seconds.</p>
@@ -77,7 +79,7 @@ Filter panel and Transaction List panel(Chart Analytics Panel)</p>
 </li>
 <li>
 <p>Filters are only to filter transaction list and chart analytics, MonthlyData is data for the current month and not the month
-shown in the filter. So filter does not apply to MonthlyData</p>
+shown in the filter. So filter does not apply to MonthlyData.</p>
 </li>
 <li>
 <p>Type the command in the command box and press <kbd>Enter</kbd> to execute it.<br>
@@ -99,7 +101,7 @@ This feature is just like the command navigation feature in your favourite comma
 <p><strong><code>budget b/1000 rc/</code></strong> : set a recurring budget of $1000 for the current month and subsequent months</p>
 </li>
 <li>
-<p><strong><code>add i/ c/Income n/salary a/2500 d/2020-04-02 rc/</code></strong> : adds a recurring income with amount <code>$2500.00</code></p>
+<p><code>add i/ c/Income n/salary a/2500 d/2020-04-02 rc/</code> : adds a recurring income with amount <code>$2500.00</code></p>
 </li>
 <li>
 <p><strong><code>add a/100</code></strong><code>n/Wagyu Steak c/FOOD</code> : adds an expense named <code>Wagyu Steak</code> with amount <code>$100.00</code> spent on the day it is added in category <code>FOOD</code> to the expense tracker</p>
@@ -114,7 +116,7 @@ This feature is just like the command navigation feature in your favourite comma
 <p><strong><code>add a/50</code></strong><code>n/shirt c/SHOPPING d/2020-04-08</code> : adds an expense named <code>shirt</code> with amount <code>50.00</code> spent on <code>2020-04-08</code> in category <code>SHOPPING</code> to the expense tracker</p>
 </li>
 <li>
-<p><strong><code>filter</code></strong><code>m/ 2020-04</code> : filters to only show transactions made on <code>2020-04</code></p>
+<p><strong><code>filter</code></strong><code>c/FOOD m/2020-02</code> : filters to only show transactions made on <code>2020-02</code> with category <code>FOOD</code></p>
 </li>
 <li>
 <p><strong><code>delete</code></strong><code>1</code> : deletes the expense with id <code>1</code> in the current list</p>
@@ -179,18 +181,38 @@ This feature is just like the command navigation feature in your favourite comma
 </div>
 <div class="paragraph">
 <p>Format: <code>budget b/AMOUNT</code> (to set a budget for the given month only)
-        <code>budget b/AMOUNT rc/</code> (to set repeating budget of $AMOUNT for the coming months)</p>
+        <code>budget b/AMOUNT rc/</code> (to set repeating budget of $<code>AMOUNT</code> for the coming months)</p>
 </div>
 <div class="paragraph">
-<p>Examples:</p>
+<p>Example Usage:</p>
 </div>
 <div class="ulist">
 <ul>
 <li>
-<p><code>budget b/1000 rc/</code></p>
+<p><code>budget b/1000</code> - set a non-recurring budget of $1000.00</p>
+<div class="imageblock">
+<div class="content">
+<img src="images/BeforeSetBudget.png" alt="BeforeSetBudget" width="790">
+</div>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/AfterSetBudget.png" alt="AfterSetBudget" width="790">
+</div>
+</div>
 </li>
 <li>
-<p><code>budget b/1500</code></p>
+<p><code>budget b/1500 rc/</code> - set a recurring budget of $1500.00</p>
+<div class="imageblock">
+<div class="content">
+<img src="images/BeforeSetBudget.png" alt="BeforeSetBudget" width="790">
+</div>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/AfterSetRecurringBudget.png" alt="AfterSetRecurringBudget" width="790">
+</div>
+</div>
 </li>
 </ul>
 </div>
@@ -198,16 +220,16 @@ This feature is just like the command navigation feature in your favourite comma
 <div class="sect2">
 <h3 id="reset-total-balance-code-resetbalance-code-hubert-halim"><a class="link" href="#reset-total-balance-code-resetbalance-code-hubert-halim">3.3. Reset total balance <code>resetbalance</code> (Hubert Halim)</a></h3>
 <div class="paragraph">
-<p>Reset Balance value to the total from the amount of all transactions in stored in the application so far.
-This command is used in case user messes up with json file or there is an unhandled bug in the app that
+<p>Reset <code>Balance</code> value to the total from the amount of all transactions in stored in the application so far.
+This command is used in case the user makes a mistake when editing the json file or there is an unhandled bug in the app that
 causes difference in the value of total balance and the net balance of all the transactions added together.
 This command will rectify that issue.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="key-in-transaction-code-add-code"><a class="link" href="#key-in-transaction-code-add-code">3.4. Key in transaction : <code>add</code></a></h3>
+<h3 id="key-in-transaction-code-add-code-fheng-guo-jing-benjamin"><a class="link" href="#key-in-transaction-code-add-code-fheng-guo-jing-benjamin">3.4. Key in transaction : <code>add</code> (Fheng Guo Jing, Benjamin)</a></h3>
 <div class="paragraph">
-<p>Adds an expense or income to the expense tracker. Expenses/incomes are stored as a transaction.</p>
+<p>Adds an expense or income to the expense tracker. Expenses/incomes are stored as transactions.</p>
 </div>
 <div class="paragraph">
 <p>Format: <code>add [i/] n/ NAME a/ AMOUNT [d/ DATE] [c/ CATEGORY] [r/ REMARK]  [rc/]</code></p>
@@ -282,17 +304,34 @@ Including rc/ will make transaction recurring every month on the same day set in
 </div>
 </div>
 <div class="sect2">
-<h3 id="filter-transactions-code-filter-code"><a class="link" href="#filter-transactions-code-filter-code">3.5. Filter transactions : <code>filter</code></a></h3>
+<h3 id="filter-transactions-code-filter-code-pang-kim-jin"><a class="link" href="#filter-transactions-code-filter-code-pang-kim-jin">3.5. Filter transactions : <code>filter</code> (Pang Kim Jin)</a></h3>
 <div class="paragraph">
-<p>Filters transactions for user to see by filter type.</p>
+<p>Filters transactions for user to view specific transactions according to the filter type. Upon application
+launch the preset filter is for all transactions in the current month as depicted below:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/Filter.png" alt="Filter" width="790">
+</div>
 </div>
 <div class="paragraph">
-<p>Format: <code>filter m/ YYYY-MM</code> to view a certain month&#8217;s transactions
-        <code>filter c/ CATEGORY</code> to view transactions of a certain category</p>
+<p>Format: <code>filter c/CATEGORY m/YYYY-MM</code></p>
 </div>
 <div class="paragraph">
 <p>Expected Outcome: Filter is changed to the filter specified. List of transactions will only
-show transactions that fulfill the filter criteria</p>
+show transactions that fulfill the filter criteria.</p>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+If only 1 filter type is specified (either category or month), the other filter type will automatically be set to "ALL".
+</td>
+</tr>
+</table>
 </div>
 <div class="paragraph">
 <p>Examples:</p>
@@ -300,24 +339,22 @@ show transactions that fulfill the filter criteria</p>
 <div class="ulist">
 <ul>
 <li>
-<p><code>filter m/ 2020-04</code> (filter by month and remove category filter)</p>
+<p><code>filter m/2020-04</code> - show transactions in April 2020 across all categories</p>
 </li>
 <li>
-<p><code>filter c/ TRANSPORT</code> (filter by category and remove month filter)</p>
+<p><code>filter c/TRANSPORT</code> - show transactions with category "TRANSPORT" across all months</p>
 </li>
 <li>
-<p><code>filter m/ 2020-04 c/ FOOD</code> (filter by both category and month)</p>
-<div class="imageblock">
-<div class="content">
-<img src="images/Filter.png" alt="Filter" width="790">
-</div>
-</div>
+<p><code>filter c/FOOD m/2020-04</code> - show transactions with category "FOOD" in April 2020</p>
+</li>
+<li>
+<p><code>filter c/ALL m/ALL</code> - show all transactions</p>
 </li>
 </ul>
 </div>
 </div>
 <div class="sect2">
-<h3 id="deleting-a-transaction-code-delete-code"><a class="link" href="#deleting-a-transaction-code-delete-code">3.6. Deleting a transaction : <code>delete</code></a></h3>
+<h3 id="deleting-a-transaction-code-delete-code-fheng-guo-jing-benjamin"><a class="link" href="#deleting-a-transaction-code-delete-code-fheng-guo-jing-benjamin">3.6. Deleting a transaction : <code>delete</code> (Fheng Guo Jing, Benjamin)</a></h3>
 <div class="paragraph">
 <p>Deletes the specified transaction from the expense tracker.</p>
 </div>
@@ -352,7 +389,7 @@ Deletes the transaction with index number 3 in the expense tracker&#8217;s curre
 </div>
 </div>
 <div class="sect2">
-<h3 id="edit-a-transaction-code-edit-code"><a class="link" href="#edit-a-transaction-code-edit-code">3.7. Edit a transaction : <code>edit</code></a></h3>
+<h3 id="edit-a-transaction-code-edit-code-fheng-guo-jing-benjamin"><a class="link" href="#edit-a-transaction-code-edit-code-fheng-guo-jing-benjamin">3.7. Edit a transaction : <code>edit</code> (Fheng Guo Jing, Benjamin)</a></h3>
 <div class="paragraph">
 <p>Edit the specified transaction from the expense tracker</p>
 </div>
@@ -380,15 +417,17 @@ Deletes the transaction with index number 3 in the expense tracker&#8217;s curre
 </div>
 </div>
 <div class="sect2">
-<h3 id="analysis-of-transactions-code-toggleview-code"><a class="link" href="#analysis-of-transactions-code-toggleview-code">3.8. Analysis of transactions : <code>toggleview</code></a></h3>
+<h3 id="analysis-of-transactions-code-toggleview-code-choi-min-suk-pang-kim-jin"><a class="link" href="#analysis-of-transactions-code-toggleview-code-choi-min-suk-pang-kim-jin">3.8. Analysis of transactions : <code>toggleview</code> (Choi Min Suk + Pang Kim Jin)</a></h3>
 <div class="paragraph">
-<p>Toggle between viewing list of transactions and analytics with bar graph and pie chart to show expense trend</p>
+<p>Toggle between viewing list of transactions and analytics with bar graph and pie chart to show expense trend.</p>
 </div>
 <div class="paragraph">
-<p>Expected Outcome: changed view to charts if previously was list view and to list view if previously was chart view.
-For Chart Analytics view, a pie chart will show transactions by different categories. A bar chart will either display
-transactions by day of the week (filter is set to a specific month) or
-transactions by month for this year and last year(filter is set to all).</p>
+<p>If filter is set to a specific month, the bar graph displays the transactions by day of the week. If filter is
+set to all months, bar chart will display transactions by month for current and previous year. The pie chart will
+show the transactions by the different categories according to the filter.</p>
+</div>
+<div class="paragraph">
+<p>Expected Outcome: changed view to charts if previously was list view and to list view if previously was chart view.</p>
 </div>
 <div class="imageblock">
 <div class="content">
@@ -399,6 +438,18 @@ transactions by month for this year and last year(filter is set to all).</p>
 <div class="content">
 <img src="images/ChartView.png" alt="ChartView" width="790">
 </div>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<code>ToggleView</code> and <code>BarChart</code> by Choi Min Suk and <code>PieChart</code> by Pang Kim Jin
+</td>
+</tr>
+</table>
 </div>
 </div>
 <div class="sect2">
@@ -430,7 +481,7 @@ transactions by month for this year and last year(filter is set to all).</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="clear-all-recurring-transactions-stored-code-clearrecurring-code"><a class="link" href="#clear-all-recurring-transactions-stored-code-clearrecurring-code">3.11. Clear all recurring transactions stored : <code>clearrecurring</code></a></h3>
+<h3 id="clear-all-recurring-transactions-stored-code-clearrecurring-code-fheng-guo-jing-benjamin"><a class="link" href="#clear-all-recurring-transactions-stored-code-clearrecurring-code-fheng-guo-jing-benjamin">3.11. Clear all recurring transactions stored : <code>clearrecurring</code> (Fheng Guo Jing, Benjamin)</a></h3>
 <div class="paragraph">
 <p>Clear all recurring transactions stored</p>
 </div>
@@ -439,7 +490,7 @@ transactions by month for this year and last year(filter is set to all).</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="export-transaction-data-to-csv-code-export-code"><a class="link" href="#export-transaction-data-to-csv-code-export-code">3.12. Export transaction data to csv : <code>export</code></a></h3>
+<h3 id="export-transaction-data-to-csv-code-export-code-choi-min-suk"><a class="link" href="#export-transaction-data-to-csv-code-export-code-choi-min-suk">3.12. Export transaction data to csv : <code>export</code> (Choi Min Suk)</a></h3>
 <div class="paragraph">
 <p>Export the filtered transaction list to a csv file</p>
 </div>
@@ -454,7 +505,7 @@ will be exported to the csv file.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="import-transaction-data-from-csv-code-import-code"><a class="link" href="#import-transaction-data-from-csv-code-import-code">3.13. Import transaction data from csv : <code>import</code></a></h3>
+<h3 id="import-transaction-data-from-csv-code-import-code-fheng-guo-jing-benjamin"><a class="link" href="#import-transaction-data-from-csv-code-import-code-fheng-guo-jing-benjamin">3.13. Import transaction data from csv : <code>import</code> (Fheng Guo Jing, Benjamin)</a></h3>
 <div class="paragraph">
 <p>Import transactions from csv and add it to transaction list, duplicate transactions are ignored.</p>
 </div>
@@ -466,7 +517,7 @@ will be added to transaction list</p>
 <div class="sect2">
 <h3 id="clear-all-data-code-clear-code-hubert-halim"><a class="link" href="#clear-all-data-code-clear-code-hubert-halim">3.14. Clear all data : <code>clear</code> (Hubert Halim)</a></h3>
 <div class="paragraph">
-<p>Clear all data in expenseLa including monthly data and global data</p>
+<p>Clear all data in ExpenseLa including monthly data and global data</p>
 </div>
 <div class="paragraph">
 <p>Expected Outcome: All transactions are deleted, balance is set to 0 and monthly data is also set to 0.
@@ -487,6 +538,21 @@ All recurring data such as budget and transactions are also cleared</p>
 <div class="paragraph">
 <p>ExpenseLa data are saved in the hard disk automatically as a json file after any command that changes the data.<br>
 There is no need to save manually.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="data-encryption-coming-in-v2-0-pang-kim-jin"><a class="link" href="#data-encryption-coming-in-v2-0-pang-kim-jin">3.17. Data Encryption [coming in v2.0] (Pang Kim Jin)</a></h3>
+<div class="paragraph">
+<p>With the AES-256 encryption, ExpenseLa ensures that the sensitive information you have provided is safe from outside
+prying eyes, and this is all done without any additional effort from the user.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="expensela-statement-code-statement-code-coming-in-v2-0-pang-kim-jin"><a class="link" href="#expensela-statement-code-statement-code-coming-in-v2-0-pang-kim-jin">3.18. ExpenseLa Statement <code>Statement</code> [coming in v2.0] (Pang Kim Jin)</a></h3>
+<div class="paragraph">
+<p>With the ability to generate your personalised ExpenseLa statement, you will be able to export all your expenses,
+income, budget, and balance information into a pdf document. Using ExpenseLa&#8217;s <code>Filter</code> command, you will be able
+to selectively include which transactions to make your statement tailored to your needs.</p>
 </div>
 </div>
 </div>
@@ -513,16 +579,17 @@ e.g. <code>budget b/ 1000</code><br>
 </li>
 <li>
 <p><strong>add</strong> : <code>add a/ AMOUNT n/ NAME [d/ DATE] [c/ CATEGORY] [r/ REMARK] [rc/]</code><br>
-e.g. * <code>add a/ 26.00 n/ Grab Share d/ 2020-02-19 c/ TRANSPORT</code><br>
+e.g.  <code>add a/ 26.00 n/ Grab Share d/ 2020-02-19 c/ TRANSPORT</code><br>
        <code>add a/ 16.00 n/ Pizza r/ Lunch c/ FOOD</code><br>
        <code>add i/ a/ 200.00 n/ pocket money c/INCOME rc/</code></p>
 </li>
 <li>
-<p><strong>Filter</strong> : <code>filter m/ YYYY-MM</code><br>
-             <code>filter c/ CATEGORY</code><br>
-e.g. <code>filter m/ 2020-02</code><br>
-     <code>filter c/ FOOD</code><br>
-     <code>filter c/ TRANSPORT m/ 2020-03</code></p>
+<p><strong>Filter</strong> : <code>filter m/YYYY-MM</code><br>
+             <code>filter c/CATEGORY</code><br>
+e.g. <code>filter m/2020-02</code><br>
+     <code>filter c/FOOD</code><br>
+     <code>filter c/TRANSPORT m/2020-03</code><br>
+     <code>filter c/ALL m/ALL</code></p>
 </li>
 <li>
 <p><strong>Find</strong> : <code>find KEYWORD [MORE_KEYWORDS]</code><br>
@@ -569,4 +636,4 @@ e.g. <code>edit 1 a/ 26.00 n/ Grab Share d/ 2020-02-19 c/ TRANSPORT</code><br>
 </ul>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2020-04-12 15:39:34 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2020-04-13 02:34:33 UTC</div></div></div></body></html>
