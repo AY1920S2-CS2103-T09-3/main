@@ -36,7 +36,7 @@
 <li><a href="#setting-budgets-hubert-halim">4.3. Setting budgets (Hubert Halim)</a></li>
 <li><a href="#command-history-navigation-hubert-halim">4.4. Command History navigation (Hubert Halim)</a></li>
 <li><a href="#filtering-transactions-pang-kim-jin">4.5. Filtering Transactions (Pang Kim Jin)</a></li>
-<li><a href="#chart-analytics-choi-min-suk-pang-kim-jin">4.6. Chart Analytics (Choi Min Suk + Pang Kim Jin)</a></li>
+<li><a href="#chart-analytics-toggleview-command-and-bar-graphs-by-choi-min-suk-pie-chart-by-pang-kim-jin">4.6. Chart Analytics (toggleview Command and Bar Graphs by Choi Min Suk + Pie Chart by Pang Kim Jin)</a></li>
 <li><a href="#export-choi-min-suk">4.7. Export (Choi Min Suk)</a></li>
 <li><a href="#proposed-data-encryption-pang-kim-jin">4.8. [Proposed] Data Encryption (Pang Kim Jin)</a></li>
 <li><a href="#proposed-expensela-monthly-statement-pang-kim-jin">4.9. [Proposed] ExpenseLa Monthly Statement (Pang Kim Jin)</a></li>
@@ -50,14 +50,33 @@
 <li><a href="#product-scope">Appendix A: Product Scope</a></li>
 <li><a href="#user-stories">Appendix B: User Stories</a></li>
 <li><a href="#use-cases-hubert-halim">Appendix C: Use Cases (Hubert Halim)</a></li>
-<li><a href="#non-functional-requirements">Appendix D: Non Functional Requirements</a></li>
+<li><a href="#non-functional-requirements-pang-kim-jin">Appendix D: Non Functional Requirements (Pang Kim Jin)</a></li>
 <li><a href="#glossary">Appendix E: Glossary</a></li>
 <li><a href="#product-survey">Appendix F: Product Survey</a></li>
-<li><a href="#instructions-for-manual-testing">Appendix G: Instructions for Manual Testing</a>
+<li><a href="#instructions-for-manual-testing-pang-kim-jin">Appendix G: Instructions for Manual Testing (Pang Kim Jin)</a>
 <ul class="sectlevel2">
 <li><a href="#launch-and-shutdown">G.1. Launch and Shutdown</a></li>
-<li><a href="#deleting-a-person">G.2. Deleting a person</a></li>
-<li><a href="#saving-data">G.3. Saving data</a></li>
+<li><a href="#setting-a-monthly-budget">G.2. Setting a monthly budget</a></li>
+<li><a href="#resetting-total-balance">G.3. Resetting total balance</a></li>
+<li><a href="#adding-a-transaction">G.4. Adding a transaction</a></li>
+<li><a href="#filtering-transactions">G.5. Filtering transactions</a></li>
+<li><a href="#deleting-a-transaction">G.6. Deleting a transaction</a></li>
+<li><a href="#editing-a-transaction">G.7. Editing a transaction</a></li>
+<li><a href="#analysis-of-transactions">G.8. Analysis of transactions</a></li>
+<li><a href="#finding-transactions">G.9. Finding transactions</a></li>
+<li><a href="#listing-all-transactions">G.10. Listing all transactions</a></li>
+<li><a href="#clearing-all-recurring-transactions">G.11. Clearing all recurring transactions</a></li>
+<li><a href="#exporting-transaction-data-to-csv">G.12. Exporting transaction data to csv</a></li>
+<li><a href="#importing-transaction-data-from-csv">G.13. Importing transaction data from csv</a></li>
+<li><a href="#clearing-all-data">G.14. Clearing all data</a></li>
+<li><a href="#showing-help-window">G.15. Showing help window</a></li>
+<li><a href="#saving-data">G.16. Saving data</a></li>
+</ul>
+</li>
+<li><a href="#effort">Appendix H: Effort</a>
+<ul class="sectlevel2">
+<li><a href="#effort-by-team">H.1. Effort by team</a></li>
+<li><a href="#challenges-faced">H.2. Challenges faced</a></li>
 </ul>
 </li>
 </ul>
@@ -1126,7 +1145,7 @@ future implementation.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="chart-analytics-choi-min-suk-pang-kim-jin"><a class="link" href="#chart-analytics-choi-min-suk-pang-kim-jin">4.6. Chart Analytics (Choi Min Suk + Pang Kim Jin)</a></h3>
+<h3 id="chart-analytics-toggleview-command-and-bar-graphs-by-choi-min-suk-pie-chart-by-pang-kim-jin"><a class="link" href="#chart-analytics-toggleview-command-and-bar-graphs-by-choi-min-suk-pie-chart-by-pang-kim-jin">4.6. Chart Analytics (toggleview Command and Bar Graphs by Choi Min Suk + Pie Chart by Pang Kim Jin)</a></h3>
 <div class="paragraph">
 <p>The <strong>toggleview</strong> command allows the user to switch between viewing the list of 'Transactions' and viewing an analysis of
 his expenditure.</p>
@@ -1724,7 +1743,7 @@ may be relevant for the purposes of exporting the statement.</p>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>* * *</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">someone who earns income</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">employed user</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">add a new income entry</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">keep track of my income</p></td>
 </tr>
@@ -1736,13 +1755,13 @@ may be relevant for the purposes of exporting the statement.</p>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>* * *</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">low-income user</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">low-income user (like student)</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">set budget for current month</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">limit my expenditure for the month</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>* * *</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">low-income user</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">low-income user (like student)</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">be notified by the application if i am spending too much money</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">be wary of overshooting my budget</p></td>
 </tr>
@@ -1754,7 +1773,7 @@ may be relevant for the purposes of exporting the statement.</p>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>* * *</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">user with varying income</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">part-time worker with varying income</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">be flexible with my budgets</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">spend more or less on certain months depending on my financial situation</p></td>
 </tr>
@@ -1790,13 +1809,13 @@ may be relevant for the purposes of exporting the statement.</p>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>* * *</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">user trying to save money</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">couple/student trying to save up</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">filter expense based on date or time period</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">see how much money I have spent in that time period and make better decisions</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>* * *</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">user trying to save money</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">couple/student trying to save up</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">view amount of budget left to spend</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">adjust spending habit for the rest of the month</p></td>
 </tr>
@@ -2275,23 +2294,32 @@ may be relevant for the purposes of exporting the statement.</p>
 </div>
 </div>
 <div class="sect1">
-<h2 id="non-functional-requirements"><a class="link" href="#non-functional-requirements">Appendix D: Non Functional Requirements</a></h2>
+<h2 id="non-functional-requirements-pang-kim-jin"><a class="link" href="#non-functional-requirements-pang-kim-jin">Appendix D: Non Functional Requirements (Pang Kim Jin)</a></h2>
 <div class="sectionbody">
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>Should work on any <a href="#mainstream-os">mainstream OS</a> as long as it has Java <code>11</code> or above installed.</p>
+<p>The software should work on any <a href="#mainstream-os">mainstream OS</a> as long as it has Java <code>11</code> or above installed.</p>
 </li>
 <li>
-<p>Should be able to hold up to 2000 transactions(expenses and incomes) without any apparent slowdown for normal usage.</p>
+<p>The software should be able to hold up to 2000 transactions(expenses and incomes).</p>
+</li>
+<li>
+<p>The software should be able to respond within 5 seconds.</p>
 </li>
 <li>
 <p>A user with above average typing speed for regular English text (i.e. not code, not system admin commands) should be able to accomplish most of the tasks faster using commands than using the mouse.</p>
 </li>
+<li>
+<p>The software should be able to run irrespective of internet connection.</p>
+</li>
+<li>
+<p>The software should support both manual and automated testing.</p>
+</li>
+<li>
+<p>The source code should be open-source</p>
+</li>
 </ol>
-</div>
-<div class="paragraph">
-<p><em>{More to be added}</em></p>
 </div>
 </div>
 </div>
@@ -2413,7 +2441,7 @@ with the goal of ensuring the systems are running efficiently and effectively.</
 </div>
 </div>
 <div class="sect1">
-<h2 id="instructions-for-manual-testing"><a class="link" href="#instructions-for-manual-testing">Appendix G: Instructions for Manual Testing</a></h2>
+<h2 id="instructions-for-manual-testing-pang-kim-jin"><a class="link" href="#instructions-for-manual-testing-pang-kim-jin">Appendix G: Instructions for Manual Testing (Pang Kim Jin)</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Given below are instructions to test the app manually.</p>
@@ -2464,44 +2492,339 @@ Expected: The most recent window size and location is retained.</p>
 </li>
 </ol>
 </div>
-<div class="paragraph">
-<p><em>{ more test cases &#8230;&#8203; }</em></p>
-</div>
 </div>
 <div class="sect2">
-<h3 id="deleting-a-person"><a class="link" href="#deleting-a-person">G.2. Deleting a person</a></h3>
+<h3 id="setting-a-monthly-budget"><a class="link" href="#setting-a-monthly-budget">G.2. Setting a monthly budget</a></h3>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>Deleting a person while all persons are listed</p>
+<p>Setting a monthly budget to a user decided amount</p>
 <div class="olist loweralpha">
 <ol class="loweralpha" type="a">
 <li>
-<p>Prerequisites: List all persons using the <code>list</code> command. Multiple persons in the list.</p>
+<p>Test Case: <code>budget b/1000</code><br>
+Expected: The monthly budget for the current month is set to $1000</p>
 </li>
 <li>
-<p>Test case: <code>delete 1</code><br>
-Expected: First contact is deleted from the list. Details of the deleted contact shown in the status message. Timestamp in the status bar is updated.</p>
-</li>
-<li>
-<p>Test case: <code>delete 0</code><br>
-Expected: No person is deleted. Error details shown in the status message. Status bar remains the same.</p>
-</li>
-<li>
-<p>Other incorrect delete commands to try: <code>delete</code>, <code>delete x</code> (where x is larger than the list size) <em>{give more}</em><br>
-Expected: Similar to previous.</p>
+<p>Test Case: <code>budget</code><br>
+Expected: The monthly budget is not updated. Error is shown in the status message</p>
 </li>
 </ol>
 </div>
 </li>
 </ol>
-</div>
-<div class="paragraph">
-<p><em>{ more test cases &#8230;&#8203; }</em></p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="saving-data"><a class="link" href="#saving-data">G.3. Saving data</a></h3>
+<h3 id="resetting-total-balance"><a class="link" href="#resetting-total-balance">G.3. Resetting total balance</a></h3>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Reset <code>Balance</code> value to the total from the amount of all transactions stored</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>Test Case: <code>resetBalance</code><br>
+Expected: The <code>Balance</code> is reset</p>
+</li>
+</ol>
+</div>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect2">
+<h3 id="adding-a-transaction"><a class="link" href="#adding-a-transaction">G.4. Adding a transaction</a></h3>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Add either an expense or income transaction</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>Test Case: <code>add a/ 26.00 n/ Grab Share d/ 2020-02-19 c/ TRANSPORT</code><br>
+Expected: A new expense transaction is added to the transaction list. Depending on the current filter applied
+this change may or may not be visible. Details of the added transaction is visible in the Command Result</p>
+</li>
+<li>
+<p>Test Case: <code>add a/ 16.00 n/ Pizza r/ Lunch c/ FOOD</code><br>
+Expected: A new expense transaction is added to the transaction list, with the transaction date set to the
+current date. Details of the added transaction is visible in the Command Result</p>
+</li>
+<li>
+<p>Test Case: <code>add i/ a/ 200.00 n/ pocket money c/INCOME rc/</code><br>
+Expected: A recurring income transaction is added to the transaction list, with the transaction date set to the
+current date. Details of the added transaction is visible in the Command Result</p>
+</li>
+<li>
+<p>Test Case: <code>add i/ n/ allowance c/INCOME rc/</code><br>
+Expected: No transaction is added. Error details are shown in the Command Result</p>
+</li>
+</ol>
+</div>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect2">
+<h3 id="filtering-transactions"><a class="link" href="#filtering-transactions">G.5. Filtering transactions</a></h3>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Filtering transactions listed by category, month, or both.</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>Test Case: <code>filter m/2020-04</code><br>
+Expected: A month filter for April 2020 is applied to the transaction list, relevant transactions are listed.
+Details of the number of transactions found is visible in the Command Result</p>
+</li>
+<li>
+<p>Test Case: <code>filter c/TRANSPORT</code><br>
+Expected: A category filter for "TRANSPORT" is applied to the transaction list, relevant transactions are listed.
+Details of the number of transactions found is visible in the Command Result</p>
+</li>
+<li>
+<p>Test Case: <code>filter c/FOOD m/2020-02</code><br>
+Expected: A category filter for "FOOD" and month filter for February 2020 is applied to the transaction list,
+relevant transactions are listed. Details of the number of transactions found is visible in the Command Result</p>
+</li>
+<li>
+<p>Test Case: <code>filter</code><br>
+Expected: No filter is applied and no transactions listed. Error details are shown in the Command Result.</p>
+</li>
+</ol>
+</div>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect2">
+<h3 id="deleting-a-transaction"><a class="link" href="#deleting-a-transaction">G.6. Deleting a transaction</a></h3>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Deleting a transaction from the transactions listed</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>Prerequisites: At least one transaction in the list using either <code>list</code> or <code>filter</code> command.</p>
+</li>
+<li>
+<p>Test case: <code>delete 1</code><br>
+Expected: First contact is deleted from the list. Details of the deleted contact shown in the status message.</p>
+</li>
+<li>
+<p>Test case: <code>delete 0</code><br>
+Expected: No transaction is deleted. Error details shown in the status message.</p>
+</li>
+<li>
+<p>Test Case: <code>delete</code><br>
+Expected: No transaction is deleted. Error details are shown in the Command Result.</p>
+</li>
+</ol>
+</div>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect2">
+<h3 id="editing-a-transaction"><a class="link" href="#editing-a-transaction">G.7. Editing a transaction</a></h3>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Editing a transaction from the transactions listed</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>Prerequisites: At least one transaction in the list using either <code>list</code> or <code>filter</code> command.</p>
+</li>
+<li>
+<p>Test case: <code>edit 1 a/ 26.00 n/ Grab Share d/ 2020-02-19 c/ TRANSPORT</code><br>
+Expected: First contact is edited from the list. Details of the edited contact shown in the status message.</p>
+</li>
+<li>
+<p>Test case: <code>edit 0 a/ 26.00 n/ Grab Share d/ 2020-02-19 c/ TRANSPORT</code><br>
+Expected: No transaction is edited. Error details shown in the status message.</p>
+</li>
+<li>
+<p>Test Case: <code>edit a/ 26.00 n/ Grab Share d/ 2020-02-19 c/ TRANSPORT</code><br>
+Expected: No transaction is edited. Error details are shown in the Command Result.</p>
+</li>
+</ol>
+</div>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect2">
+<h3 id="analysis-of-transactions"><a class="link" href="#analysis-of-transactions">G.8. Analysis of transactions</a></h3>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Toggle between viewing list of transactions and analytics with bar graph and pie chart to show expense trend.</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>Test case: <code>toggleview</code><br>
+Expected: Transaction view is toggled to analytics view or vice versa.</p>
+</li>
+<li>
+<p>Test case: <code>toggle</code><br>
+Expected: No toggling happens. Error details shown in the status message.</p>
+</li>
+</ol>
+</div>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect2">
+<h3 id="finding-transactions"><a class="link" href="#finding-transactions">G.9. Finding transactions</a></h3>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Finding transactions that match any of the supplied keywords in its name field.</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>Test case: <code>find Airpods</code><br>
+Expected: Transactions with the word "Airpods" in its name will be displayed in the transaction list.</p>
+</li>
+<li>
+<p>Test case: <code>find Airpods Allowance Electricity</code><br>
+Expected: Transactions with the word "Airpods" "Allowance" or "Electricity" in its name will be displayed in the
+transaction list.</p>
+</li>
+<li>
+<p>Test case: <code>find</code><br>
+Expected: No transactions found. Error details shown in the status message.</p>
+</li>
+</ol>
+</div>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect2">
+<h3 id="listing-all-transactions"><a class="link" href="#listing-all-transactions">G.10. Listing all transactions</a></h3>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Listing all transactions and resetting all filters to "ALL".</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>Test case: <code>list</code><br>
+Expected: All transactions will be displayed in the transaction list. Filter for Category and Month are now
+"ALL".</p>
+</li>
+</ol>
+</div>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect2">
+<h3 id="clearing-all-recurring-transactions"><a class="link" href="#clearing-all-recurring-transactions">G.11. Clearing all recurring transactions</a></h3>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Clearing all recurring transactions stored.</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>Test case: <code>clearrecurring</code><br>
+Expected: All recurring transactions in the transaction list will be cleared.</p>
+</li>
+</ol>
+</div>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect2">
+<h3 id="exporting-transaction-data-to-csv"><a class="link" href="#exporting-transaction-data-to-csv">G.12. Exporting transaction data to csv</a></h3>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Exporting the filtered transaction list to a csv file.</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>Prerequisite: There must be at least one transaction in the transaction list</p>
+</li>
+<li>
+<p>Test case: <code>export</code><br>
+Expected: All transactions in the transaction list after applying filters will be exported.</p>
+</li>
+</ol>
+</div>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect2">
+<h3 id="importing-transaction-data-from-csv"><a class="link" href="#importing-transaction-data-from-csv">G.13. Importing transaction data from csv</a></h3>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Importing the filtered transaction list to a csv file.</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>Prerequisite: There must be at least one transaction in the csv file</p>
+</li>
+<li>
+<p>Test case: <code>import</code><br>
+Expected: All transactions that are in the correct format and not duplicated entries in the csv file
+will be imported.</p>
+</li>
+</ol>
+</div>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect2">
+<h3 id="clearing-all-data"><a class="link" href="#clearing-all-data">G.14. Clearing all data</a></h3>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Clearing all data in ExpenseLa including monthly data and global data</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>Test case: <code>clear</code><br>
+Expected: All transactions are deleted, balance is set to 0 and monthly data is also set to 0.
+All recurring data such as budget and transactions are also cleared.</p>
+</li>
+</ol>
+</div>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect2">
+<h3 id="showing-help-window"><a class="link" href="#showing-help-window">G.15. Showing help window</a></h3>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>View the help window for help with commands</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>Test Case: <code>help</code><br>
+Expected: A popup with a link to the User Guide pops up.</p>
+</li>
+</ol>
+</div>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect2">
+<h3 id="saving-data"><a class="link" href="#saving-data">G.16. Saving data</a></h3>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
@@ -2509,16 +2832,87 @@ Expected: Similar to previous.</p>
 <div class="olist loweralpha">
 <ol class="loweralpha" type="a">
 <li>
-<p><em>{explain how to simulate a missing/corrupted file and the expected behavior}</em></p>
+<p>Delete the data files at <code>.\data\expenseLa.json</code> and <code>.\data\globalData.json</code></p>
 </li>
 </ol>
 </div>
 </li>
 </ol>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="effort"><a class="link" href="#effort">Appendix H: Effort</a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>In this section, we highlight the amount of effort taken for us to develop ExpenseLa, the challenges faced in this development and our eventual achievement.</p>
+</div>
+<div class="sect2">
+<h3 id="effort-by-team"><a class="link" href="#effort-by-team">H.1. Effort by team</a></h3>
+<div class="paragraph">
+<p>Our application, ExpenseLa, is considerably different from what Address Book 3 (AB3) had implemented. We wanted to take some address book features
+that were available in AB3, but wanted to build an expense tracker for our project. As such, to build ExpenseLa, we took and modified some features previously
+available in AB3, but had to create many of our own models and implementations for the new features.</p>
 </div>
 <div class="paragraph">
-<p><em>{ more test cases &#8230;&#8203; }</em></p>
+<p>In short, AB3 stores details related to multiple people known to the user. ExpenseLa stores data related to multiple transactions by
+the user and so much more. ExpenseLa uses that data to track the monthly expenditure, income as well as budget, analyses their expenditure
+by graphing it out, and provide many other features like filtering transactions as well as new ways of adding transactions to make the application
+easier to use.</p>
+</div>
+<div class="paragraph">
+<p>While building ExpenseLa, we spent a considerable amount of time not just implementing our features, but also making sure that new features were linked
+to ExpenseLa and could cohesively work with other features to make sure the application provided and smooth and consistent user experience. All these discussions
+were held at least once a week with a minimum 2 hours each round to provide feedback for each other&#8217;s implementations and that our implementations could work together.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="challenges-faced"><a class="link" href="#challenges-faced">H.2. Challenges faced</a></h3>
+<div class="paragraph">
+<p>The team encountered some challenges while developing ExpenseLa. The most notable ones are:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Initial brainstorming of ideas</strong><br>
+At the start of the project, we wanted to do a meeting scheduler for NUS computing students. However after multiple discussions, we deemed it unfit to implement
+as there were too many components to think about and difficult to implement given our limited time to complete the application. Thus we decided to make an expense
+tracker instead. We had many different ideas for our expense tracker and ways to implement them. We needed a few meetings to discuss and iron out our direction for
+the project to ensure everyone was on the same page before starting the development process.</p>
+</li>
+<li>
+<p><strong>Storage</strong><br>
+We needed a way to store our data so when the application starts we can load previously stored transactions and other data. We decided to adopt and modify slightly AB3&#8217;s
+storage system and implement it in ExpenseLa.</p>
+</li>
+<li>
+<p><strong>Commands</strong><br>
+An expense tracker requires many different commands to carry out many different actions, especially since it uses command line interface. We adapted AB3&#8217;s parser. For
+similar commands to AB3 like add, we had to change the command to accept different predicates, thus parsing it differently. We also had to think about how to parse new commands,
+such as filter function and parsing recurring budget and transactions to be stored as Global data (talked about below), which was a big change from AB3.</p>
+</li>
+<li>
+<p><strong>Global data</strong><br>
+We set ExpenseLa to be timeframe specific, with Monthly Data such as budget, income and expenditure for the month to reset at the beginning of every month.
+However we also had some data that were not timeframe specific, such as transactions and budget that were set to be recurring every month. We could not store
+and reference it the same way as how the normal transactions were referenced from the json data. After discussion, we decided to create a <code>GlobalData</code> class in <code>ModelManager</code>
+where it will be referenced separately from <code>ExpenseLa</code>.</p>
+</li>
+<li>
+<p><strong>User interface</strong><br>
+We decided to keep a ExpenseLa&#8217;s UI generally similar to AB3, but with addition of new UI features. We created a new placeholder for <code>Monthly Data</code> for easy constant viewing by
+the user. We created a chart analysis for the expenditures, which was in the form of a bar chart and pie chart. The charts took up a considerable amount of space, and putting a separate
+placeholder for it would be unfeasible for small screens. Thus we implemented a <code>toggleview</code> command which allows the user to toggle between viewing the list of transactions and the chart analytics.
+This required us to learn both the chart libraries as well as think about how we were going to change the views, while updating the charts when new commands were added.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p><strong>Conclusion</strong><br>
+From planning to documentation to coding of the project, the team believes that every member has put in equal and huge amount of effort on all parts of the project. We believe that
+our product is significantly different from AB3, with many new features which were carefully planned in implementation, and we are proud of ExpenseLa we have built.</p>
 </div>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2020-04-13 07:25:06 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2020-04-13 13:16:55 UTC</div></div></div></body></html>

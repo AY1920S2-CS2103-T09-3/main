@@ -10,7 +10,8 @@
 <h2 id="overview"><a class="link" href="#overview">Overview</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>AddressBook - Level 3 is a desktop address book application used for teaching Software Engineering principles. The user interacts with it using a CLI, and it has a GUI created with JavaFX. It is written in Java, and has about 10 kLoC.</p>
+<p>ExpenseLa is a desktop expense tracking application. The user works with a Command Line Interface (CLI), and enjoys a
+Graphical User Interface(GUI) created using JavaFX. It is written in Java for an NUS module CS2103/CS2103T Software Engineering.</p>
 </div>
 </div>
 </div>
@@ -23,37 +24,77 @@
 <div class="sect2">
 <h3 id="code-contributed"><a class="link" href="#code-contributed">Code contributed</a></h3>
 <div class="paragraph">
-<p>You can follow these links to view a sample of my code:<br></p>
+<p>You can follow these links to view a sample of my code:<br>
+ [<a href="https://github.com/AY1920S2-CS2103-T09-3/main/commits/master?author=chlalstjr">Commits</a>] [<a href="https://github.com/AY1920S2-CS2103-T09-3/main/pulls?utf8=%E2%9C%93&amp;q=is%3Amerged+is%3Apr+author%3Achlalstjr+">Pull requests</a>] [<a href="https://nus-cs2103-ay1920s2.github.io/tp-dashboard/#search=chlalstjr&amp;sort=groupTitle&amp;sortWithin=title&amp;since=2020-02-14&amp;timeframe=commit&amp;mergegroup=false&amp;groupSelect=groupByRepos&amp;breakdown=false">RepoSense Dashboard</a>]</p>
 </div>
-<div class="ulist https://github.com/AY1920S1-CS2103T-W12-2/main/commits/master?author=krusagiz[Commits]] [https://github.com/AY1920S1-CS2103T-W12-2/main/pulls?utf8=%E2%9C%93&q=is%3Amerged+is%3Apr+author%3Akrusagiz+[Pull requests]] [https://nus-cs2103-ay1920s1.github.io/tp-dashboard/#search=krusagiz&sort=groupTitle&sortWithin=title&since=2019-09-06&timeframe=commit&mergegroup=false&groupSelect=groupByRepos&breakdown=false[RepoSense Dashboard]">
-<ul class="https://github.com/AY1920S1-CS2103T-W12-2/main/commits/master?author=krusagiz[Commits]] [https://github.com/AY1920S1-CS2103T-W12-2/main/pulls?utf8=%E2%9C%93&q=is%3Amerged+is%3Apr+author%3Akrusagiz+[Pull requests]] [https://nus-cs2103-ay1920s1.github.io/tp-dashboard/#search=krusagiz&sort=groupTitle&sortWithin=title&since=2019-09-06&timeframe=commit&mergegroup=false&groupSelect=groupByRepos&breakdown=false[RepoSense Dashboard]">
-<li>
-<p><strong>Major enhancement</strong>: added <strong>the ability to undo/redo previous commands</strong></p>
+</div>
+<div class="sect2">
+<h3 id="enhancements-implemented"><a class="link" href="#enhancements-implemented">Enhancements implemented</a></h3>
 <div class="ulist">
 <ul>
 <li>
-<p>What it does: allows the user to undo all previous commands one at a time. Preceding undo commands can be reversed by using the redo command.</p>
+<p><strong>Major enhancement</strong>: Created <strong>bar chart</strong> of the expenditures</p>
+<div class="ulist">
+<ul>
+<li>
+<p>What it does: Allows the user analyse his expenditure using bar chart.</p>
 </li>
 <li>
-<p>Justification: This feature improves the product significantly because a user can make mistakes in commands and the app should provide a convenient way to rectify them.</p>
+<p>Justification: Viewing just a list of transactions does not provide much information of his expenditure, especially if there are many transactions. Viewing it as a bar chart will allow him to analyse his expenditures better.</p>
 </li>
 <li>
-<p>Highlights: This enhancement affects existing commands and commands to be added in future. It required an in-depth analysis of design alternatives. The implementation too was challenging as it required changes to existing commands.</p>
-</li>
-<li>
-<p>Credits: <em>{mention here if you reused any code/ideas from elsewhere or if a third-party library is heavily used in the feature so that a reader can make a more accurate judgement of how much effort went into the feature}</em></p>
+<p>Highlights: Different kinds of bar chart can be showed depending on the filter set on the transactions. When filter is of a certain month,
+a stacked bar chart with days of the week as the x-axis is formed, with different weeks stacked on top of each other in ascending order.
+While there is no filter, a bar chart with month as the x-axis is formed, with total expenditures of current year and previous year each shown.
+Which has to reference many things from <code>Model</code> making it not easy to implement.</p>
 </li>
 </ul>
 </div>
 </li>
 <li>
-<p><strong>Minor enhancement</strong>: added a history command that allows the user to navigate to previous commands using up/down keys.</p>
+<p><strong>Major enhancement</strong>: Added the ability to <strong>toggle view</strong> between list of transactions and chart analysis</p>
+<div class="ulist">
+<ul>
+<li>
+<p>What it does: The <code>toggleview</code> command allows the user to switch between viewing the list of transactions and chart analysis(as said above) containing the bar chart and a pie chart.</p>
 </li>
 <li>
-<p><strong>Code contributed</strong>: [<a href="https://github.com">Functional code</a>] [<a href="https://github.com">Test code</a>] <em>{give links to collated code files}</em></p>
+<p>Justification: The user gets to view more things given the limited space the app has. This prevents compromising the amount of space given to viewing the list of transactions or the chart analysis.</p>
 </li>
 <li>
-<p><strong>Other contributions</strong>:</p>
+<p>Highlights: The <code>toggleview</code> was implemented as a separate class residing in <code>ModelManager</code> for better extendability next time to toggle view between more features.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><strong>Minor enhancement</strong>: Added an export command that allows the user to export the filtered transactions into a csv file.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Justification: The user can use the data to do his own analysis of his earnings and expenditure, and in a csv file format it is organized as well as allows the user to easily use excel functions for his analysis.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><strong>Minor enhancement</strong>: Added percentage to be shown for on pie chart created by my teammate (Pie chart of total expenditure separated by categories).</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Justification: A pie chart for expenditure is to show the relative amount spent on each category relative to the total expenditure. Without percentage shown it can be quite hard to tell the relative amount.</p>
+</li>
+<li>
+<p>Highlights: The pie chart library in Java does not support showing percentage, so I had to research how Java&#8217;s pie chart stores the values, and use that to figure out how to calculate the percentage and concat it into the pie chart, which was not easy to implement.</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="other-contributions"><a class="link" href="#other-contributions">Other contributions</a></h3>
 <div class="ulist">
 <ul>
 <li>
@@ -61,7 +102,7 @@
 <div class="ulist">
 <ul>
 <li>
-<p>Managed releases <code>v1.3</code> - <code>v1.5rc</code> (3 releases) on GitHub</p>
+<p>I managed issues assigned to me from version 1.0 to 1.4 on <a href="https://github.com/AY1920S2-CS2103-T09-3/main/milestones">GitHub</a>.</p>
 </li>
 </ul>
 </div>
@@ -71,10 +112,12 @@
 <div class="ulist">
 <ul>
 <li>
-<p>Updated the GUI color scheme (Pull requests <a href="https://github.com">#33</a>, <a href="https://github.com">#34</a>)</p>
+<p>Refactored the original AddressBook-Level3 codebase to fit our requirements.
+(Pull requests <a href="https://github.com/AY1920S2-CS2103-T09-3/main/pull/50">#50</a>, <a href="https://github.com/AY1920S2-CS2103-T09-3/main/pull/57">#57</a>)</p>
 </li>
 <li>
-<p>Wrote additional tests for existing features to increase coverage from 88% to 92% (Pull requests <a href="https://github.com">#36</a>, <a href="https://github.com">#38</a>)</p>
+<p>Wrote additional tests for existing features to increase coverage from 88% to 92%
+(Pull request <a href="https://github.com/AY1920S2-CS2103-T09-3/main/pull/146">#146</a>)</p>
 </li>
 </ul>
 </div>
@@ -84,7 +127,7 @@
 <div class="ulist">
 <ul>
 <li>
-<p>Did cosmetic tweaks to existing contents of the User Guide: <a href="https://github.com">#14</a></p>
+<p>Did the first version of the User Guide early on with our vision for the application. (Pull request <a href="https://github.com/AY1920S2-CS2103-T09-3/main/pull/6">#6</a>)</p>
 </li>
 </ul>
 </div>
@@ -94,40 +137,12 @@
 <div class="ulist">
 <ul>
 <li>
-<p>PRs reviewed (with non-trivial review comments): <a href="https://github.com">#12</a>, <a href="https://github.com">#32</a>, <a href="https://github.com">#19</a>, <a href="https://github.com">#42</a></p>
-</li>
-<li>
-<p>Contributed to forum discussions (examples:  <a href="https://github.com">1</a>, <a href="https://github.com">2</a>, <a href="https://github.com">3</a>, <a href="https://github.com">4</a>)</p>
-</li>
-<li>
-<p>Reported bugs and suggestions for other teams in the class (examples:  <a href="https://github.com">1</a>, <a href="https://github.com">2</a>, <a href="https://github.com">3</a>)</p>
-</li>
-<li>
-<p>Some parts of the history feature I added was adopted by several other class mates (<a href="https://github.com">1</a>, <a href="https://github.com">2</a>)</p>
-</li>
-</ul>
-</div>
-</li>
-<li>
-<p>Tools:</p>
-<div class="ulist">
-<ul>
-<li>
-<p>Integrated a third party library (Natty) to the project (<a href="https://github.com">#42</a>)</p>
-</li>
-<li>
-<p>Integrated a new Github plugin (CircleCI) to the team repo</p>
+<p>Reviewed pull requests from my teammates: <a href="https://github.com/AY1920S2-CS2103-T09-3/main/pull/36">#36</a>, <a href="https://github.com/AY1920S2-CS2103-T09-3/main/pull/37">#37</a></p>
 </li>
 </ul>
 </div>
 </li>
 </ul>
-</div>
-</li>
-</ul>
-</div>
-<div class="paragraph">
-<p><em>{you can add/remove categories in the list above}</em></p>
 </div>
 </div>
 </div>
@@ -145,6 +160,57 @@
 </tr>
 </tbody>
 </table>
+<div class="sect2">
+<h3 id="analysis-of-transactions-code-toggleview-code-choi-min-suk-pang-kim-jin"><a class="link" href="#analysis-of-transactions-code-toggleview-code-choi-min-suk-pang-kim-jin">Analysis of transactions : <code>toggleview</code> (Choi Min Suk + Pang Kim Jin)</a></h3>
+<div class="paragraph">
+<p>Toggle between viewing list of transactions and analytics with bar graph and pie chart to show expense trend.</p>
+</div>
+<div class="paragraph">
+<p>If filter is set to a specific month, the bar graph displays the transactions by day of the week. If filter is
+set to all months, bar chart will display transactions by month for current and previous year. The pie chart will
+show the transactions by the different categories according to the filter.</p>
+</div>
+<div class="paragraph">
+<p>Expected Outcome: changed view to charts if previously was list view and to list view if previously was chart view.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../images/ListView.png" alt="ListView" width="790">
+</div>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../images/ChartView.png" alt="ChartView" width="790">
+</div>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<code>ToggleView</code> and <code>BarChart</code> by Choi Min Suk and <code>PieChart</code> by Pang Kim Jin
+</td>
+</tr>
+</table>
+</div>
+</div>
+<div class="sect2">
+<h3 id="export-transaction-data-to-csv-code-export-code-choi-min-suk"><a class="link" href="#export-transaction-data-to-csv-code-export-code-choi-min-suk">Export transaction data to csv : <code>export</code> (Choi Min Suk)</a></h3>
+<div class="paragraph">
+<p>Export the filtered transaction list to a csv file</p>
+</div>
+<div class="paragraph">
+<p>Expected Outcome: A csv file will be created at the root directory and all transactions currently visible in the app
+will be exported to the csv file.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../images/Csv.png" alt="Csv" width="790">
+</div>
+</div>
+</div>
 </div>
 </div>
 <div class="sect1">
@@ -160,14 +226,608 @@
 </tr>
 </tbody>
 </table>
+<div class="sect2">
+<h3 id="Design-Ui"><a class="link" href="#Design-Ui">UI component (Choi Min Suk)</a></h3>
+<div class="imageblock">
+<div class="content">
+<img src="../images/UiClassDiagram.png" alt="UiClassDiagram">
+</div>
+<div class="title">Figure 1. Structure of the UI Component</div>
+</div>
+<div class="paragraph">
+<p><strong>API</strong> : <a href="{repoURL}/src/main/java/seedu/expensela/ui/Ui.java"><code>Ui.java</code></a></p>
+</div>
+<div class="paragraph">
+<p>The UI consists of a <code>MainWindow</code> that is made up of parts e.g.<code>CommandBox</code>, <code>ResultDisplay</code>, <code>TransactionListPanel</code>, <code>StatusBarFooter</code> etc. All these, including the <code>MainWindow</code>, inherit from the abstract <code>UiPart</code> class.</p>
+</div>
+<div class="paragraph">
+<p>The <code>UI</code> component uses JavaFx UI framework. The layout of these UI parts are defined in matching <code>.fxml</code> files that are in the <code>src/main/resources/view</code> folder. For example, the layout of the <a href="{repoURL}/src/main/java/seedu/expensela/ui/MainWindow.java"><code>MainWindow</code></a> is specified in <a href="{repoURL}/src/main/resources/view/MainWindow.fxml"><code>MainWindow.fxml</code></a></p>
+</div>
+<div class="paragraph">
+<p>The <code>UI</code> component does the following actions:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Executes user commands using the <code>Logic</code> component.</p>
+</li>
+<li>
+<p>Listens for changes to <code>Model</code> data so that the UI can be updated with the modified data.</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="chart-analytics-toggleview-command-and-bar-graphs-by-choi-min-suk-pie-chart-by-pang-kim-jin"><a class="link" href="#chart-analytics-toggleview-command-and-bar-graphs-by-choi-min-suk-pie-chart-by-pang-kim-jin">Chart Analytics (toggleview Command and Bar Graphs by Choi Min Suk + Pie Chart by Pang Kim Jin)</a></h3>
+<div class="paragraph">
+<p>The <strong>toggleview</strong> command allows the user to switch between viewing the list of 'Transactions' and viewing an analysis of
+his expenditure.</p>
+</div>
+<div class="paragraph">
+<p>In the expenditure analysis view we have a bar chart to show expenditure breakdown by date as well as a pie chart to
+show expenditure breakdown by category.</p>
+</div>
+<div class="sect3">
+<h4 id="implementation"><a class="link" href="#implementation">Implementation</a></h4>
+<div class="paragraph">
+<p><code>MainWindow</code> decides whether to show a list of transactions or chart analysis based on <code>ToggleView#isViewList</code>, by accessing
+<code>Logic#getToggleView()</code>.</p>
+</div>
+<div class="paragraph">
+<p>Here is a Class Diagram for the implementation of <code>ToggleView</code>:</p>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="../images/chart-analytics/ToggleViewClassDiagram.png" alt="ToggleViewClassDiagram"></span></p>
+</div>
+<div class="paragraph">
+<p>The <strong>ToggleView</strong> mechanism utilizes <code>Logic</code> operations with the <code>ToggleViewCommand</code> class in place of <code>Command</code>. The following
+methods are concrete implementations for the <strong>toggle</strong> operation:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>ToggleViewCommand#execute()</code> - Modifies the <code>ToggleView</code> in <code>Model</code> to view list of transactions or view analytics, and
+returns a <code>CommandResult</code> (<a href="#Design-Logic">Step 4 of Logic</a>).</p>
+</li>
+<li>
+<p><code>ToggleView#switchIsViewList()</code> - Modifies the boolean value <code>isViewList</code> in <code>ToggleView</code> to the negation of it&#8217;s
+current value.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>This <code>ToggleView</code> is wrapped in <code>ExpenseLa</code> and its <code>switchIsViewList()</code> is called through
+<code>ExpenseLa#switchToggleView()</code>.</p>
+</li>
+<li>
+<p><code>ExpenseLa#switchToggleView()</code> is exposed in the <code>Model</code> interface as <code>Model#switchToggleView()</code>.</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>The following sequence diagram illustrates <strong>toggleview</strong> command execution:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../images/chart-analytics/ToggleViewSequenceDiagram.png" alt="ToggleViewSequenceDiagram">
+</div>
+<div class="title">Figure 2. Sequence diagram showing execution of <strong>toggleview</strong></div>
+</div>
+<div class="sect4">
+<h5 id="example-of-usage"><a class="link" href="#example-of-usage">Example of usage</a></h5>
+<div class="paragraph">
+<p>Given next is an example and explanation of how the <strong>ToggleView</strong> mechanism behaves at each step:</p>
+</div>
+<div class="paragraph">
+<p>Step 1. The user starts up the application with an initial list loaded from external storage file. The diagram here
+depicts the example list used throughout this scenario.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../images/chart-analytics/ToggleViewStep1.png" alt="ToggleViewStep1" width="650">
+</div>
+<div class="title">Example list on startup</div>
+</div>
+<div class="paragraph">
+<p>Step 2. The user inputs <strong>toggleview</strong> to change the view from list of transactions to chart analysis.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../images/chart-analytics/ToggleViewStep2.png" alt="ToggleViewStep2">
+</div>
+<div class="title">User input for toggle view</div>
+</div>
+<div class="paragraph">
+<p>Step 3. <code>ToggleViewCommand#execute()</code> switches <code>isViewList</code> of <code>ToggleView</code> from true to false.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../images/chart-analytics/ToggleViewStep3.PNG" alt="ToggleViewStep3">
+</div>
+<div class="title">isViewList of ToggleView switched from ToggleViewCommand#execute()</div>
+</div>
+<div class="paragraph">
+<p>Step 4. <code>MainWindow#executeCommand()</code> checks the boolean value of isViewList in ToggleView, which is false,
+and displays chart analysis.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../images/chart-analytics/ToggleViewStep4.png" alt="ToggleViewStep4" width="650">
+</div>
+<div class="title">Switched from showing list of transactions to chart analysis</div>
+</div>
+<div class="paragraph">
+<p>Step 5. User inputs <strong>toggleview</strong> again to change view back to list of transactions.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../images/chart-analytics/ToggleViewStep2.png" alt="ToggleViewStep2">
+</div>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../images/chart-analytics/ToggleViewStep1.PNG" alt="ToggleViewStep1" width="650">
+</div>
+<div class="title">Switched from showing list of transactions to chart analysis</div>
+</div>
+<div class="paragraph">
+<p>Step 6. User can set filter to a certain month to view a different kind of bar chart.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../images/chart-analytics/ToggleViewStep6.PNG" alt="ToggleViewStep6" width="650">
+</div>
+<div class="title">Example of stacked bar chart of expenditure for a certain month</div>
+</div>
+<div class="paragraph">
+<p>The following code snippet from <code>MainWindow#executeCommand()</code> checking of the boolean value of isViewList in ToggleView,
+and deciding whether to show a list of transactions of chart analysis, and what bar graph to show:</p>
+</div>
+<div class="listingblock">
+<div class="title">MainWindow#executeCommand()</div>
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="java"><span class="comment">// The if else statement checks the value of isViewList from ToggleView</span>
+<span class="keyword">if</span> (logic.getToggleView().getIsViewList()) {
+    <span class="comment">// Creates ui for list of transactions</span>
+    transactionListPanel = <span class="keyword">new</span> TransactionListPanel(logic.getFilteredTransactionList());
+    transactionListAndChartAnalyticsPanelPlaceholder.getChildren().add(transactionListPanel.getRoot());
+} <span class="keyword">else</span> {
+    <span class="comment">// Creates ui for chart analysis</span>
+    <span class="comment">// Calls logic.getIsFilterMonth() to check if the filter is set to a specific month or not, to decide which bar graph to build</span>
+    chartAnalyticsPanel = <span class="keyword">new</span> ChartAnalyticsPanel(logic.getFilteredTransactionList(), logic.getIsFilterMonth());
+    transactionListAndChartAnalyticsPanelPlaceholder.getChildren().add(chartAnalyticsPanel.getRoot());
+}</code></pre>
+</div>
+</div>
+</div>
+<div class="sect4">
+<h5 id="execution-shown-to-user"><a class="link" href="#execution-shown-to-user">Execution shown to user</a></h5>
+<div class="paragraph">
+<p>The following activity diagram gives an overview of what ExpenseLa shows the user when executing <strong>toggleview</strong> command:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../images/chart-analytics/ToggleViewActivityDiagram.png" alt="ToggleViewActivityDiagram">
+</div>
+<div class="title">Figure 3. Activity diagram for execution of toggleview command</div>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="design-considerations"><a class="link" href="#design-considerations">Design considerations</a></h4>
+<div class="paragraph">
+<p>This section shows some of the design considerations taken when implementing the undo and redo features.</p>
+</div>
+<div class="sect4">
+<h5 id="aspect-design-used-to-implement-toggelview-feature"><a class="link" href="#aspect-design-used-to-implement-toggelview-feature">Aspect: Design used to implement toggelview feature</a></h5>
+<div class="ulist">
+<ul>
+<li>
+<p>Alternative 1 (current choice): Create a ToggleView Class to keep a boolean value of isViewList to keep track of
+showing list of transactions or chart analysis.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Pros: Easily extendable next time to accommodate more different kind of views by changing boolean to possibly enum.</p>
+</li>
+<li>
+<p>Pros: Easy to implement functions to change values in <code>ToggleView</code> object, which allows easy extendability next time also.</p>
+</li>
+<li>
+<p>Cons: Needs to implement many functions through <code>Logic</code> and <code>Model</code>.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Alternative 2: Create a boolean value in <code>Model</code> to track whether to show list of transactions or chart analysis.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Pros: Easy implementation and checking of boolean value by <code>MainWindow</code> to check which view to show.</p>
+</li>
+<li>
+<p>Cons: Not extendable next time when trying to accommodate different kind of views.</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Alternative 1 was chosen because it is easily extendable, in case we want to improve or develop on the feature in the
+future. It also follows better OOP principles, making the code much neater and understandable.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="export-choi-min-suk"><a class="link" href="#export-choi-min-suk">Export (Choi Min Suk)</a></h3>
+<div class="paragraph">
+<p>The <strong>export</strong> command allows user to export currently filtered transactions to a csv file, in case he would like to use
+the data for his own analysis.</p>
+</div>
+<div class="sect3">
+<h4 id="implementation-2"><a class="link" href="#implementation-2">Implementation</a></h4>
+<div class="paragraph">
+<p><code>ExportCommand</code> is instantiated by <code>ExpenseLaParser#parseCommand(String userInput)</code>, which attempts to split the userInput
+into the command word and its parameters. Since <code>ExportCommand</code> does not require any arguments, it is instantiated directly.</p>
+</div>
+<div class="paragraph">
+<p><code>ExportCommand</code> obtains the filtered list of transaction to export using <code>Model#getFilteredTransactionList()</code>, which then
+attempts to create a csv file in the current directory using the attributes of each transaction.</p>
+</div>
+<div class="paragraph">
+<p>The sequence diagram below shows how the execution of <strong>export</strong> is like:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../images/export/ExportSequenceDiagram.png" alt="ExportSequenceDiagram">
+</div>
+<div class="title">Figure 4. Sequence diagram of how <strong>export</strong> command is applied at the back-end.</div>
+</div>
+<div class="paragraph">
+<p>The following conditions will cause a <code><strong>CommandException</strong></code> to be thrown by the command:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Empty filtered transaction list</p>
+</li>
+<li>
+<p>Failure in creating the file</p>
+</li>
+<li>
+<p>Failure in writing to the file (Possibly due to the directory changing while the command is being executed)</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>The image below shows how the csv file looks when user executes <strong>export</strong> command successfully:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../images/export/ExportCsv.PNG" alt="ExportCsv" width="650">
+</div>
+<div class="title">Figure 5. List of transactions in a csv file opened in Microsoft Excel</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="proposed-extension"><a class="link" href="#proposed-extension">Proposed extension</a></h4>
+<div class="paragraph">
+<p>In the near future, we plan to enhance the export feature. We want to improve the export command to take in view as a
+possible argument, thus allowing the user to choose between exporting list of transactions or the chart analysis. The
+user can use the chart analysis generated for visual presentations, especially if the expense tracker is for a business.</p>
+</div>
+<div class="paragraph">
+<p>The image below shows how a possible future implementation of this feature could look like:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../images/export/ExportChartCommand.PNG" alt="ExportChartCommand">
+</div>
+<div class="title">Figure 6. Expected command to export chart analytics</div>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../images/export/ExportBarGraph.PNG" alt="ExportBarGraph" width="550">
+</div>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../images/export/ExportPieChart.PNG" alt="ExportPieChart" width="550">
+</div>
+<div class="title">Figure 7. Expected images to be exported when <strong>export chartanalysis</strong></div>
+</div>
+</div>
+</div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="project-powerpointlabs"><a class="link" href="#project-powerpointlabs">PROJECT: PowerPointLabs</a></h2>
+<h2 id="user-stories"><a class="link" href="#user-stories">User Stories</a></h2>
 <div class="sectionbody">
-<hr>
 <div class="paragraph">
-<p><em>{Optionally, you may include other projects in your portfolio.}</em></p>
+<p>Priorities: High (must have) - <code>* * *</code>, Medium (nice to have) - <code>* *</code>, Low (unlikely to have) - <code>*</code></p>
+</div>
+<table class="tableblock frame-all grid-all" style="width: 59%;">
+<colgroup>
+<col style="width: 22%;">
+<col style="width: 23%;">
+<col style="width: 25%;">
+<col style="width: 30%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Priority</th>
+<th class="tableblock halign-left valign-top">As a &#8230;&#8203;</th>
+<th class="tableblock halign-left valign-top">I want to &#8230;&#8203;</th>
+<th class="tableblock halign-left valign-top">So that I can&#8230;&#8203;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>* * *</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">new user</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">see usage instructions</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">refer to instructions when I forget how to use the App</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>* * *</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">general user</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">add a new expense entry</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">keep track of my expenses</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>* * *</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">employed user</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">add a new income entry</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">keep track of my income</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>* * *</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">high-income user</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">keep track of all the money I earn</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">make decisions on where my most lucrative source of income is</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>* * *</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">low-income user (like student)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">set budget for current month</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">limit my expenditure for the month</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>* * *</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">low-income user (like student)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">be notified by the application if i am spending too much money</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">be wary of overshooting my budget</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>* * *</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">consistent thrifty user</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">set budget for every month(recurrent budget) once</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">have no need to constant;y set my unchanging budget</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>* * *</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">part-time worker with varying income</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">be flexible with my budgets</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">spend more or less on certain months depending on my financial situation</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>* * *</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">visual user</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">be visually alerted when I spend a certain proportion of my budget</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">adjust my spending habit for the rest of the month</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>* * *</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">careless user</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">delete an expense or income entry</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">remove entries that I added in by mistake</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>* * *</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">forgetful user</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">find an entry by keyword</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">check if I spent money on a particular thing</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>* * *</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">spendthrift user</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">filter expense based on category</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">know if I generally spend a lot of money or only on certain months</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>* * *</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">forward-looking user</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">look at my spending trend by week or month</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">keep track of my income</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>* * *</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">couple/student trying to save up</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">filter expense based on date or time period</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">see how much money I have spent in that time period and make better decisions</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>* * *</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">couple/student trying to save up</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">view amount of budget left to spend</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">adjust spending habit for the rest of the month</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>* * *</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">general user</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">view total money I have</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">be able to tell how much I can spend</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>* * *</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">user trying to save money</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">view total expense for a particular month</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">decide on my future expenditures</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>* * *</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">visually analytical user</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">view pie chart of money spent based on category</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">see where I spend the most money on</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>* * *</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">visually analytical user</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">view bar chart of money spent based on time period</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">see when I spend the most money</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>* * *</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">organized user</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">organize my expenditure into different categories</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">better able to track where I am spending my money</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>* * *</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">not one-off user</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">all my expenditures and income to be saved</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">continue on from previous whenever I exit and launch back the application</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>* *</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">smart analytical user</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">export my expenditure and income</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">use the data to make my own analysis</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>* *</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">secretive user</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">set a password to login tp the application</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">prevent unwanted users from viewing my expenses</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>* *</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">businessman</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">have multiple accounts</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">manage my expenses not only for myself but my business</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>* *</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">parent</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">have multiple accounts</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">help manage my children’s expenses</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>* *</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">user with many friends</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">add friends in the application</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">help each other in their savings</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>* *</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">concerned friend</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">look at my friend&#8217;s spending habit</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">keep a lookout for their expenditure</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>*</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">user who owes people money</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">view the people who I owe money to</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">keep track of who I owe</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>*</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">user who lends people money</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">request payment from people who owe me money</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">keep track of my loans</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>*</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">sociable user</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">indicate when my expenditure is within the budget</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">share the achievement with my friends</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>*</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">lazy user</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">have the application make recommendations on my spending habits</p></td>
+</tr>
+</tbody>
+</table>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2020-04-13 07:25:06 UTC</div></div></div></body></html>
+<div class="sect1">
+<h2 id="effort"><a class="link" href="#effort">Effort</a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>In this section, we highlight the amount of effort taken for us to develop ExpenseLa, the challenges faced in this development and our eventual achievement.</p>
+</div>
+<div class="sect2">
+<h3 id="effort-by-team"><a class="link" href="#effort-by-team">Effort by team</a></h3>
+<div class="paragraph">
+<p>Our application, ExpenseLa, is considerably different from what Address Book 3 (AB3) had implemented. We wanted to take some address book features
+that were available in AB3, but wanted to build an expense tracker for our project. As such, to build ExpenseLa, we took and modified some features previously
+available in AB3, but had to create many of our own models and implementations for the new features.</p>
+</div>
+<div class="paragraph">
+<p>In short, AB3 stores details related to multiple people known to the user. ExpenseLa stores data related to multiple transactions by
+the user and so much more. ExpenseLa uses that data to track the monthly expenditure, income as well as budget, analyses their expenditure
+by graphing it out, and provide many other features like filtering transactions as well as new ways of adding transactions to make the application
+easier to use.</p>
+</div>
+<div class="paragraph">
+<p>While building ExpenseLa, we spent a considerable amount of time not just implementing our features, but also making sure that new features were linked
+to ExpenseLa and could cohesively work with other features to make sure the application provided and smooth and consistent user experience. All these discussions
+were held at least once a week with a minimum 2 hours each round to provide feedback for each other&#8217;s implementations and that our implementations could work together.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="challenges-faced"><a class="link" href="#challenges-faced">Challenges faced</a></h3>
+<div class="paragraph">
+<p>The team encountered some challenges while developing ExpenseLa. The most notable ones are:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Initial brainstorming of ideas</strong><br>
+At the start of the project, we wanted to do a meeting scheduler for NUS computing students. However after multiple discussions, we deemed it unfit to implement
+as there were too many components to think about and difficult to implement given our limited time to complete the application. Thus we decided to make an expense
+tracker instead. We had many different ideas for our expense tracker and ways to implement them. We needed a few meetings to discuss and iron out our direction for
+the project to ensure everyone was on the same page before starting the development process.</p>
+</li>
+<li>
+<p><strong>Storage</strong><br>
+We needed a way to store our data so when the application starts we can load previously stored transactions and other data. We decided to adopt and modify slightly AB3&#8217;s
+storage system and implement it in ExpenseLa.</p>
+</li>
+<li>
+<p><strong>Commands</strong><br>
+An expense tracker requires many different commands to carry out many different actions, especially since it uses command line interface. We adapted AB3&#8217;s parser. For
+similar commands to AB3 like add, we had to change the command to accept different predicates, thus parsing it differently. We also had to think about how to parse new commands,
+such as filter function and parsing recurring budget and transactions to be stored as Global data (talked about below), which was a big change from AB3.</p>
+</li>
+<li>
+<p><strong>Global data</strong><br>
+We set ExpenseLa to be timeframe specific, with Monthly Data such as budget, income and expenditure for the month to reset at the beginning of every month.
+However we also had some data that were not timeframe specific, such as transactions and budget that were set to be recurring every month. We could not store
+and reference it the same way as how the normal transactions were referenced from the json data. After discussion, we decided to create a <code>GlobalData</code> class in <code>ModelManager</code>
+where it will be referenced separately from <code>ExpenseLa</code>.</p>
+</li>
+<li>
+<p><strong>User interface</strong><br>
+We decided to keep a ExpenseLa&#8217;s UI generally similar to AB3, but with addition of new UI features. We created a new placeholder for <code>Monthly Data</code> for easy constant viewing by
+the user. We created a chart analysis for the expenditures, which was in the form of a bar chart and pie chart. The charts took up a considerable amount of space, and putting a separate
+placeholder for it would be unfeasible for small screens. Thus we implemented a <code>toggleview</code> command which allows the user to toggle between viewing the list of transactions and the chart analytics.
+This required us to learn both the chart libraries as well as think about how we were going to change the views, while updating the charts when new commands were added.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p><strong>Conclusion</strong><br>
+From planning to documentation to coding of the project, the team believes that every member has put in equal and huge amount of effort on all parts of the project. We believe that
+our product is significantly different from AB3, with many new features which were carefully planned in implementation, and we are proud of ExpenseLa we have built.</p>
+</div>
+</div>
+</div>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2020-04-13 13:16:55 UTC</div></div></div></body></html>

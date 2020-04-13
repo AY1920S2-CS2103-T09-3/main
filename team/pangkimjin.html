@@ -1,7 +1,7 @@
-<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><!--[if IE]><meta http-equiv="X-UA-Compatible" content="IE=edge"><![endif]--><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="generator" content="Asciidoctor 1.5.6.1"><title>John Doe - Project Portfolio</title><link rel="stylesheet" href="../stylesheets/gh-pages.css">
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><!--[if IE]><meta http-equiv="X-UA-Compatible" content="IE=edge"><![endif]--><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="generator" content="Asciidoctor 1.5.6.1"><title>Pang Kim Jin - Project Portfolio</title><link rel="stylesheet" href="../stylesheets/gh-pages.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css">
-<link rel="stylesheet" href="../stylesheets/coderay-asciidoctor.css"></head><body class="article"><div id="seedu-header"><nav class="navbar navbar-lg navbar-light bg-lighter"><div class="container"><a class="navbar-brand" href="https://se-edu.github.io/"><img src="../images/SeEduLogo.png" alt="SE-EDU"></a><ul class="navbar-nav"><li class="nav-item"><a class="nav-link active" href="../index.html">ExpenseLa</a></li><li class="nav-item"><a class="nav-link" href="https://se-edu.github.io/collate">Collate</a></li><li class="nav-item"><a class="nav-link" href="https://se-edu.github.io/se-book">Book</a></li><li class="nav-item"><a class="nav-link" href="https://se-edu.github.io/learningresources">Resources</a></li></ul></div></nav></div><div id="site-header"><nav class="navbar navbar-light bg-light"><div class="container"><a class="navbar-brand" href="../index.html">ExpenseLa</a><ul class="navbar-nav"><li class="nav-item"><a class="nav-link" href="../UserGuide.html">User Guide</a></li><li class="nav-item"><a class="nav-link" href="../DeveloperGuide.html">Developer Guide</a></li><li class="nav-item"><a class="nav-link" href="../LearningOutcomes.html">LOs</a></li><li class="nav-item"><a class="nav-link active" href="../AboutUs.html">About Us</a></li><li class="nav-item"><a class="nav-link" href="../ContactUs.html">Contact Us</a></li><li class="navitem"><a class="nav-link" href="https://github.com/AY1920S2-CS2103-T09-3/main"><span class="fa fa-github fa-lg" aria-hidden="true"></span>&nbsp;View on GitHub</a></li></ul></div></nav></div><div id="header"><h1>John Doe - Project Portfolio</h1></div><div id="content"><div class="sect1">
-<h2 id="project-addressbook-level-3"><a class="link" href="#project-addressbook-level-3">PROJECT: AddressBook - Level 3</a></h2>
+<link rel="stylesheet" href="../stylesheets/coderay-asciidoctor.css"></head><body class="article"><div id="seedu-header"><nav class="navbar navbar-lg navbar-light bg-lighter"><div class="container"><a class="navbar-brand" href="https://se-edu.github.io/"><img src="../images/SeEduLogo.png" alt="SE-EDU"></a><ul class="navbar-nav"><li class="nav-item"><a class="nav-link active" href="../index.html">ExpenseLa</a></li><li class="nav-item"><a class="nav-link" href="https://se-edu.github.io/collate">Collate</a></li><li class="nav-item"><a class="nav-link" href="https://se-edu.github.io/se-book">Book</a></li><li class="nav-item"><a class="nav-link" href="https://se-edu.github.io/learningresources">Resources</a></li></ul></div></nav></div><div id="site-header"><nav class="navbar navbar-light bg-light"><div class="container"><a class="navbar-brand" href="../index.html">ExpenseLa</a><ul class="navbar-nav"><li class="nav-item"><a class="nav-link" href="../UserGuide.html">User Guide</a></li><li class="nav-item"><a class="nav-link" href="../DeveloperGuide.html">Developer Guide</a></li><li class="nav-item"><a class="nav-link" href="../LearningOutcomes.html">LOs</a></li><li class="nav-item"><a class="nav-link active" href="../AboutUs.html">About Us</a></li><li class="nav-item"><a class="nav-link" href="../ContactUs.html">Contact Us</a></li><li class="navitem"><a class="nav-link" href="https://github.com/AY1920S2-CS2103-T09-3/main"><span class="fa fa-github fa-lg" aria-hidden="true"></span>&nbsp;View on GitHub</a></li></ul></div></nav></div><div id="header"><h1>Pang Kim Jin - Project Portfolio</h1></div><div id="content"><div class="sect1">
+<h2 id="project-expensela"><a class="link" href="#project-expensela">PROJECT: ExpenseLa</a></h2>
 <div class="sectionbody">
 <hr>
 </div>
@@ -10,7 +10,8 @@
 <h2 id="overview"><a class="link" href="#overview">Overview</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>AddressBook - Level 3 is a desktop address book application used for teaching Software Engineering principles. The user interacts with it using a CLI, and it has a GUI created with JavaFX. It is written in Java, and has about 10 kLoC.</p>
+<p>ExpenseLa is a desktop expense tracking application for money-conscious NUS students who wish to track their spending, in order to make better informed
+decisions when it comes to saving money. The user interacts with it using a CLI, and it has a GUI created with JavaFX. It is written in Java, and has about 16 kLoC.</p>
 </div>
 </div>
 </div>
@@ -20,29 +21,60 @@
 <div class="ulist">
 <ul>
 <li>
-<p><strong>Major enhancement</strong>: added <strong>the ability to undo/redo previous commands</strong></p>
+<p><strong>Major enhancement</strong>: Added <strong>the ability to filter transactions based on category or transaction month</strong></p>
 <div class="ulist">
 <ul>
 <li>
-<p>What it does: allows the user to undo all previous commands one at a time. Preceding undo commands can be reversed by using the redo command.</p>
+<p>What it does: Allows the user to apply category or month filters to the transaction list in the transaction list view.<br>
+On top of this core functionality, <code>filter</code> also interacts closely with many other features to:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Display specific transactions for a shorter and more relevant transaction list to <code>edit</code> or <code>delete</code> transactions</p>
 </li>
 <li>
-<p>Justification: This feature improves the product significantly because a user can make mistakes in commands and the app should provide a convenient way to rectify them.</p>
+<p>Include/exclude transactions for the user to view chart analytics using the <code>toggleview</code> feature</p>
 </li>
 <li>
-<p>Highlights: This enhancement affects existing commands and commands to be added in future. It required an in-depth analysis of design alternatives. The implementation too was challenging as it required changes to existing commands.</p>
+<p>Include/exclude transactions for the <code>export</code> feature</p>
 </li>
 <li>
-<p>Credits: <em>{mention here if you reused any code/ideas from elsewhere or if a third-party library is heavily used in the feature so that a reader can make a more accurate judgement of how much effort went into the feature}</em></p>
+<p>Include/exclude transactions for the ExpenseLa Statement proposed feature</p>
 </li>
 </ul>
 </div>
 </li>
 <li>
-<p><strong>Minor enhancement</strong>: added a history command that allows the user to navigate to previous commands using up/down keys.</p>
+<p>Justification: This feature improves the product significantly because <code>filter</code> reduces the size of the transaction list
+shown to the user, leaving behind only the relevant transactions.<br>
+And upon application launch, <code>filter</code> is preset to show only transactions of the current month to prevent overloading the user with information.</p>
 </li>
 <li>
-<p><strong>Code contributed</strong>: [<a href="https://github.com">Functional code</a>] [<a href="https://github.com">Test code</a>] <em>{give links to collated code files}</em></p>
+<p>Highlights: This enhancement affects existing commands and commands to be added in future. It required an in-depth analysis of design alternatives.
+The implementation too was challenging as it required changes to existing commands, support for multiple filter types at once, and support for future
+feature extension.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><strong>Major enhancement</strong>: Implemented <strong>Pie Chart for a breakdown of expenses</strong> in the month by category, according to the filter set by the user.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>What it does: Provides a visual representation of the amount spent per category as a percentage of the total amount spent in the filter&#8217;s month.</p>
+</li>
+<li>
+<p>Justification: This feature improves the product significantly because users are able to tell, at a glance, where the bulk of their money has been spent on.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><strong>Minor enhancement</strong>: Implemented responsive UI for <code>filter</code> command with colour schemes matching the transaction categories.</p>
+</li>
+<li>
+<p><strong>Code contributed</strong>: [<a href="https://nus-cs2103-ay1920s2.github.io/tp-dashboard/#search=pangkimjin&amp;sort=groupTitle&amp;sortWithin=title&amp;since=2020-02-14&amp;timeframe=commit&amp;mergegroup=false&amp;groupSelect=groupByRepos&amp;breakdown=false">RepoSense</a>] [<a href="https://github.com/AY1920S2-CS2103-T09-3/main/pulls?q=is%3Amerged+is%3Apr+author%3APangKimJin">Pull Requests</a>]</p>
 </li>
 <li>
 <p><strong>Other contributions</strong>:</p>
@@ -53,7 +85,7 @@
 <div class="ulist">
 <ul>
 <li>
-<p>Managed releases <code>v1.3</code> - <code>v1.5rc</code> (3 releases) on GitHub</p>
+<p>There were a total of 4 releases, from version 1.1 to 1.4. I contributed to each release from project planning, feature implementation, enhancement, to testing.</p>
 </li>
 </ul>
 </div>
@@ -63,10 +95,7 @@
 <div class="ulist">
 <ul>
 <li>
-<p>Updated the GUI color scheme (Pull requests <a href="https://github.com">#33</a>, <a href="https://github.com">#34</a>)</p>
-</li>
-<li>
-<p>Wrote additional tests for existing features to increase coverage from 88% to 92% (Pull requests <a href="https://github.com">#36</a>, <a href="https://github.com">#38</a>)</p>
+<p>Wrote additional tests for existing features to increase test coverage (Pull request <a href="https://github.com/AY1920S2-CS2103-T09-3/main/pull/52">#36</a>)</p>
 </li>
 </ul>
 </div>
@@ -76,7 +105,8 @@
 <div class="ulist">
 <ul>
 <li>
-<p>Did cosmetic tweaks to existing contents of the User Guide: <a href="https://github.com">#14</a></p>
+<p>Contributed multiple diagrams in the Developer Guide to better illustrate the new software architecture, Model component, <code>filter</code> feature,
+proposed Data Encryption feature, and proposed ExpenseLa Statement feature: <a href="https://github.com/AY1920S2-CS2103-T09-3/main/pull/167">#167</a> <a href="https://github.com/AY1920S2-CS2103-T09-3/main/pull/176">#176</a></p>
 </li>
 </ul>
 </div>
@@ -86,29 +116,10 @@
 <div class="ulist">
 <ul>
 <li>
-<p>PRs reviewed (with non-trivial review comments): <a href="https://github.com">#12</a>, <a href="https://github.com">#32</a>, <a href="https://github.com">#19</a>, <a href="https://github.com">#42</a></p>
+<p>PRs reviewed (with non-trivial review comments): <a href="https://github.com/AY1920S2-CS2103-T09-3/main/pull/180">#180</a>, <a href="https://github.com">#181</a></p>
 </li>
 <li>
-<p>Contributed to forum discussions (examples:  <a href="https://github.com">1</a>, <a href="https://github.com">2</a>, <a href="https://github.com">3</a>, <a href="https://github.com">4</a>)</p>
-</li>
-<li>
-<p>Reported bugs and suggestions for other teams in the class (examples:  <a href="https://github.com">1</a>, <a href="https://github.com">2</a>, <a href="https://github.com">3</a>)</p>
-</li>
-<li>
-<p>Some parts of the history feature I added was adopted by several other class mates (<a href="https://github.com">1</a>, <a href="https://github.com">2</a>)</p>
-</li>
-</ul>
-</div>
-</li>
-<li>
-<p>Tools:</p>
-<div class="ulist">
-<ul>
-<li>
-<p>Integrated a third party library (Natty) to the project (<a href="https://github.com">#42</a>)</p>
-</li>
-<li>
-<p>Integrated a new Github plugin (CircleCI) to the team repo</p>
+<p>Reported bugs and suggestions for other teams in the class (<a href="https://github.com/PangKimJin/ped/issues/1">1</a>)</p>
 </li>
 </ul>
 </div>
@@ -117,9 +128,6 @@
 </div>
 </li>
 </ul>
-</div>
-<div class="paragraph">
-<p><em>{you can add/remove categories in the list above}</em></p>
 </div>
 </div>
 </div>
@@ -136,6 +144,71 @@
 </tr>
 </tbody>
 </table>
+<div class="sect2">
+<h3 id="filter-transactions-code-filter-code"><a class="link" href="#filter-transactions-code-filter-code">Filter transactions : <code>filter</code></a></h3>
+<div class="paragraph">
+<p>Filters transactions for user to view specific transactions according to the filter type. Upon application
+launch the preset filter is for all transactions in the current month as depicted below:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../images/Filter.png" alt="Filter" width="790">
+</div>
+</div>
+<div class="paragraph">
+<p>Format: <code>filter c/CATEGORY m/YYYY-MM</code></p>
+</div>
+<div class="paragraph">
+<p>Expected Outcome: Filter is changed to the filter specified. List of transactions will only
+show transactions that fulfill the filter criteria.</p>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+If only 1 filter type is specified (either category or month), the other filter type will automatically be set to "ALL".
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>Examples:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>filter m/2020-04</code> - show transactions in April 2020 across all categories</p>
+</li>
+<li>
+<p><code>filter c/TRANSPORT</code> - show transactions with category "TRANSPORT" across all months</p>
+</li>
+<li>
+<p><code>filter c/FOOD m/2020-04</code> - show transactions with category "FOOD" in April 2020</p>
+</li>
+<li>
+<p><code>filter c/ALL m/ALL</code> - show all transactions</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="data-encryption-coming-in-v2-0"><a class="link" href="#data-encryption-coming-in-v2-0">Data Encryption [coming in v2.0]</a></h3>
+<div class="paragraph">
+<p>With the AES-256 encryption, ExpenseLa ensures that the sensitive information you have provided is safe from outside
+prying eyes, and this is all done without any additional effort from the user.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="expensela-statement-code-statement-code-coming-in-v2-0"><a class="link" href="#expensela-statement-code-statement-code-coming-in-v2-0">ExpenseLa Statement <code>Statement</code> [coming in v2.0]</a></h3>
+<div class="paragraph">
+<p>With the ability to generate your personalised ExpenseLa statement, you will be able to export all your expenses,
+income, budget, and balance information into a pdf document. Using ExpenseLa&#8217;s <code>Filter</code> command, you will be able
+to selectively include which transactions to make your statement tailored to your needs.</p>
+</div>
+</div>
 </div>
 </div>
 <div class="sect1">
@@ -151,14 +224,870 @@
 </tr>
 </tbody>
 </table>
-</div>
-</div>
-<div class="sect1">
-<h2 id="project-powerpointlabs"><a class="link" href="#project-powerpointlabs">PROJECT: PowerPointLabs</a></h2>
-<div class="sectionbody">
-<hr>
+<div class="sect2">
+<h3 id="architecture"><a class="link" href="#architecture">Architecture</a></h3>
 <div class="paragraph">
-<p><em>{Optionally, you may include other projects in your portfolio.}</em></p>
+<p>In this section, we will be introducing the individual components that form ExpenseLa using various diagrams.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../images/ArchitectureDiagram.png" alt="ArchitectureDiagram">
+</div>
+<div class="title">Figure 1. Architecture Diagram</div>
+</div>
+<div class="paragraph">
+<p>The <strong><em>Architecture Diagram</em></strong> given above explains the high-level design of the App. Given below is a quick overview of each component.</p>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+The <code>.puml</code> files used to create diagrams in this document can be found in the <a href="{repoURL}/docs/diagrams/">diagrams</a> folder.
+Refer to the <a href="UsingPlantUml.html">Using PlantUML guide</a> to learn how to create and edit diagrams.
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p><code>Main</code> has two classes called <a href="{repoURL}/src/main/java/seedu/expensela/Main.java"><code>Main</code></a> and <a href="{repoURL}/src/main/java/seedu/expensela/MainApp.java"><code>MainApp</code></a>. It is responsible for,</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>At app launch: Initializes the components in the correct sequence, and connects them up with each other.</p>
+</li>
+<li>
+<p>At shut down: Shuts down the components and invokes cleanup method where necessary.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p><a href="#Design-Commons"><strong><code>Commons</code></strong></a> represents a collection of classes used by multiple other components.
+The following class plays an important role at the architecture level:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>LogsCenter</code> : Used by many classes to write log messages to the App&#8217;s log file.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>The rest of the App consists of four components.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="#Design-Ui"><strong><code>UI</code></strong></a>: The UI of the App.</p>
+</li>
+<li>
+<p><a href="#Design-Logic"><strong><code>Logic</code></strong></a>: The command executor.</p>
+</li>
+<li>
+<p><a href="#Design-Model"><strong><code>Model</code></strong></a>: Holds the data of the App in-memory.</p>
+</li>
+<li>
+<p><a href="#Design-Storage"><strong><code>Storage</code></strong></a>: Reads data from, and writes data to, the hard disk.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Each of the four components</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Defines its <em>API</em> in an <code>interface</code> with the same name as the Component.</p>
+</li>
+<li>
+<p>Exposes its functionality using a <code>{Component Name}Manager</code> class.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>For example, the <code>Logic</code> component (see the class diagram given below) defines it&#8217;s API in the <code>Logic.java</code> interface and exposes its functionality using the <code>LogicManager.java</code> class.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../images/LogicClassDiagram.png" alt="LogicClassDiagram">
+</div>
+<div class="title">Figure 2. Class Diagram of the <code>Logic</code> Component</div>
+</div>
+<h4 id="how-the-architecture-components-interact-with-each-other" class="discrete">How the architecture components interact with each other</h4>
+<div class="paragraph">
+<p>The <em>Sequence Diagram</em> below shows how the components interact with each other for the scenario where the user issues the command <code>delete 1</code>.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../images/ArchitectureSequenceDiagram.png" alt="ArchitectureSequenceDiagram">
+</div>
+<div class="title">Figure 3. Component interactions for <code>delete 1</code> command</div>
+</div>
+<div class="paragraph">
+<p>The sections below give more details of each component.</p>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2020-04-13 07:25:06 UTC</div></div></div></body></html>
+<div class="sect2">
+<h3 id="model-component"><a class="link" href="#model-component">Model component</a></h3>
+<div class="imageblock">
+<div class="content">
+<img src="../images/ModelClassDiagram.png" alt="ModelClassDiagram">
+</div>
+<div class="title">Figure 4. Structure of the Model Component</div>
+</div>
+<div class="paragraph">
+<p><strong>API</strong> : <a href="{repoURL}/src/main/java/seedu/expensela/model/Model.java"><code>Model.java</code></a></p>
+</div>
+<div class="paragraph">
+<p>The <code>Model</code>,</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>stores an ArrayList which contains the user&#8217;s command history.</p>
+</li>
+<li>
+<p>stores a <code>UserPref</code> object that represents the user&#8217;s preferences.</p>
+</li>
+<li>
+<p>stores the <code>ExpenseLa</code> data.</p>
+</li>
+<li>
+<p>stores the <code>GlobalData</code> which contains the recurring budget, transactions, total balance, and last updated date.</p>
+</li>
+<li>
+<p>stores a <code>MonthlyData</code> object which contains budget, expense, and income information set by the user.</p>
+</li>
+<li>
+<p>stores a <code>ToggleView</code> object that represents the nature of transaction information displayed to the user.</p>
+</li>
+<li>
+<p>stores a <code>Filter</code> object which represents the filter on the transactions as set by the user</p>
+</li>
+<li>
+<p>stores <code>TransactionList</code> which contains the list of all transactions</p>
+</li>
+<li>
+<p>exposes an unmodifiable <code>ObservableList&lt;Transaction&gt;</code> that can be 'observed' e.g. the UI can be bound to this list
+so that the UI automatically updates when the data in the list change.</p>
+</li>
+<li>
+<p>does not depend on any of the other three components.</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="filtering-transactions-pang-kim-jin"><a class="link" href="#filtering-transactions-pang-kim-jin">Filtering Transactions (Pang Kim Jin)</a></h3>
+<div class="paragraph">
+<p>The <code>Filter</code> command allows the user to bring up a list of <code>Transaction</code>, and filter it by either category, month,
+or both at the same time. This is implemented by using a predicate for category and another predicate for month,
+both of which inheriting from <code>Predicate&lt;Transaction&gt;</code> to filter the <code>Transaction</code>.</p>
+</div>
+<div class="sect3">
+<h4 id="implementation"><a class="link" href="#implementation">Implementation</a></h4>
+<div class="paragraph">
+<p><code>FilterCommand</code> is instantiated by <code>FilterCommandParser#parse(String args)</code> method, which parses the arguments supplied in the user
+command to return a <code>FilterCommand</code> object.</p>
+</div>
+<div class="paragraph">
+<p>The below sequence diagram depicts the interactions within the <code>Logic</code> component for the execute("filter c/FOOD m/2020-04") call:
+<span class="image"><img src="../images/FilterSequenceDiagram.png" alt="FilterSequenceDiagram"></span></p>
+</div>
+<div class="paragraph">
+<p>The below scenario shows a typical usage of the filter feature:</p>
+</div>
+<div class="paragraph">
+<p>Step 1: Upon application launch, the filter for all categories and the current month is automatically applied.
+<span class="image"><img src="../images/filter/Filter_SS_1.PNG" alt="Filter SS 1"></span></p>
+</div>
+<div class="paragraph">
+<p>Step 2: User executes the command <code>filter c/food m/2020-02</code> to bring up transactions in the category "FOOD" for the month
+of February 2020. (Note: The command in the command line disappears upon hitting Enter, the command in the command line
+is purely for illustration purposes).
+<span class="image"><img src="../images/filter/Filter_SS_2.PNG" alt="Filter SS 2"></span></p>
+</div>
+<div class="paragraph">
+<p>Step 3: The <code>FilterCommandParser#parse(String args)</code> parses the arguments.</p>
+</div>
+<div class="paragraph">
+<p>Step 4: Since user input is correct and the arguments are parsed, a new <code>FilterCommand</code> object is created by the
+<code>FilterCommandParser</code>.</p>
+</div>
+<div class="paragraph">
+<p>Step 5: The <code>FilterCommand</code> object will use a <code>Predicate&lt;Transaction&gt;</code> based on the specified category, month, or both, to filter
+the list of transactions.</p>
+</div>
+<div class="paragraph">
+<p>Step 6: The list of filtered transactions is brought up. The filter category and month UI will also update accordingly
+to show the category and month that the transactions are filtered by.</p>
+</div>
+<div class="paragraph">
+<p>The below activity diagram gives an overview of the command execution:
+<span class="image"><img src="../images/filter/FilterActivityDiagram.png" alt="FilterActivityDiagram"></span></p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="design-considerations"><a class="link" href="#design-considerations">Design Considerations</a></h4>
+<div class="paragraph">
+<p><strong>Aspect: Using <code>Predicate</code> to improve extendability of the <code>Filter</code> feature in the future.</strong></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Alternative 1 (current choice): Create a new <code>Predicate&lt;Transaction&gt;</code> for each new filter type</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Pros: Greater flexibility can be provided for each filter type since different filter types have different requirements (e.g. Month vs Category)</p>
+</li>
+<li>
+<p>Cons: Tedious to implement a new class for each new type of filter</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Alternative 2: Use a single <code>Predicate&lt;Transaction&gt;</code> to filter for all filter types</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Pros: Easy to implement</p>
+</li>
+<li>
+<p>Cons: Prone to being inflexible for extensions</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>We decided to go with Alternative 1 since the current filter feature supports increasing the number of filter types
+- on top of the current category and month filters. Despite having a different <code>Predicate</code> for each filter type, we use
+a composed <code>Predicate</code> comprising of both <code>Predicate</code> s, making it much easier to support extensions to this feature.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="proposed-extension"><a class="link" href="#proposed-extension">Proposed Extension</a></h4>
+<div class="paragraph">
+<p>We plan to enhance the filter feature to support other arguments in the command to filter by different types such as
+price range or date range. This allows the user to have greater flexibility and have a better understanding of his/her
+expenses.</p>
+</div>
+<div class="paragraph">
+<p>The design consideration mentioned earlier hence facilitates this proposed extension, reducing the difficulty of such a
+future implementation.</p>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="proposed-data-encryption"><a class="link" href="#proposed-data-encryption">[Proposed] Data Encryption</a></h3>
+<div class="paragraph">
+<p>Given the sensitive nature of the information provided by users, we would like to safeguard the information provided by
+our users through encryption. Naturally, the information would be encrypted and decrypted in the back-end without the user
+requiring to do any of the encryption, decryption, or even any knowledge of how it works.</p>
+</div>
+<div class="sect3">
+<h4 id="proposed-implementation"><a class="link" href="#proposed-implementation">Proposed Implementation</a></h4>
+<div class="paragraph">
+<p>We thus propose a <code>Keystore</code> module to contain authorisation certificates or public key certificates
+interacting with the <code>Logic</code> and <code>Storage</code> modules. With this addition, the following architecture diagram
+gives an overview of how it would fit in:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../images/DataEncryptionClassDiagram.png" alt="DataEncryptionClassDiagram">
+</div>
+</div>
+<div class="paragraph">
+<p>The <code>Keystore</code> module would have a <code>KeystoreManager</code> which implements the following methods:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>KeystoreManager#setCipher(Cipher cipher)</code> - sets the <code>Cipher</code> for encryption usage.</p>
+</li>
+<li>
+<p><code>KeystoreManager#encryptExpenseLa(ExpenseLa expenseLa)</code> - encrypts the given <code>ExpenseLa</code> object with the encryption cipher set with every
+call to <code>LogicManager#execute()</code> method.</p>
+</li>
+<li>
+<p><code>KeystoreManager#decryptExpenseLa(ExpenseLa expenseLa)</code> - Decrypts the encrypted json file upon application launch.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>The following class diagram provides a depiction of the above:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../images/DataEncryptionClassDiagram2.png" alt="DataEncryptionClassDiagram2">
+</div>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<code>KeystoreManager#encryptExpenseLa(ExpenseLa expenseLa)</code> and <code>KeystoreManager#decryptExpenseLa(ExpenseLa expenseLa)</code>
+will be using the Advanced Encryption Standard (AES 256) encryption algorithm.
+</td>
+</tr>
+</table>
+</div>
+</div>
+<div class="sect3">
+<h4 id="design-considerations-2"><a class="link" href="#design-considerations-2">Design Considerations</a></h4>
+<div class="paragraph">
+<p><strong>Aspect: Encryption Algorithm</strong></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Alternative 1: Data Encryption Standard</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Pros: Simpler to implement encryption and decryption</p>
+</li>
+<li>
+<p>Cons: Weaker security, easy to brute force</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Alternative 2 (current choice) : Advanced Encryption Standard</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Pros: 256 bit key is exponentially more secure than DES' 56 bit key</p>
+</li>
+<li>
+<p>Cons: Harder to implement</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="proposed-expensela-monthly-statement"><a class="link" href="#proposed-expensela-monthly-statement">[Proposed] ExpenseLa Monthly Statement</a></h3>
+<div class="paragraph">
+<p>Similar to how banks issue a statement of account, we believe that it would be helpful to provide
+our users with an overview of their expenses. This statement would include the user&#8217;s balance,
+budget, expense, income, and transactions in a user specified time frame.The user can choose to include/exclude certain
+transactions based on their categories or dates.</p>
+</div>
+<div class="sect3">
+<h4 id="proposed-implementation-2"><a class="link" href="#proposed-implementation-2">Proposed Implementation</a></h4>
+<div class="paragraph">
+<p>To generate the statement, we propose a <code>StatementCommand</code> that extends <code>Command</code> and works with <code>ModelManager</code> just like
+all other commands, as depicted in the following diagram:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../images/StatementCommandClassDiagram.png" alt="StatementCommandClassDiagram">
+</div>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>The user uses the <code>FilterCommand</code> to  filter the list of transactions to show only the transactions with the
+user&#8217;s preferred category and transaction month</p>
+</li>
+<li>
+<p>Then <code>StatementCommand#execute()</code> will retrieve the <code>FilteredList</code> of transactions
+and generate a Portable Document Format (PDF) file with Java&#8217;s PDFWrite API.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Below is a truncated example of the PDF ExpenseLa statement:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../images/statement/Statement.png" alt="Statement">
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="design-considerations-3"><a class="link" href="#design-considerations-3">Design Considerations</a></h4>
+<div class="paragraph">
+<p><strong>Aspect: Time and Nature of Transactions to Export</strong></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Alternative 1 (current choice): Users get to choose when to generate their statement and which month and categories of
+transactions to include.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Pros: Users get a statement tailored according to their needs.</p>
+</li>
+<li>
+<p>Cons: Users may forget to include certain types of transactions.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Alternative 2: At the end of every month, a statement of all transactions and user information is exported</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Pros: Users get a comprehensive view of their expenses</p>
+</li>
+<li>
+<p>Cons: Users may be overloaded with information</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Ultimately we chose Alternative 1 as we prioritise our user&#8217;s freedom of choice and we understand that not all transactions
+may be relevant for the purposes of exporting the statement.</p>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="non-functional-requirements"><a class="link" href="#non-functional-requirements">Non Functional Requirements</a></h3>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>The software should work on any <a href="#mainstream-os">mainstream OS</a> as long as it has Java <code>11</code> or above installed.</p>
+</li>
+<li>
+<p>The software should be able to hold up to 2000 transactions(expenses and incomes).</p>
+</li>
+<li>
+<p>The software should be able to respond within 5 seconds.</p>
+</li>
+<li>
+<p>A user with above average typing speed for regular English text (i.e. not code, not system admin commands) should be able to accomplish most of the tasks faster using commands than using the mouse.</p>
+</li>
+<li>
+<p>The software should be able to run irrespective of internet connection.</p>
+</li>
+<li>
+<p>The software should support both manual and automated testing.</p>
+</li>
+<li>
+<p>The source code should be open-source</p>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect2">
+<h3 id="instructions-for-manual-testing"><a class="link" href="#instructions-for-manual-testing">Instructions for Manual Testing</a></h3>
+<div class="paragraph">
+<p>Given below are instructions to test the app manually.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+These instructions only provide a starting point for testers to work on; testers are expected to do more <em>exploratory</em> testing.
+</td>
+</tr>
+</table>
+</div>
+<div class="sect3">
+<h4 id="launch-and-shutdown"><a class="link" href="#launch-and-shutdown">Launch and Shutdown</a></h4>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Initial launch</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>Download the jar file and copy into an empty folder</p>
+</li>
+<li>
+<p>Double-click the jar file<br>
+Expected: Shows the GUI with a set of sample contacts. The window size may not be optimum.</p>
+</li>
+</ol>
+</div>
+</li>
+<li>
+<p>Saving window preferences</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>Resize the window to an optimum size. Move the window to a different location. Close the window.</p>
+</li>
+<li>
+<p>Re-launch the app by double-clicking the jar file.<br>
+Expected: The most recent window size and location is retained.</p>
+</li>
+</ol>
+</div>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect3">
+<h4 id="setting-a-monthly-budget"><a class="link" href="#setting-a-monthly-budget">Setting a monthly budget</a></h4>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Setting a monthly budget to a user decided amount</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>Test Case: <code>budget b/1000</code><br>
+Expected: The monthly budget for the current month is set to $1000</p>
+</li>
+<li>
+<p>Test Case: <code>budget</code><br>
+Expected: The monthly budget is not updated. Error is shown in the status message</p>
+</li>
+</ol>
+</div>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect3">
+<h4 id="resetting-total-balance"><a class="link" href="#resetting-total-balance">Resetting total balance</a></h4>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Reset <code>Balance</code> value to the total from the amount of all transactions stored</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>Test Case: <code>resetBalance</code><br>
+Expected: The <code>Balance</code> is reset</p>
+</li>
+</ol>
+</div>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect3">
+<h4 id="adding-a-transaction"><a class="link" href="#adding-a-transaction">Adding a transaction</a></h4>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Add either an expense or income transaction</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>Test Case: <code>add a/ 26.00 n/ Grab Share d/ 2020-02-19 c/ TRANSPORT</code><br>
+Expected: A new expense transaction is added to the transaction list. Depending on the current filter applied
+this change may or may not be visible. Details of the added transaction is visible in the Command Result</p>
+</li>
+<li>
+<p>Test Case: <code>add a/ 16.00 n/ Pizza r/ Lunch c/ FOOD</code><br>
+Expected: A new expense transaction is added to the transaction list, with the transaction date set to the
+current date. Details of the added transaction is visible in the Command Result</p>
+</li>
+<li>
+<p>Test Case: <code>add i/ a/ 200.00 n/ pocket money c/INCOME rc/</code><br>
+Expected: A recurring income transaction is added to the transaction list, with the transaction date set to the
+current date. Details of the added transaction is visible in the Command Result</p>
+</li>
+<li>
+<p>Test Case: <code>add i/ n/ allowance c/INCOME rc/</code><br>
+Expected: No transaction is added. Error details are shown in the Command Result</p>
+</li>
+</ol>
+</div>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect3">
+<h4 id="filtering-transactions"><a class="link" href="#filtering-transactions">Filtering transactions</a></h4>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Filtering transactions listed by category, month, or both.</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>Test Case: <code>filter m/2020-04</code><br>
+Expected: A month filter for April 2020 is applied to the transaction list, relevant transactions are listed.
+Details of the number of transactions found is visible in the Command Result</p>
+</li>
+<li>
+<p>Test Case: <code>filter c/TRANSPORT</code><br>
+Expected: A category filter for "TRANSPORT" is applied to the transaction list, relevant transactions are listed.
+Details of the number of transactions found is visible in the Command Result</p>
+</li>
+<li>
+<p>Test Case: <code>filter c/FOOD m/2020-02</code><br>
+Expected: A category filter for "FOOD" and month filter for February 2020 is applied to the transaction list,
+relevant transactions are listed. Details of the number of transactions found is visible in the Command Result</p>
+</li>
+<li>
+<p>Test Case: <code>filter</code><br>
+Expected: No filter is applied and no transactions listed. Error details are shown in the Command Result.</p>
+</li>
+</ol>
+</div>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect3">
+<h4 id="deleting-a-transaction"><a class="link" href="#deleting-a-transaction">Deleting a transaction</a></h4>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Deleting a transaction from the transactions listed</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>Prerequisites: At least one transaction in the list using either <code>list</code> or <code>filter</code> command.</p>
+</li>
+<li>
+<p>Test case: <code>delete 1</code><br>
+Expected: First contact is deleted from the list. Details of the deleted contact shown in the status message.</p>
+</li>
+<li>
+<p>Test case: <code>delete 0</code><br>
+Expected: No transaction is deleted. Error details shown in the status message.</p>
+</li>
+<li>
+<p>Test Case: <code>delete</code><br>
+Expected: No transaction is deleted. Error details are shown in the Command Result.</p>
+</li>
+</ol>
+</div>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect3">
+<h4 id="editing-a-transaction"><a class="link" href="#editing-a-transaction">Editing a transaction</a></h4>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Editing a transaction from the transactions listed</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>Prerequisites: At least one transaction in the list using either <code>list</code> or <code>filter</code> command.</p>
+</li>
+<li>
+<p>Test case: <code>edit 1 a/ 26.00 n/ Grab Share d/ 2020-02-19 c/ TRANSPORT</code><br>
+Expected: First contact is edited from the list. Details of the edited contact shown in the status message.</p>
+</li>
+<li>
+<p>Test case: <code>edit 0 a/ 26.00 n/ Grab Share d/ 2020-02-19 c/ TRANSPORT</code><br>
+Expected: No transaction is edited. Error details shown in the status message.</p>
+</li>
+<li>
+<p>Test Case: <code>edit a/ 26.00 n/ Grab Share d/ 2020-02-19 c/ TRANSPORT</code><br>
+Expected: No transaction is edited. Error details are shown in the Command Result.</p>
+</li>
+</ol>
+</div>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect3">
+<h4 id="analysis-of-transactions"><a class="link" href="#analysis-of-transactions">Analysis of transactions</a></h4>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Toggle between viewing list of transactions and analytics with bar graph and pie chart to show expense trend.</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>Test case: <code>toggleview</code><br>
+Expected: Transaction view is toggled to analytics view or vice versa.</p>
+</li>
+<li>
+<p>Test case: <code>toggle</code><br>
+Expected: No toggling happens. Error details shown in the status message.</p>
+</li>
+</ol>
+</div>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect3">
+<h4 id="finding-transactions"><a class="link" href="#finding-transactions">Finding transactions</a></h4>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Finding transactions that match any of the supplied keywords in its name field.</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>Test case: <code>find Airpods</code><br>
+Expected: Transactions with the word "Airpods" in its name will be displayed in the transaction list.</p>
+</li>
+<li>
+<p>Test case: <code>find Airpods Allowance Electricity</code><br>
+Expected: Transactions with the word "Airpods" "Allowance" or "Electricity" in its name will be displayed in the
+transaction list.</p>
+</li>
+<li>
+<p>Test case: <code>find</code><br>
+Expected: No transactions found. Error details shown in the status message.</p>
+</li>
+</ol>
+</div>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect3">
+<h4 id="listing-all-transactions"><a class="link" href="#listing-all-transactions">Listing all transactions</a></h4>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Listing all transactions and resetting all filters to "ALL".</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>Test case: <code>list</code><br>
+Expected: All transactions will be displayed in the transaction list. Filter for Category and Month are now
+"ALL".</p>
+</li>
+</ol>
+</div>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect3">
+<h4 id="clearing-all-recurring-transactions"><a class="link" href="#clearing-all-recurring-transactions">Clearing all recurring transactions</a></h4>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Clearing all recurring transactions stored.</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>Test case: <code>clearrecurring</code><br>
+Expected: All recurring transactions in the transaction list will be cleared.</p>
+</li>
+</ol>
+</div>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect3">
+<h4 id="exporting-transaction-data-to-csv"><a class="link" href="#exporting-transaction-data-to-csv">Exporting transaction data to csv</a></h4>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Exporting the filtered transaction list to a csv file.</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>Prerequisite: There must be at least one transaction in the transaction list</p>
+</li>
+<li>
+<p>Test case: <code>export</code><br>
+Expected: All transactions in the transaction list after applying filters will be exported.</p>
+</li>
+</ol>
+</div>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect3">
+<h4 id="importing-transaction-data-from-csv"><a class="link" href="#importing-transaction-data-from-csv">Importing transaction data from csv</a></h4>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Importing the filtered transaction list to a csv file.</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>Prerequisite: There must be at least one transaction in the csv file</p>
+</li>
+<li>
+<p>Test case: <code>import</code><br>
+Expected: All transactions that are in the correct format and not duplicated entries in the csv file
+will be imported.</p>
+</li>
+</ol>
+</div>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect3">
+<h4 id="clearing-all-data"><a class="link" href="#clearing-all-data">Clearing all data</a></h4>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Clearing all data in ExpenseLa including monthly data and global data</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>Test case: <code>clear</code><br>
+Expected: All transactions are deleted, balance is set to 0 and monthly data is also set to 0.
+All recurring data such as budget and transactions are also cleared.</p>
+</li>
+</ol>
+</div>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect3">
+<h4 id="showing-help-window"><a class="link" href="#showing-help-window">Showing help window</a></h4>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>View the help window for help with commands</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>Test Case: <code>help</code><br>
+Expected: A popup with a link to the User Guide pops up.</p>
+</li>
+</ol>
+</div>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect3">
+<h4 id="saving-data"><a class="link" href="#saving-data">Saving data</a></h4>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Dealing with missing/corrupted data files</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>Delete the data files at <code>.\data\expenseLa.json</code> and <code>.\data\globalData.json</code></p>
+</li>
+</ol>
+</div>
+</li>
+</ol>
+</div>
+</div>
+</div>
+</div>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2020-04-13 13:16:55 UTC</div></div></div></body></html>
